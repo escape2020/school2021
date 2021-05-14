@@ -1,0 +1,5 @@
+name: eschool2021
+channels:
+  - default
+dependencies:
+  - numpy
