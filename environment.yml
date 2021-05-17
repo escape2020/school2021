@@ -2,4 +2,12 @@ name: eschool2021
 channels:
   - default
 dependencies:
+  - python=3.9
+  - pip
   - numpy
+  - pytest
+  - setuptools
+  - twine
+  - wheel
+  - pip:
+    - build
