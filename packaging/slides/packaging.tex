@@ -225,14 +225,7 @@
     \item Many other tools can also be configured through \texttt{pyproject.toml},\\ e.g. black, poetry, \ldots.
   \end{itemize}
 
-  \begin{code}[title={Minimal pyproject.toml file for projects using setuptools}]{toml}
-    [build-system]
-    # required packages *at build time*
-    requires = ["setuptools", "wheel"]
-
-    # the function pip will call to build our project.
-    build-backend = "setuptools.build_meta"
-  \end{code}
+  \inputcode[title={Minimal pyproject.toml file for projects using setuptools}]{../escape_school21_demo/pyproject.toml}{toml}
 \end{frame}
 
 \begin{frame}[c, fragile]{setup.py and setup.cfg}
