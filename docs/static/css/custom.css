@@ -1,0 +1,55 @@
+body.dark .os-viewport {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-position: unset;
+  }
+}
+
+.ui.inverted.segment {
+  background-color: #333;
+}
+
+.ui.attached.segment.dream-card {
+  border: none;
+  border-radius: 1.5em;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.dream-back .ui.segment,
+.ui.segment.dream-posts-section,
+.ui.segment.dream-categories-section,
+.ui.segment.dream-tags-section,
+/* .dream-single-aside .ui.segment, */
+.ui.segment.post-disqus-area,
+.ui.segment.utterances-comments {
+  border-radius: 1.5em;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.ui.segment.toc {
+  background: none;
+  border: none;
+  box-shadow: none;
+  float: right;
+}
+
+.dream-single .ui.top.attached.segment {
+  border-top-left-radius: 1.5em;
+  border-top-right-radius: 1.5em;
+}
+
+.dream-single .ui.attached.segment:not(.cover) {
+  border-bottom-left-radius: 1.5em;
+  border-bottom-right-radius: 1.5em;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+body.dark .markdown-body .highlight pre {
+  background: #222 !important;
+}

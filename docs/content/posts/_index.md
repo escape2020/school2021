@@ -1,0 +1,5 @@
+---
+title: School
+---
+
+Schedule

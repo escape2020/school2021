@@ -1,0 +1,98 @@
+baseURL = "https://escape2020.github.io/school2021/"
+languageCode = "en"
+defaultContentLanguage = "en"
+title = "ESCAPE school 2021"
+theme = "dream"
+relativeURLs = false
+
+copyright = '<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />'
+
+googleAnalytics = ""
+
+##disqusShortname = "ESCAPE-LAPP"
+staticDir = ["static"]
+
+enableRobotsTXT = true
+
+hasCJKLanguage = true
+
+Paginate = 8
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  background = "#ffffff" ## D4F1F4
+  backgroundImage = ""
+  linkColor = ""
+
+  # dark mode
+  defaultDark = false
+  backgroundDark = "#05445E"
+  backgroundImageDark = "#ffffff"
+  darkLinkColor = "#ffffff"
+  darkNav = true
+  dark404 = true
+
+  images = [""]
+
+  author = "ESCAPE"
+  description = "ESCAPE"
+  avatar = "https://projectescape.eu/sites/default/files/logo-Escape_0.png"
+  headerTitle = "ESCAPE School"
+  motto = "2021"
+  # maxTags = 5
+
+  # footerBottomText = "Learn more at: "
+
+  rss = true
+
+  # utterancesRepo = "ESCAPE/ESCAPE.github.io"
+
+  # valine = true
+  # LEANCLOUD_APP_ID = ""
+  # LEANCLOUD_APP_KEY = ""
+
+  email = "escape_school@lapp.in2p3.fr"
+  twitter = "ESCAPE_EU"
+  # facebook = "ESCAPE"
+  # instagram = "ESCAPE"
+  # mastodon = ""
+  linkedin = "escape-eu"
+  # github = ""
+  gitlabin2p3 = "escape2020/schools/school2021"
+  # stackoverflow = "ESCAPE"
+  # codepen = "ESCAPE"
+
+  siteStartYear = 2021
+
+  favicon = "https://projectescape.eu/sites/default/files/logo-Escape_0.png"
+
+  highlightjs = true
+  # highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
+  highlightjsExtraLanguages = ["clojure", "ocaml"]
+  highlightjsTheme = "tomorrow"
+  highlightjsThemeDark = "tomorrow-night"
+
+  # search
+  enableSearch = false
+
+  # options
+  showSummaryCoverInPost = true
+  hasTwitterEmbed = true
+  # reversePostAndAside = true
+  # shareInAside = true
+
+  [params.advanced]
+    customCSS = []
+    customJS = []
+
+  [params.experimental]
+    jsDate = true
+    jsDateFormat = "dd/MM/yyyy"
+    # jsDateFormat = "yyyy年MM月dd日，cccc"
