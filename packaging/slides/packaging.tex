@@ -10,9 +10,7 @@
   aspectratio=1610,
 ]{beamer}
 \usetheme{vertex}
-
-\usepackage{polyglossia}
-\setmainlanguage{english}
+\usepackage[american]{babel}
 
 \usepackage[autostyle]{csquotes}
 
@@ -22,18 +20,16 @@
   BoldItalicFont=Fira Sans Medium Italic,
   ItalicFont=Fira Sans Light Italic
 ]{Fira Sans Light}
-\setmonofont{Fira Mono Regular}
+\setmonofont{Fira Mono}
 
-\usepackage{grffile}
 \usepackage{graphicx}
-
-\usepackage{tabu}
-\setlength\tabulinesep{0.3\baselineskip}
 
 \usepackage[outputdir=build]{minted}
 \usepackage{xcolor}
 \usepackage{tcolorbox}
 \tcbuselibrary{minted}
+\usepackage[space=true]{accsupp}
+\usepackage{attachfile2}
 
 \usepackage{bookmark}
 \usepackage[shortcuts]{extdash}
@@ -60,7 +56,13 @@
   listing file=#2,
   listing engine=minted,
   minted language=#3,
-  minted options={fontsize=\footnotesize,breaklines,autogobble,linenos,numbersep=3mm},
+  minted options={
+    fontsize=\footnotesize,
+    breaklines,
+    autogobble,
+    linenos,
+    numbersep=3mm
+  },
   colback=black!5!white,
   colframe=black!75!white,
   listing only,
@@ -73,6 +75,12 @@
   },
   #1
 }
+
+\renewcommand\theFancyVerbLine{%
+    \BeginAccSupp{method=escape,ActualText={}}%
+    {\ttfamily\tiny\arabic{FancyVerbLine}}%
+    \EndAccSupp{}%
+}%
 
 
 
@@ -237,7 +245,7 @@
       \end{itemize}
     \item[$\Rightarrow$] For simple projects, only use the \texttt{setup.cfg}
     \item Editable installs currently require a minimal \texttt{setup.py}:
-      \inputcode[]{../escape_school21_demo/setup.py}{python}
+      \inputcode{../escape_school21_demo/setup.py}{python}
   \end{itemize}
 \end{frame}
 
@@ -305,6 +313,31 @@
     }
   \end{itemize}
 \end{frame}
+
+\begin{frame}[c,fragile]{Entry Points}
+  \begin{itemize}
+    \item Console script entry points define scripts that get installed so they can be run from the command line
+
+    \begin{code}[title={setup.cfg}]{ini}
+    [options.entry_points]
+    console_scripts = 
+      fibonacci = escape_school21_demo.__main__:main
+    \end{code}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Including Data}
+  \begin{itemize}
+    \item To include non-code files into the source distribution and wheels you need to add
+      \begin{code}[title={setup.cfg}]{ini}
+      [options]
+      include_package_data = True
+      \end{code}
+    \item And define these additional files in an additional file \texttt{MANIFEST.in}
+  \end{itemize}
+\end{frame}
+
 
 \section{Versions and Semantic Versioning}
 \headlineframe{Versions and Semantic Versioning}
@@ -413,6 +446,7 @@
   since setuptools is not actually importing the variable but parses the code.
 \end{frame}
 
+
 \section{Choosing a License}
 \headlineframe{Choosing a License}
 
@@ -437,14 +471,7 @@
 
 \begin{frame}[c]{The MIT License}
   \small
-  Copyright <YEAR> <COPYRIGHT HOLDER>
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files
-  (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  \input{../../LICENSE}
 \end{frame}
 
 \begin{frame}[c]{BSD-3-Clause}
