@@ -1,0 +1,54 @@
+[home]
+other = "Home"
+
+[backToHome]
+other = "Back to home"
+
+[flip]
+other = "Flip it!"
+
+[archives]
+other = "Archives"
+
+[allTags]
+other = "All Tags"
+
+[tag]
+one = "1 tag"
+other = "{{ .Count }} tags"
+
+[allCategories]
+other = "All Categories"
+
+[category]
+one = "1 category"
+other = "{{ .Count }} categories"
+
+[article]
+one = "1 article"
+other = "{{ .Count }} articles"
+
+[socialLinks]
+other = "Social Links"
+
+[minuteRead]
+one = " minute read"
+other = " minutes read"
+
+[updateAt]
+other = "Update at"
+
+[noTag]
+other = "No Tags"
+
+[prevPage]
+other = "Previous page"
+
+[nextPage]
+other = "Next page"
+
+[saveAsImage]
+other = "Save as image"
+
+[search]
+other = "Search"

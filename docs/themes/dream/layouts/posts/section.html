@@ -1,0 +1,28 @@
+{{ define "title" }}
+{{- .Title -}}
+{{ end }}
+
+{{ define "main"}}
+
+{{ partial "header.html" . }}
+
+<div class="ui container">
+  <article class="ui segment dream-posts-section">
+    <h2 class="ui header">
+      {{ .Title }}
+      <span class="ui grey sub header">{{ .Content }}</span>
+    </h2>
+
+    {{ range .Data.Pages.GroupByDate "2006" }}
+    <h3 class="ui header">{{ .Key }}</h3>
+    <ul>
+      {{ range .Pages }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </article>
+</div>
+{{ end }}

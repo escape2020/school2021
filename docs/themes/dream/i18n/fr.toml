@@ -1,0 +1,51 @@
+[home]
+other = "Accueil"
+
+[backToHome]
+other = "Revenir à l'accueil"
+
+[flip]
+other = "Retourne ça!"
+
+[archives]
+other = "Archives"
+
+[allTags]
+other = "Tous les étiquettes"
+
+[tag]
+one = "1 étiquette"
+other = "{{ .Count }} étiquettes"
+
+[allCategories]
+other = "Toutes les catégories"
+
+[category]
+one = "1 category"
+other = "{{ .Count }} catégories"
+
+[article]
+one = "1 article"
+other = "{{ .Count }} articles"
+
+[socialLinks]
+other = "Liens sociaux"
+
+[minuteRead]
+one = " minute de lecture"
+other = " minutes de lecture"
+
+[updateAt]
+other = "Mise à jour le"
+
+[noTag]
+other = "Pas d'étiquette"
+
+[prevPage]
+other = "Page précédente"
+
+[nextPage]
+other = "Page suivante"
+
+[saveAsImage]
+other = "Enregistrer sous forme d'image"
