@@ -34,6 +34,12 @@ jobs:
       run: |
         pytest
 
+    - name: Test packaging demo packages
+      run: |
+        python -m build packaging/escape_school21_demo
+        python -m build packaging/eschool21_wheel_demo
+        conda build packaging/eschool21_wheel_demo/conda-recipe
+
     - name: Build slides
       run: |
         pip install https://github.com/maxnoe/texlive-batch-installation/archive/refs/tags/v0.3.0.tar.gz
