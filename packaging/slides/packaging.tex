@@ -25,6 +25,7 @@
 
 \usepackage{bookmark}
 \usepackage[shortcuts]{extdash}
+\usepackage{fontawesome5}
 
 \tcbuselibrary{skins}
 \newtcblisting{code}[2][]{
@@ -43,6 +44,11 @@
   },
   #1
 }
+
+\definecolor{positive}{HTML}{15B01A}
+\colorlet{negative}{vertexDarkRed}
+
+\newcommand\headline[1]{\textbf{\Large\strut{}#1}\newline}
 
 \newtcbinputlisting{inputcode}[3][]{
   listing file=#2,
@@ -510,7 +516,127 @@
   \end{itemize}
 \end{frame}
 
-\section{Building and distributing Binary Wheels}
+\section{Publishing Binary Wheels}
+\headlineframe{Publishing Binary Wheels}
+\begin{frame}[c]{Publishing Binary Wheels}
+  \headline{\faIcon{windows} Windows}
+  With python >= 3.5, things got a lot easier
+  \begin{enumerate}
+    \item Install Visual Studio C/C++ Compilers and Windows SDK
+    \item Install all versions of python you want to support
+    \item Build the wheel for each version of python
+    \item Upload to PyPI
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}[c]{Publishing Binary Wheels}
+  \headline{\faIcon{apple} macOS}
+  Decide the oldest supported macOS version (10.9 is most common)
+
+  \begin{enumerate}
+    \item Install compilers using \texttt{xcode install --select}
+    \item Install all versions of python you want to support (e.g. using pyenv or brew)
+    \item \mintinline{bash}+export MACOSX_DEPLOYMENT_TARGET=10.9+
+    \item Build the wheel for each version of python
+    \item Upload to PyPI
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[c]{Publishing Binary Wheels}
+  \headline{\faIcon{linux} Linux}
+  \begin{itemize}
+    \item The many different Linux distributions and versions make things a bit harder
+    \item Standardized wheels to make sure they run on \enquote{manylinux} distributions
+    \item Essentially you have to compile with the oldest glibc you want to support
+    \item e.\,g.\ \texttt{manylinux2014} is based on CentOS 7, glibc 2.17
+  \end{itemize}
+
+  The python packaging authority (PyPA) provides docker containers for each of these standards,
+  which is the best way of building these, see \url{https://github.com/pypa/python-manylinux-demo}.
+\end{frame}
+
+\begin{frame}[c, fragile]{Publishing Binary Wheels – Including dependencies}
+  \begin{itemize}
+    \item Binary wheels are only allowed to link externally against basic system libraries defined in \href{https://www.python.org/dev/peps/pep-0513/}{PEP 513}/\href{https://www.python.org/dev/peps/pep-0599/}{PEP 599}.
+    \item All other libraries must be included in the wheel
+    \item \href{https://github.com/pypa/auditwheel}{\texttt{auditwheel}} (\faIcon{linux}) and \href{https://github.com/matthew-brett/delocate}{\texttt{delocate}} (\faIcon{apple}) take care of this
+    \item No off-the-shelve solution for \faIcon{windows}
+    \item \href{https://github.com/pypa/cibuildwheel}{\texttt{cibuildwheel}} offers CI build configurations for wheels for all platforms
+  \end{itemize}
+
+  \begin{code}[title={Inside the manylinux docker container}]{bash}
+    $ auditwheel repair --plat manylinux2014_x86_64 <wheel> -w <outputdir>
+  \end{code}
+\end{frame}
+
+
 \section{A new Alternative: poetry}
+\headlineframe{A new Alternative: poetry}
+\begin{frame}[c]{Poetry}
+  poetry aims to provide a complete solution for dependency management and packaging
+
+  \begin{itemize}
+    \item[\color{positive}\faPlus] Configured completely in \texttt{pyproject.toml}
+    \item[\color{positive}\faPlus] Automatic creation of virtual environments with all dependencies
+    \item[\color{positive}\faPlus] Exact versions of all dependencies (including transitive) using a \enquote{lock file}
+    \item[\color{positive}\faPlus] Building and publishing packages
+    \item[\color{positive}\faPlus] Initial setup of new projects
+    \item[\color{negative}\faMinus] No support for binary extensions / wheels yet
+  \end{itemize}
+\end{frame}
+
+\headlineframe{live demo}
+
 \section{Conda Packages and conda-forge}
+\headlineframe{Conda Packages and conda-forge}
+
+\begin{frame}[c, fragile]{Conda Packages}
+  \begin{itemize}
+    \item Conda packages for python packages should always start from a buildable package using the tools introduced before
+    \item Then, we only need to define build- and runtime depedencies as well as metadata in a yaml file \texttt{meta.yaml}
+      \begin{code}{bash}
+        $ conda build <path to recipe directory>
+        $ anaconda upload <path to package>
+      \end{code}
+    \item \href{https://conda-forge.org/}{\texttt{conda-forge}} provides CI infrastructure to automatically build conda packages for open source projects
+  \end{itemize}
+\end{frame}
+
+\section{Conclusions and Recommendations}
+\headlineframe{Conclusions and Recommendations}
+
+\begin{frame}[c]{Conclusions and Recommendations}
+  \begin{itemize}
+    \item Always make sure your code is a valid python package and declares its dependencies
+    \item Publishing sdists / any-wheels to PyPI is free and easy \\
+      → your code is just a \texttt{pip install} away
+    \item When you expect your users to rely on conda, also publish conda packages
+    \item conda-forge is highly recommended, as it automatizes this process greatly
+    \item When using compiled python extensions, consider publishing wheels and/or conda packages \\
+      → Much easier installation for your users, but may be a bit complicated to setup
+    \item Consider using poetry instead of setuptools for applications / libraries without compiled components
+    \item The python packaging landscape has improved greatly in the last couple of years, check carefully if guides
+      you find are still up-to-date
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Further Reading}
+  \begin{description}[conda build docs]
+    \item[PyPA User Guide] \url{https://packaging.python.org}
+    \item[setuptools docs] \url{https://setuptools.readthedocs.io/}
+    \item[poetry] \url{https://python-poetry.org/}
+
+    \medskip
+    \item[conda-forge] \url{https://conda-forge.org/}
+    \item[conda build docs] \url{https://docs.conda.io/projects/conda-build}
+
+    \medskip
+    \item[cibuildhweel] \url{https://github.com/pypa/cibuildwheel}
+    \item[auditwheel] \url{https://github.com/pypa/auditwheel}
+    \item[delocate] \url{https://github.com/matthew-brett/delocate}
+    \item[manylinux demo] \url{https://github.com/pypa/python-manylinux-demo}
+  \end{description}
+\end{frame}
+
 \end{document}

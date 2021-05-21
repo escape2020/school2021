@@ -28,3 +28,4 @@ epstopdf-pkg
 fira
 firamath
 accsupp
+fontawesome5
