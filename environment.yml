@@ -4,6 +4,7 @@ channels:
 dependencies:
   - python=3.9
   - pip
+  - conda-build
   - numpy
   - pytest
   - setuptools
