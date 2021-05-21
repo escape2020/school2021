@@ -47,6 +47,7 @@
 
 \definecolor{positive}{HTML}{15B01A}
 \colorlet{negative}{vertexDarkRed}
+\setmonofont{Fira Mono}
 
 \newcommand\headline[1]{\textbf{\Large\strut{}#1}\newline}
 
@@ -611,6 +612,7 @@
     \item Always make sure your code is a valid python package and declares its dependencies
     \item Publishing sdists / any-wheels to PyPI is free and easy \\
       → your code is just a \texttt{pip install} away
+    \item Choose a permissive FOSS License for scientific software (MIT or BSD 3-Clause)
     \item When you expect your users to rely on conda, also publish conda packages
     \item conda-forge is highly recommended, as it automatizes this process greatly
     \item When using compiled python extensions, consider publishing wheels and/or conda packages \\
