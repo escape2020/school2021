@@ -1,21 +1,21 @@
 ---
-title: Class Reproducibility I
-date: 2021-05-07T10:00:00
-lastmod: 2021-05-07T10:00:00
-author: ArturoS
-authorlink: https://github.com/artfisica
-avatar: https://indico.in2p3.fr/event/20306/images/6620-yo.jpg
-cover: /schools/courseportal/img/ml.png
+title: Keynote Reproducible Science
+date: 2021-05-10
+lastmod: 2021-05-10
+author: Rachael Ainsworth
+avatar: https://indico.in2p3.fr/event/20306/images/6621-ERD6r_sXYAQjoa6%20copy.jpg
+cover: /schools/courseportal/img/analysis.png
 images:
-  - /schools/courseportal/img/ml.png
+  - /schools/courseportal/img/analysis.png
 categories:
   - Coding environment, tools, good code practice for collaborative and continuous developments
 tags:
-  - Coding
-  - Day 4
+  - Day 1
+
+weight: 1
 ---
 
-Reproducible Science in practice #1
+Reproducible Science
 
 <!--more-->
 <!---->
@@ -86,6 +86,3 @@ Several notebooks with analysis examples and an interface to launch the framewor
 * C
 
 ---
-
-***La science reproductible en pratique:***
-*Il fait référence à une série de principes, techniques, outils et considérations pratiques qui permettent la documentation, l'enregistrement et la préservation des pipelines d'analyse de données - améliorant les possibilités de collaborations transfrontalières et augmentant les probabilités de répliquer les résultats par d'autres (et par vous-même) à l'avenir. . La reproductibilité implique l'utilisation de protocoles standard et bien établis pour garantir que votre code survivra en dehors de votre ordinateur, au fil du temps et que d'autres pourront l'utiliser comme point de départ pour une nouvelle analyse. Nous explorerons plusieurs de ces outils: de l'utilisation du contrôle de version et des notebooks dans le cloud pour préparer et encapsuler les environnements logiciels (VM, conteneurs) et l'utilisation de bonnes pratiques concernant les licences, les citations et les DOI.*

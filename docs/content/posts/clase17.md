@@ -1,20 +1,19 @@
 ---
-title: Matplotlib
-date: 2021-05-08
-lastmod: 2021-05-08
-author: Tamas Gal
-avatar: https://indico.in2p3.fr/event/16864/images/3742-TG.jpg
-cover: /schools/courseportal/img/cloud.png
+title: Debugging and profiling
+date: 2021-05-05
+lastmod: 2021-05-05
+author: TBD
+## avatar:
+cover: /schools/courseportal/img/analysis.png
 images:
-  - /schools/courseportal/img/cloud.png
+  - /schools/courseportal/img/analysis.png
 categories:
-  - Community specific analysis
+  - Profile, debug and optimise
 tags:
-  - Day 3
-  - Python
+  - Day 6
 ---
 
-Matplotlib
+Debugging and profiling
 
 <!--more-->
 <!---->
@@ -29,7 +28,7 @@ Please, if you don't need to, do not change the one that is now.
 
 <!---->
 
-# Matplotlib
+# Debugging and profiling
 
 
 ---

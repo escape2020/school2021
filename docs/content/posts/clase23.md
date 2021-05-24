@@ -1,20 +1,20 @@
 ---
-title: Matplotlib
-date: 2021-05-08
-lastmod: 2021-05-08
+title: Introduction to Julia
+date: 2021-05-04
+lastmod: 2021-05-04
 author: Tamas Gal
 avatar: https://indico.in2p3.fr/event/16864/images/3742-TG.jpg
-cover: /schools/courseportal/img/cloud.png
+cover: /schools/courseportal/img/ml.png
 images:
-  - /schools/courseportal/img/cloud.png
+  - /schools/courseportal/img/ml.png
 categories:
-  - Community specific analysis
+  - Other
 tags:
-  - Day 3
-  - Python
+  - Julia
+  - Day 7
 ---
 
-Matplotlib
+Introduction to Julia
 
 <!--more-->
 <!---->
@@ -29,7 +29,7 @@ Please, if you don't need to, do not change the one that is now.
 
 <!---->
 
-# Matplotlib
+# Introduction to Julia
 
 
 ---

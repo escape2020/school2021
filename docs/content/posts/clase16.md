@@ -1,20 +1,20 @@
 ---
-title: Matplotlib
-date: 2021-05-08
-lastmod: 2021-05-08
-author: Tamas Gal
-avatar: https://indico.in2p3.fr/event/16864/images/3742-TG.jpg
-cover: /schools/courseportal/img/cloud.png
+title: Astropy
+date: 2021-05-06
+lastmod: 2021-05-06
+author: Axel Donath
+avatar: https://indico.in2p3.fr/event/16864/images/3753-Donath_-_Copie.JPG
+cover: /schools/courseportal/img/telescope.png
 images:
-  - /schools/courseportal/img/cloud.png
+  - /schools/courseportal/img/telescope.png
 categories:
   - Community specific analysis
 tags:
-  - Day 3
+  - Day 5
   - Python
 ---
 
-Matplotlib
+Astropy
 
 <!--more-->
 <!---->
@@ -29,7 +29,7 @@ Please, if you don't need to, do not change the one that is now.
 
 <!---->
 
-# Matplotlib
+# Astropy
 
 
 ---

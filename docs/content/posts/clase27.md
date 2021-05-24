@@ -1,20 +1,20 @@
 ---
-title: Matplotlib
-date: 2021-05-08
-lastmod: 2021-05-08
-author: Tamas Gal
-avatar: https://indico.in2p3.fr/event/16864/images/3742-TG.jpg
-cover: /schools/courseportal/img/cloud.png
+title: Machine Learning II
+date: 2021-05-03T09:00:00
+lastmod: 2021-05-03T09:00:00
+author: Martino Sorbaro
+avatar: https://indico.in2p3.fr/event/20306/images/6641-martino_ini.jpeg
+cover: /schools/courseportal/img/ml.png
 images:
-  - /schools/courseportal/img/cloud.png
+  - /schools/courseportal/img/ml.png
 categories:
-  - Community specific analysis
+  - Machine Learning
 tags:
-  - Day 3
-  - Python
+  - ML
+  - Day 8
 ---
 
-Matplotlib
+Machine Learning #2
 
 <!--more-->
 <!---->
@@ -29,7 +29,7 @@ Please, if you don't need to, do not change the one that is now.
 
 <!---->
 
-# Matplotlib
+# Machine Learning #2
 
 
 ---

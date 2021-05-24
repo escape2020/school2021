@@ -1,20 +1,20 @@
 ---
-title: Matplotlib
-date: 2021-05-08
-lastmod: 2021-05-08
-author: Tamas Gal
-avatar: https://indico.in2p3.fr/event/16864/images/3742-TG.jpg
+title: Optimisation and parallelism in Python
+date: 2021-05-05
+lastmod: 2021-05-05
+author: TBD
+## avatar:
 cover: /schools/courseportal/img/cloud.png
 images:
   - /schools/courseportal/img/cloud.png
 categories:
-  - Community specific analysis
+  - Profile, debug and optimise
 tags:
-  - Day 3
+  - Day 6
   - Python
 ---
 
-Matplotlib
+Optimisation and parallelism in Python
 
 <!--more-->
 <!---->
@@ -29,7 +29,7 @@ Please, if you don't need to, do not change the one that is now.
 
 <!---->
 
-# Matplotlib
+# Optimisation and parallelism in Python
 
 
 ---
