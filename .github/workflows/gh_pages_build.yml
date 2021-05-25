@@ -1,8 +1,13 @@
 name: github pages build
 
-on: [pull_request, push]
-  branches:
-    - main  # Set a branch to deploy
+on:
+  pull_request:
+    branches:
+      - main  # Set a branch to deploy
+  push:
+    branches:
+      - main
+
 
 jobs:
   build:
