@@ -29,10 +29,11 @@ jobs:
           cd docs; hugo --minify -d ../public;
           echo "$PWD";
           ls;
+          cd ..;
 
       - name: Install
         run: curl https://htmltest.wjdp.uk | bash
 
       - name: Test
         run: |
-          bin/htmltest ../public
+          bin/htmltest public
