@@ -1,0 +1,39 @@
+package:
+  name: eschool21_wheel_demo
+  version: 0.1.0
+
+source:
+  path: ..
+
+build:
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
+
+requirements:
+  build:
+    - {{ compiler("c") }}
+  host:
+    - python >=3.7
+    - pip
+    - setuptools
+    - cython
+  run:
+    - python >=3.7
+    - numpy >=1.17
+    - astropy >=4,<5
+test:
+  imports:
+    - eschool21_wheel_demo.fibonacci
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://github.com/escape2020/school2021
+  license: MIT
+  license_family: MIT
+  license_file: ../LICENSE
+  description: Escape2020/school2021 packaging demo
+  doc_url: https://cta-observatory.github.io/ctapipe/
+  dev_url: https://github.com/cta-observatory/ctapipe
