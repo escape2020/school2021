@@ -33,11 +33,6 @@ jobs:
           echo "$PWD";
           ls;
 
-      - name: install dependencies
-        run: |
-          bundle config set --local path 'vendor/bundle'
-          bundle install
-
       - name: Test
         run: |
           bundle exec htmlproofer ./_site \
