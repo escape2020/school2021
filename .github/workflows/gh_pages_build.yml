@@ -35,9 +35,4 @@ jobs:
 
       - name: Test
         run: |
-          bin/htmltest ../public \
-            --allow-hash-href \
-            --check-html \
-            --only-4xx \
-            --disable-external \
-            --empty-alt-ignore
+          bin/htmltest ../public
