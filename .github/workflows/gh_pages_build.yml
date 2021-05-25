@@ -31,6 +31,7 @@ jobs:
           ls;
 
       - name: Install
+        run:
           - curl https://htmltest.wjdp.uk | bash
 
       - name: Test
