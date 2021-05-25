@@ -5,32 +5,32 @@ on:
     branches:
       - main  # Set a branch to deploy
 
-    jobs:
-      build:
-        runs-on: ubuntu-18.04
-        steps:
-          - uses: actions/checkout@v2
-            with:
-              submodules: true  # Fetch Hugo themes (true OR recursive)
-              fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+  jobs:
+    build:
+      runs-on: ubuntu-18.04
+      steps:
+        - uses: actions/checkout@v2
+          with:
+            submodules: true  # Fetch Hugo themes (true OR recursive)
+            fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-          - name: Setup Hugo
-            uses: peaceiris/actions-hugo@v2
-            with:
-              hugo-version: '0.81.0'
-              # extended: true
+        - name: Setup Hugo
+          uses: peaceiris/actions-hugo@v2
+          with:
+            hugo-version: '0.81.0'
+            # extended: true
 
-          - name: Build
-            run:
-              cd docs; hugo --minify -d ../public;
-              echo "$PWD";
-              ls;
+        - name: Build
+          run:
+            cd docs; hugo --minify -d ../public;
+            echo "$PWD";
+            ls;
 
-          - name: Test
-            run: |
-              bundle exec htmlproofer ./_site \
-                --allow-hash-href \
-                --check-html \
-                --only-4xx \
-                --disable-external \
-                --empty-alt-ignore
+        - name: Test
+          run: |
+            bundle exec htmlproofer ./_site \
+              --allow-hash-href \
+              --check-html \
+              --only-4xx \
+              --disable-external \
+              --empty-alt-ignore
