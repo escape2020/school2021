@@ -1,20 +1,20 @@
 ---
-title: Matplotlib
-date: 2021-05-08
-lastmod: 2021-05-08
-author: Tamas Gal
-avatar: https://indico.in2p3.fr/event/16864/images/3742-TG.jpg
+title: Introduction to Deep Learning II
+date: 2021-05-02T08:00:00
+lastmod: 2021-05-02T08:00:00
+author: Mikaël Jacquemont
+avatar: https://indico.in2p3.fr/event/16864/images/3765-mikael.png
 cover: /schools/courseportal/img/cloud.png
 images:
   - /schools/courseportal/img/cloud.png
 categories:
-  - Community specific analysis
+  - Machine Learning
 tags:
-  - Day 3
-  - Python
+  - Day 9
+  - ML
 ---
 
-Matplotlib
+Introduction to Deep Learning #2
 
 <!--more-->
 <!---->
@@ -29,7 +29,7 @@ Please, if you don't need to, do not change the one that is now.
 
 <!---->
 
-# Matplotlib
+# Introduction to Deep Learning #2
 
 
 ---

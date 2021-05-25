@@ -1,20 +1,19 @@
 ---
-title: Matplotlib
-date: 2021-05-08
-lastmod: 2021-05-08
-author: Tamas Gal
-avatar: https://indico.in2p3.fr/event/16864/images/3742-TG.jpg
-cover: /schools/courseportal/img/cloud.png
+title: Analysis Workflow from the KM3NeT Open Data Center
+date: 2021-05-04
+lastmod: 2021-05-04
+author: Jutta Schnabel
+## avatar:
+cover: /schools/courseportal/img/telescope.png
 images:
-  - /schools/courseportal/img/cloud.png
+  - /schools/courseportal/img/telescope.png
 categories:
   - Community specific analysis
 tags:
-  - Day 3
-  - Python
+  - Day 7
 ---
 
-Matplotlib
+Analysis Workflow from the KM3NeT Open Data Center
 
 <!--more-->
 <!---->
@@ -29,7 +28,7 @@ Please, if you don't need to, do not change the one that is now.
 
 <!---->
 
-# Matplotlib
+# Analysis Workflow from the KM3NeT Open Data Center
 
 
 ---

@@ -1,21 +1,31 @@
 ---
-title: Class 2
-date: 2021-04-02T09:30:49+08:00
-lastmod: 2021-04-02T09:30:49+08:00
-author: ArturoS
-avatar: https://indico.in2p3.fr/event/20306/images/6620-yo.jpg
-cover: /school2021/img/analysis.png
+title: Environment Setup
+date: 2021-05-10
+lastmod: 2021-05-10
+author: Enrique Garcia Garcia
+avatar: https://indico.in2p3.fr/event/20306/images/6623-img251%20copy.jpeg
+cover: /schools/courseportal/img/cloud.png
 images:
-  - /school2021/img/analysis.png
+  - /schools/courseportal/img/cloud.png
 categories:
-  - Physics
+  - Coding environment, tools, good code practice for collaborative and continuous developments
 tags:
-  - Code
-  - C++
+  - Day 1
 ---
 
-pre-Title
+Environment Setup
 
 <!--more-->
+<!---->
 
-# Title
+<!-- Dear instructor:
+* The dates at the top of this markdown (.md) document will help order the classes in the portal.
+Please, if you don't need to, do not change the one that is now.
+* Take into account that there is a feature in the dates: if you use a date in the future, the class will be not visible in the portal until the date you have assigned.
+* You can create dedicated folders if you need to.
+* But if you simply need to add some pictures, you can use the folder ../static/img/ mentioned at the top as /schools/courseportal/img/
+-->
+
+<!---->
+
+# Environment Setup

@@ -1,21 +1,35 @@
 ---
-title: Class 13
-date: 2021-04-02T09:30:49+08:00
-lastmod: 2021-04-02T09:30:49+08:00
-author: ArturoS
-avatar: https://indico.in2p3.fr/event/20306/images/6620-yo.jpg
-cover: /school2021/img/analysis.png
+title: Test driven devs, pytest
+date: 2021-05-07T06:00:00
+lastmod: 2021-05-07T06:00:00
+author: Maximilian Nöthe
+avatar: https://indico.in2p3.fr/event/20306/images/6618-max.jpg
+cover: /schools/courseportal/img/analysis.png
 images:
-  - /school2021/img/analysis.png
+  - /schools/courseportal/img/analysis.png
 categories:
-  - Physics
+  - Community specific analysis
 tags:
-  - Code
-  - C++
+  - Python
+  - Day 4
 ---
 
-pre-Title
+Test driven devs, pytest
 
 <!--more-->
+<!---->
 
-# Title
+<!-- Dear instructor:
+* The dates at the top of this markdown (.md) document will help order the classes in the portal.
+Please, if you don't need to, do not change the one that is now.
+* Take into account that there is a feature in the dates: if you use a date in the future, the class will be not visible in the portal until the date you have assigned.
+* You can create dedicated folders if you need to.
+* But if you simply need to add some pictures, you can use the folder ../static/img/ mentioned at the top as /schools/courseportal/img/
+-->
+
+<!---->
+
+# Test driven devs, pytest
+
+
+---

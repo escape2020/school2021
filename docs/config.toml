@@ -5,7 +5,7 @@ title = "ESCAPE school 2021"
 theme = "dream"
 relativeURLs = false
 
-copyright = '<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />'
+copyright = '<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a> <b>CC BY-NC-SA 4.0</b> <br /> For more details on the rights and licenses, please go to the GitHub repo of the School'
 
 googleAnalytics = ""
 
@@ -29,13 +29,13 @@ Paginate = 8
 [params]
   background = "#ffffff" ## D4F1F4
   backgroundImage = ""
-  linkColor = ""
+  linkColor = "#0000D1"
 
   # dark mode
   defaultDark = false
   backgroundDark = "#05445E"
-  backgroundImageDark = "#ffffff"
-  darkLinkColor = "#ffffff"
+  backgroundImageDark = ""
+  darkLinkColor = "##D4F1F4"
   darkNav = true
   dark404 = true
 
@@ -95,4 +95,3 @@ Paginate = 8
   [params.experimental]
     jsDate = true
     jsDateFormat = "dd/MM/yyyy"
-    # jsDateFormat = "yyyy年MM月dd日，cccc"

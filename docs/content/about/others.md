@@ -4,12 +4,15 @@ date: 2019-11-11T01:30:23+08:00
 lastmod: 2019-11-11T01:30:23+08:00
 ---
 
-Slack: https://escape-school.slack.com/ (after being invited)
+**Slack**: https://escape-school.slack.com/
 
-Youtube: https://www.youtube.com/channel/UC05braEQdP2rCSUamHm9I_Q
+**YouTube**: (to be added)
 
-Indico: https://indico.in2p3.fr/event/20306/
+**Indico**: https://indico.in2p3.fr/event/20306/
 
-GitHub: https://github.com/escape2020/school2021
+**GatherTown**: Invitation only
 
-GatherTown: Invitation only
+---
+
+### Images Attribution
+- [Authors at The Noun Project](https://thenounproject.com/) under CC licenses.

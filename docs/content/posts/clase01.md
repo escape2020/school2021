@@ -1,20 +1,21 @@
 ---
-title: Matplotlib
-date: 2021-05-08
-lastmod: 2021-05-08
-author: Tamas Gal
-avatar: https://indico.in2p3.fr/event/16864/images/3742-TG.jpg
-cover: /schools/courseportal/img/cloud.png
+title: Keynote Reproducible Science
+date: 2021-05-10
+lastmod: 2021-05-10
+author: Rachael Ainsworth
+avatar: https://indico.in2p3.fr/event/20306/images/6621-ERD6r_sXYAQjoa6%20copy.jpg
+cover: /schools/courseportal/img/analysis.png
 images:
-  - /schools/courseportal/img/cloud.png
+  - /schools/courseportal/img/analysis.png
 categories:
-  - Community specific analysis
+  - Coding environment, tools, good code practice for collaborative and continuous developments
 tags:
-  - Day 3
-  - Python
+  - Day 1
+
+weight: 1
 ---
 
-Matplotlib
+Reproducible Science
 
 <!--more-->
 <!---->
@@ -29,7 +30,8 @@ Please, if you don't need to, do not change the one that is now.
 
 <!---->
 
-# Matplotlib
+## Summary
 
+It refers... 
 
 ---
