@@ -26,9 +26,17 @@ https://escape2020.github.io/school2021/
 Open a terminal and go to your working directory
 
 ```
-git clone https://github.com/escape2020/school2021.git
+git clone --recursive https://github.com/escape2020/school2021.git
 ```
 
+The `--recursive` is needed because we use submodules for the LaTeX slides and
+the web page. You can leave it out in case you don't want to build the slides or web page.
+
+If you cloned without recursive and need the submodules, run
+```
+git submodules update --init --recursive
+```
+o
 ### Setup the conda environment
 
 ```

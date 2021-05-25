@@ -1,0 +1,372 @@
+\PassOptionsToPackage{
+  unicode,
+  pdfusetitle,
+  colorlinks,
+  linkcolor=vertexDarkRed,
+  urlcolor=vertexDarkRed,
+  citecolor=vertexDarkRed,
+}{hyperref}
+\documentclass[
+  aspectratio=1610,
+]{beamer}
+\usetheme{vertex}
+\usepackage[american]{babel}
+
+\usepackage[autostyle]{csquotes}
+
+\usepackage{fontspec}
+\usepackage{graphicx}
+
+\usepackage[outputdir=build]{minted}
+\usepackage{xcolor}
+\usepackage{xparse}
+\usepackage{tcolorbox}
+\tcbuselibrary{minted}
+\tcbuselibrary{skins}
+\tcbuselibrary{xparse}
+\usepackage{accsupp}
+
+\usepackage{bookmark}
+\usepackage[shortcuts]{extdash}
+\usepackage{fontawesome5}
+
+\newtcblisting{code}[2][]{
+  listing engine=minted,
+  minted language=#2,
+  minted options={
+    fontsize=\footnotesize,
+    breaklines,
+    autogobble,
+    linenos,
+    numbersep=3mm
+  },
+  colback=black!5!white,
+  colframe=vertexDarkGrey,
+  listing only,
+  left=5mm,
+  enhanced,
+  overlay={%
+    \begin{tcbclipinterior}
+      \fill[black!20!white] (frame.south west) rectangle ([xshift=5mm]frame.north west);
+    \end{tcbclipinterior}
+  },
+  #1
+}
+
+\definecolor{positive}{HTML}{15B01A}
+\colorlet{negative}{vertexDarkRed}
+\setmonofont{Fira Mono}
+
+\newcommand\headline[1]{\textbf{\Large\strut{}#1}\newline}
+
+\DeclareTCBInputListing{inputcode} {O{} m m O{}} {
+  listing file=#2,
+  listing engine=minted,
+  minted language=#3,
+  minted options={
+    fontsize=\footnotesize,
+    breaklines,
+    autogobble,
+    linenos,
+    numbersep=3mm,
+    #4
+  },
+  colback=black!5!white,
+  colframe=vertexDarkGrey,
+  listing only,
+  left=5mm,
+  enhanced,
+  overlay={%
+    \begin{tcbclipinterior}
+      \fill[black!20!white] (frame.south west) rectangle ([xshift=5mm]frame.north west);
+    \end{tcbclipinterior}
+  },
+  #1
+}
+
+\renewcommand\theFancyVerbLine{%
+    \BeginAccSupp{method=escape,ActualText={}}%
+    {\ttfamily\tiny\arabic{FancyVerbLine}}%
+    \EndAccSupp{}%
+}%
+
+
+
+\newcommand\headlineframe[1]{%
+  \begin{frame}[c]%
+    \begin{center}%
+      \Huge\color{vertexDarkRed}#1%
+    \end{center}%
+  \end{frame}%
+}%
+
+
+
+\author[M. Nöthe]{Maximilian Nöthe}
+\title[Testing]{Testing \\ Test Driven Development \\ Continuous Integration}
+\date[2021-03-10]{Escape Summer School 2021 – 2021-06-10}
+\institute[TU Dortmund]{Astroparticle Physics, TU Dortmund}
+
+\begin{document}
+\maketitle
+
+\begin{frame}[c]{overview}
+  \tableofcontents
+\end{frame}
+
+\section{Introduction}
+\headlineframe{Introduction}
+
+\begin{frame}[c]{Automated Software Testing}
+  \begin{itemize}
+    \item Verifying that a software works as intended is crucial
+    \item Doing this manually using whatever method you can think of is very tedious
+    \item[$\Rightarrow$] We need automated tests that verify our software
+    \item Tests fall into three categories
+      \begin{enumerate}
+        \item Unit tests
+        \item Integration tests
+        \item Performance tests
+      \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Unit tests}
+  \begin{itemize}
+    \item Test single \enquote{units} of the code in isolation
+    \item Require modular design of the code base
+    \item Are the bedrock of any more complicated tests
+    \item Good unit tests serve multiple purposes
+      \begin{itemize}
+        \item They check correctness of the current code
+        \item They provide a safety net for developers changing parts of the code
+        \item They provide examples / documentation for how your code is meant to be used
+      \end{itemize}
+    \item Writing good unit tests can be hard
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Frameworks}
+  All modern languages have one or more frameworks for tests, a small selection:
+
+  \begin{description}[Python]
+    \item[Python] pytest
+    \item[C++] Catch2, GoogleTest
+    \item[Java] JUnit
+    \item[Rust] Part of the language
+    \item[Julia] \texttt{Test} module in the standard library
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Integration tests}
+  \begin{itemize}
+    \item Test that multiple \emph{units} are working together
+    \item E.\,g.\ testing a whole command line application
+    \item Can grow arbitrarily large / complicated
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Performance tests}
+  \begin{itemize}
+    \item Unit and integration tests usually only test the correctness of code
+    \item Performance (regression) tests make sure the code does not get slower
+    \item This introduction focuses on unit tests
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c, fragile]{Example python code}
+  We are going to use this simple function as example for our first unit tests:
+  \inputcode[title=\texttt{examples/step1/fibonacci.py}]{./examples/step1/fibonacci.py}{python}
+\end{frame}
+
+\section{pytest}
+\headlineframe{pytest}
+
+\begin{frame}[c, fragile]{pytest}
+  \begin{itemize}
+    \item Standard framework for writing unit tests for Python projects
+    \item Uses the \mintinline{python}+assert+ statement for tests
+    \item Tests fail if an assertion fails or an exception is raised
+    \item Uses introspection of the assertion to give detailed error messages
+    \item Automatic test detection using patterns:
+      \begin{itemize}
+        \item Modules matching \mintinline{text}+test_*.py+ or \mintinline{text}+*_test.py+
+        \item Functions called \mintinline{text}+test*+
+        \item Methods named \mintinline{text}+test*+ of classes named \mintinline{text}+Test*+
+      \end{itemize}
+
+    \item Docs: \url{https://pytest.org}
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}[c, fragile]{First Unit Test}
+  \inputcode[title=\texttt{examples/step1/test\_fiboncacci.py}]{./examples/step1/test_fibonacci.py}{python}
+
+  \begin{code}{text}
+    $ pytest
+    =========================== test session starts ==========================
+    platform linux -- Python 3.9.4, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+    rootdir: /home/maxnoe/Uni/escape-school2021/testing/slides/examples/step1
+    collected 1 item
+
+    test_fibonacci.py .                                               [100%]
+
+    =========================== 1 passed in 0.00s ============================
+  \end{code}
+\end{frame}
+
+\begin{frame}[c]{Testing Exceptions}
+  \inputcode[title=\texttt{examples/step2/fibonacci.py}]{./examples/step2/fibonacci.py}{python}[lastline=4]
+  \inputcode[title=\texttt{examples/step2/test\_exception.py}]{./examples/step2/test_exception.py}{python}
+
+  The same can be done for warnings using \mintinline{python}+pytest.warns+
+\end{frame}
+
+
+\begin{frame}[c, fragile]{Careful with floating point numbers}
+  \inputcode[title={Naive, this fails}]{./examples/floating/test_floating.py}{python}[firstline=4, lastline=5]
+  \inputcode[title={Correct approach, using \texttt{pytest.approx}}]{./examples/floating/test_floating.py}{python}[firstline=7]
+
+  See \url{https://0.30000000000000004.com/}
+\end{frame}
+
+\begin{frame}[c, fragile]{Using numpy testing utitlities}
+  \inputcode[title={Using numpy}]{./examples/floating/test_numpy.py}{python}
+  See \url{https://numpy.org/doc/stable/reference/routines.testing.html}
+\end{frame}
+
+\begin{frame}[c, fragile]{Using astropy quantity support}
+  \inputcode[title={Using astropy units}]{./examples/floating/test_astropy.py}{python}
+\end{frame}
+
+\begin{frame}[c]{Fixtures}
+  \begin{itemize}
+    \item Data and resources used by tests can be injected into tests using \enquote{fixtures}
+    \item Fixtures are provided by functions decorated with \texttt{@fixture}
+    \item Fixtures have a scope $⇒$ same object used per session, module, or test
+  \end{itemize}
+
+  \inputcode{./examples/fixtures/test_fixtures.py}{python}
+\end{frame}
+
+
+\begin{frame}[c]{Fixtures provided by pytest}
+  pytest provides several builtin fixtures for
+  \begin{itemize}
+    \item temporary directories \mintinline{python}+tmp_path+ / \mintinline{python}+tmp_path_factory+
+    \item Testing output to stdout / stderr \mintinline{python}+capsys+
+    \item Testing logging \mintinline{python}+caplog+
+    \item Monkeypatching \mintinline{python}+monkeypatch+
+  \end{itemize}
+  More at \url{https://docs.pytest.org/en/6.2.x/fixture.html}
+\end{frame}
+
+\begin{frame}[c]{capsys – Fixture for testing the standard streams}
+  \inputcode{./examples/fixtures/test_capsys.py}{python}
+\end{frame}
+
+\begin{frame}[c]{caplog – Fixture for testing logging}
+  \inputcode{./examples/fixtures/test_logging.py}{python}
+\end{frame}
+
+\begin{frame}[c]{Temporary paths}
+  \begin{itemize}
+    \item For tests that need to create files, use the \mintinline{python}+tmp_path+ fixture \\
+      $⇒$ Avoids cluttering and conflicts when running tests multiple times / between tests
+    \item \mintinline{python}+tmp_path+ has scope test, so each test gets its own temporary directory
+    \item These directories are not cleaned up after the tests, so you can inspect the results
+    \item If you need a temporary path with a wider scope, add a new fixture using \mintinline{python}+tmp_path_factory+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Temporary paths}
+  \inputcode{./examples/fixtures/test_tmp_paths.py}{python}
+
+  Run the test and checkout \mintinline{bash}+/tmp/pytest-of-$USER/pytest-current/test_to_csvcurrent+
+\end{frame}
+
+
+\begin{frame}[c, fragile]{Choosing which tests to run}
+  pytest offers fine-grained control over which tests to run
+
+  \begin{itemize}
+    \item Select a specific test:
+      \begin{code}{bash}
+        $ pytest test_module.py::test_name
+      \end{code}
+    \item Run only tests that failed the last time pytest was run
+      \begin{code}{bash}
+        $ pytest --last-failed
+      \end{code}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c, fragile]{Debugging}
+  \begin{itemize}
+    \item Unit tests can be very useful for debugging
+
+    \item E.\,g.\ Write a new test that triggers the bug → investigate → make it pass
+
+    \item pytest allows you to jump into pdb when a test fails:
+      \begin{code}{bash}
+        $ pytest --pdb
+      \end{code}
+
+    \item or any other debugger, e.\,g.\ ipython's:
+      \begin{code}{bash}
+        $ pytest --pdb --pdbcls=IPython.terminal.debugger:TerminalPdb
+      \end{code}
+  \end{itemize}
+\end{frame}
+
+\section{Test Coverage}
+\headlineframe{Test Coverage}
+
+\begin{frame}[c, fragile]{Test Coverage}
+  \begin{itemize}
+    \item Test coverage is a metric measuring how much of the code is tested:
+      \begin{equation*}
+        \operatorname{coverage} = \frac{\text{Lines of code executed during tests}}{\text{Total lines of code}}
+      \end{equation*}
+    \item Can be helpful to find parts of code that are not tested (enough).
+    \item Especially useful in CI system to check that new / changed code is tested
+    \item One more badge \faSmileWink[regular]{}! \includegraphics[height=0.5cm]{badge.pdf}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c, fragile]{Limitations of coverage}
+  Hit lines of code are not a perfect measure.
+  \begin{code}{python}
+    if some_condition is True:
+      do_stuff()
+    do_other_stuff()
+  \end{code}
+
+  \onslide<2->{%
+    When during the tests \mintinline{python}+some_condition is True+, this code will have 100\,\% coverage.
+    \bigskip
+    But what about \mintinline{python}+some_condition is not True+?
+  }
+
+  \onslide<3->
+
+  \begin{code}{python}
+    result = scipy.optimize.minimize(likelihood, ...)
+  \end{code}
+
+  \onslide<4->{Calling functions from other packages can have arbitrarily many branches}
+\end{frame}
+
+\section{Mocking}
+\headlineframe{Mocking}
+
+\section{Test Driven Development}
+\headlineframe{Test Driven Development}
+
+\section{Doctest}
+\headlineframe{Doctest}
+
+\section{Continuous Integration}
+\headlineframe{Continuous Integration}
+\end{document}

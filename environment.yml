@@ -2,11 +2,11 @@ name: eschool2021
 channels:
   - default
 dependencies:
-  - python=3.9
   - astropy
   - conda-build
   - cython
   - h5py
+  - ipython
   - ipython
   - jupyter
   - jupyterlab
@@ -17,6 +17,7 @@ dependencies:
   - pip
   - pytables
   - pytest
+  - pytest-cov
   - python=3.9
   - pyyaml
   - scikit-learn

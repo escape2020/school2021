@@ -4,11 +4,11 @@ all: build/packaging.pdf
 
 
 build/packaging.pdf: FORCE | build
-	TEXINPUTS=beamertheme-vertex: latexmk $(TEXOPTIONS) packaging.tex
+	TEXINPUTS=../../.tex/beamertheme-vertex: latexmk $(TEXOPTIONS) packaging.tex
 
 
 preview: FORCE | build
-	TEXINPUTS=beamertheme-vertex: latexmk -pvc $(TEXOPTIONS) packaging.tex
+	TEXINPUTS=../../.tex/beamertheme-vertex: latexmk -pvc $(TEXOPTIONS) packaging.tex
 
 build:
 	mkdir -p build

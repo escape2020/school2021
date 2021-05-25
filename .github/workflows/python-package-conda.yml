@@ -1,4 +1,4 @@
-name: Python Package using Conda
+name: Tests
 
 on: [push, pull_request]
 
@@ -47,11 +47,3 @@ jobs:
         python -m build packaging/escape_school21_demo
         python -m build packaging/eschool21_wheel_demo
         conda build packaging/eschool21_wheel_demo/conda-recipe
-
-    - name: Build slides
-      shell: bash -leo pipefail {0}
-      run: |
-        pip install https://github.com/maxnoe/texlive-batch-installation/archive/refs/tags/v0.3.0.tar.gz
-        install_texlive -p $HOME/texlive -t 2021 --collections="-a" --package-file packaging/slides/tex-packages.txt --update
-        export PATH="$HOME/texlive/2021/bin/x86_64-linux:$PATH"
-        make -C packaging/slides
