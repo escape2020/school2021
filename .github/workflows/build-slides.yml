@@ -22,7 +22,7 @@ jobs:
 
     - name: Build slides
       run: |
-        pip install https://github.com/maxnoe/texlive-batch-installation/archive/refs/tags/v0.3.0.tar.gz
+        pip install 'pygments>=2.4' https://github.com/maxnoe/texlive-batch-installation/archive/refs/tags/v0.3.0.tar.gz
         install_texlive -p $HOME/texlive -t 2021 --collections="-a" --package-file .tex/tex-packages.txt --update
         export PATH="$HOME/texlive/2021/bin/x86_64-linux:$PATH"
         make -C packaging/slides
