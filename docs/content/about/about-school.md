@@ -10,7 +10,3 @@ The program of the school is devoted to project development for astrophysics, as
 
 - [Agenda and registration of the school](https://indico.in2p3.fr/event/20306/)
 
----
-
-### Images Attribution
-- [Authors at The Noun Project](https://thenounproject.com/) under CC licenses.
