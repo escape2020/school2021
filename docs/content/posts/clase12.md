@@ -5,9 +5,9 @@ lastmod: 2021-05-07T09:00:00
 author: ArturoS
 authorlink: https://github.com/artfisica
 avatar: https://indico.in2p3.fr/event/20306/images/6620-yo.jpg
-cover: /schools/courseportal/img/telescope.png
+cover: /school2021/img/telescope.png
 images:
-  - /schools/courseportal/img/telescope.png
+  - /school2021/img/telescope.png
 categories:
   - Coding environment, tools, good code practice for collaborative and continuous developments
 tags:
@@ -25,7 +25,7 @@ Reproducible Science in practice #2
 Please, if you don't need to, do not change the one that is now.
 * Take into account that there is a feature in the dates: if you use a date in the future, the class will be not visible in the portal until the date you have assigned.
 * You can create dedicated folders if you need to.
-* But if you simply need to add some pictures, you can use the folder ../static/img/ mentioned at the top as /schools/courseportal/img/
+* But if you simply need to add some pictures, you can use the folder ../static/img/ mentioned at the top as /school2021/img/
 -->
 
 <!---->
@@ -41,7 +41,7 @@ Several notebooks with analysis examples and an interface to launch the framewor
 
 | <h2><b>Visualisation</b></h2> | <h2><b>Code and Run</b></h2> |
 | :---:        |          :---: |
-| [![nbviewer](/schools/courseportal/img/Jupyter-logo.jpg)](https://nbviewer.jupyter.org/github/atlas-outreach-data-tools/notebooks-collection-opendata/tree/master/) | [![GitHub](/schools/courseportal/img/GitHub-logo.png)](https://github.com/atlas-outreach-data-tools/notebooks-collection-opendata) |
+| [![nbviewer](/school2021/img/Jupyter-logo.jpg)](https://nbviewer.jupyter.org/github/atlas-outreach-data-tools/notebooks-collection-opendata/tree/master/) | [![GitHub](/school2021/img/GitHub-logo.png)](https://github.com/atlas-outreach-data-tools/notebooks-collection-opendata) |
 | Take a look at the notebooks in NBviewer | Check, clone and run the code from GitHub |
 
 </CENTER>
