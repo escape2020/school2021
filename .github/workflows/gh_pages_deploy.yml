@@ -1,0 +1,16 @@
+name: github pages deploy
+
+on:
+  push:
+    branches:
+      - main
+s
+    jobs:
+      deploy:
+        runs-on: ubuntu-18.04
+        steps:
+        - name: Deploy
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./public
