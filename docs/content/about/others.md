@@ -4,7 +4,7 @@ date: 2019-11-11T01:30:23+08:00
 lastmod: 2019-11-11T01:30:23+08:00
 ---
 
-Slack: https://escape-school.slack.com/ (aftere being invited)
+Slack: https://escape-school.slack.com/ (after being invited)
 
 Youtube: https://www.youtube.com/channel/UC05braEQdP2rCSUamHm9I_Q
 
