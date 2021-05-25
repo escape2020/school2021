@@ -30,6 +30,9 @@ jobs:
           echo "$PWD";
           ls;
           cd ..;
+          echo "$PWD";
+          ls;
+          ls public;
 
       - name: Install
         run: curl https://htmltest.wjdp.uk | bash
