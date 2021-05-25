@@ -4,9 +4,9 @@ date: 2021-05-20
 lastmod: 2021-05-20
 author: Thomas Vuillaume
 avatar: https://nsip.in2p3.fr/uploads/images/agents/605996f62c58c286687850.jpg
-cover: /schools/courseportal/img/welcome.png
+cover: /school2021/img/welcome.png
 images:
-  - /schools/courseportal/img/welcome.png
+  - /school2021/img/welcome.png
 categories:
   - Welcome
 tags:
@@ -25,7 +25,7 @@ Welcome to the ESCAPE Summer school
 Please, if you don't need to, do not change the one that is now.
 * Take into account that there is a feature in the dates: if you use a date in the future, the class will be not visible in the portal until the date you have assigned.
 * You can create dedicated folders if you need to.
-* But if you simply need to add some pictures, you can use the folder ../static/img/ mentioned at the top as /schools/courseportal/img/
+* But if you simply need to add some pictures, you can use the folder ../static/img/ mentioned at the top as /school2021/img/
 -->
 
 <!---->
