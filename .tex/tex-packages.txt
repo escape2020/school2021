@@ -17,6 +17,7 @@ fvextra
 graphics
 infwarerr
 kvoptions
+l3packages
 latex-bin
 latexmk
 lineno
@@ -29,5 +30,4 @@ tcolorbox
 tools
 unicode-math
 upquote
-xparse
 xstring
