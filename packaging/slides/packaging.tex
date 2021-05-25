@@ -1,0 +1,644 @@
+\PassOptionsToPackage{
+  unicode,
+  pdfusetitle,
+  colorlinks,
+  linkcolor=vertexDarkRed,
+  urlcolor=vertexDarkRed,
+  citecolor=vertexDarkRed,
+}{hyperref}
+\documentclass[
+  aspectratio=1610,
+]{beamer}
+\usetheme{vertex}
+\usepackage[american]{babel}
+
+\usepackage[autostyle]{csquotes}
+
+\usepackage{fontspec}
+\usepackage{graphicx}
+
+\usepackage[outputdir=build]{minted}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{minted}
+\usepackage{accsupp}
+
+\usepackage{bookmark}
+\usepackage[shortcuts]{extdash}
+\usepackage{fontawesome5}
+
+\tcbuselibrary{skins}
+\newtcblisting{code}[2][]{
+  listing engine=minted,
+  minted language=#2,
+  minted options={fontsize=\footnotesize,breaklines,autogobble,linenos,numbersep=3mm},
+  colback=black!5!white,
+  colframe=black!75!white,
+  listing only,
+  left=5mm,
+  enhanced,
+  overlay={%
+    \begin{tcbclipinterior}
+      \fill[black!20!white] (frame.south west) rectangle ([xshift=5mm]frame.north west);
+    \end{tcbclipinterior}
+  },
+  #1
+}
+
+\definecolor{positive}{HTML}{15B01A}
+\colorlet{negative}{vertexDarkRed}
+\setmonofont{Fira Mono}
+
+\newcommand\headline[1]{\textbf{\Large\strut{}#1}\newline}
+
+\newtcbinputlisting{inputcode}[3][]{
+  listing file=#2,
+  listing engine=minted,
+  minted language=#3,
+  minted options={
+    fontsize=\footnotesize,
+    breaklines,
+    autogobble,
+    linenos,
+    numbersep=3mm
+  },
+  colback=black!5!white,
+  colframe=black!75!white,
+  listing only,
+  left=5mm,
+  enhanced,
+  overlay={%
+    \begin{tcbclipinterior}
+      \fill[black!20!white] (frame.south west) rectangle ([xshift=5mm]frame.north west);
+    \end{tcbclipinterior}
+  },
+  #1
+}
+
+\renewcommand\theFancyVerbLine{%
+    \BeginAccSupp{method=escape,ActualText={}}%
+    {\ttfamily\tiny\arabic{FancyVerbLine}}%
+    \EndAccSupp{}%
+}%
+
+
+
+\newcommand\headlineframe[1]{%
+  \begin{frame}[c]%
+    \begin{center}%
+      \Huge\color{vertexDarkRed}#1%
+    \end{center}%
+  \end{frame}%
+}%
+
+
+
+\author[M. Nöthe]{Maximilian Nöthe}
+\title[Packaging]{Packaging and Distributing Python Projects}
+\date[2021-03-10]{Escape Summer School 2021 – 2021-06-10}
+\institute[TU Dortmund]{Astroparticle Physics, TU Dortmund}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}[c]{overview}
+  \tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}[c]{The Python Package Index}
+  \begin{itemize}
+    \item Python packages are published on the Python Package Index (\url{https://pypi.org})
+    \item \mintinline{text}+pip install foo+ will by default:
+      \begin{enumerate}
+        \item Search for a package named \texttt{foo} on PyPI
+        \item Download the best available distribution for your platform
+        \item Install all dependencies of the package
+        \item Install the package
+      \end{enumerate}
+    \item There is \url{https://test.pypi.org} for people to test their packaging code before
+      publishing to \enquote{the real thing}.
+    \item It is also possible to self-host a python package index
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Source Distributions and Wheels}
+
+  \begin{columns}[onlytextwidth, t]%
+    \begin{column}{0.495\textwidth}%
+      \textbf{\Large Source Distributions}
+      \begin{itemize}
+        \item \texttt{.zip} or \texttt{.tar.gz} archives of the project
+        \item Simplest solution to publish your package
+        \item If a package contains compiled components, these need to be built at installation time
+      \end{itemize}
+    \end{column}%
+    \hfill%
+    \begin{column}{0.495\textwidth}%
+      \textbf{\Large Wheels} \includegraphics[height=1cm]{images/cheese.png}
+      \begin{itemize}
+        \item Standardized format for pre-built python packages
+        \item Simple for pure-python packages (no compiled components)
+        \item Platform-dependent wheels for packages with compiled components
+          \begin{itemize}
+            \item C-Extensions
+            \item Cython-Code
+            \item Wrappers for C or C++-Libraries
+            \item \dots
+          \end{itemize}
+      \end{itemize}
+    \end{column}%
+  \end{columns}%
+\end{frame}
+
+\begin{frame}[c]{Wheels}
+  \begin{itemize}
+    \item Platform dependent binary wheels must follow standards to be uploaded to PyPI
+    \item This is to ensure they run on many systems (not just on your computer)
+    \item Essentially:
+      \begin{itemize}
+        \item Compile using the oldest C-Standard Library a package wants to support
+        \item Include all needed libraries in the wheel
+      \end{itemize}
+  \end{itemize}
+
+  \bigskip
+  \begin{center}
+    \Large More on how to actually build wheels for your own projects later.
+  \end{center}
+\end{frame}
+
+
+
+\section{Using setuptools}
+\headlineframe{Using setuptools}
+
+\begin{frame}[c]{setuptools}
+  \begin{itemize}
+    \item \texttt{setuptools} is the most common solution for python packaging
+    \item Allows to declare package metadata, dependencies
+    \item Facilitates creation of files for distribution
+  \end{itemize}
+\end{frame}
+\begin{frame}[c, fragile]{Example Package Structure}
+  \begin{columns}[onlytextwidth, c]%
+    \begin{column}{0.44\textwidth}%
+      \begin{code}{text}
+        escape_school21_demo
+        ├── escape_school21_demo
+        │   ├── tests
+        │   │   ├── __init__.py
+        │   │   └── test_fibonacci.py
+        │   ├── fibonacci.py
+        │   └── __init__.py
+        ├── LICENSE
+        ├── pyproject.toml
+        ├── README.md
+        ├── setup.cfg
+        └── setup.py
+      \end{code}
+    \end{column}%
+    \hfill%
+    \begin{column}{0.55\textwidth}%
+      \only<1>{%
+        Common convention: project directory equal or very similar to package name:
+        \begin{itemize}
+          \item \texttt{numpy / numpy}
+          \item \texttt{PyTables / tables}
+          \item \texttt{python-dateutil / dateutil}
+        \end{itemize}
+      }%
+      \only<2>{%
+        Files in the base directory for metadata / build configuration
+        \small
+        \begin{description}[\texttt{pyproject.toml}]
+          \item[\texttt{README.md}] Project description
+          \item[\texttt{LICENSE}] Software license
+          \item[\texttt{pyproject.toml}] Common configuration for python projects
+          \item[\texttt{setup.\{py,cfg\}}] setuptools specific project files
+        \end{description}
+      }%
+    \end{column}%
+  \end{columns}%
+\end{frame}
+
+\begin{frame}[c, fragile]{pyproject.toml}
+  \begin{itemize}
+    \item Defines \emph{build-time} dependencies of a python package
+    \item Uses the toml file format: \url{https://github.com/toml-lang/toml}
+    \item Defined in \href{https://www.python.org/dev/peps/pep-0517/}{PEP 517} and \href{https://www.python.org/dev/peps/pep-0518/}{PEP 518}
+    \item Many other tools can also be configured through \texttt{pyproject.toml},\\ e.g. black, poetry, \ldots.
+  \end{itemize}
+
+  \inputcode[title={Minimal pyproject.toml file for projects using setuptools}]{../escape_school21_demo/pyproject.toml}{toml}
+\end{frame}
+
+\begin{frame}[c, fragile]{setup.py and setup.cfg}
+  \begin{itemize}
+    \item All metadata concerning your package can be specified in a \texttt{setup.py} file
+      \begin{itemize}
+        \item Using code for configuration is generally not a good idea
+        \item Projects can run arbitrary python code in \texttt{setup.py} to setup the project
+      \end{itemize}
+    \item[$\Rightarrow$] For simple projects, only use the \texttt{setup.cfg}
+    \item Editable installs currently require a minimal \texttt{setup.py}:
+      \inputcode{../escape_school21_demo/setup.py}{python}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c, fragile]{setup.cfg}
+  \begin{code}{ini}
+    [metadata]
+    name = mypackage
+    version = 0.1.0
+    description = Example Package
+    license = MIT
+    # ... many more metadata options possible, see docs
+    long_description = file: README.md
+    long_description_content_type = text/markdown
+
+    classifiers =
+      # see https://pypi.org/classifiers/ for more
+      License :: OSI Approved :: MIT License
+
+    [options]
+    packages = find:  # automatically find python packages
+    python_requires = >=3.6
+    install_requires =
+      astropy >= 4
+  \end{code}
+\end{frame}
+
+\begin{frame}[c, fragile]{Building the Project}
+  \begin{itemize}
+    \item Install the \texttt{build} package (already available in the \texttt{eschool21} environment):
+      \begin{code}{text}
+        $ python -m pip install build
+      \end{code}
+    \item Run the build module in the project directory
+      \begin{code}{text}
+        $ python -m build
+      \end{code}
+    \item You will get both the sdist and the wheel in the \texttt{dist} directory:
+      \begin{code}{text}
+        $ ls -1 dist
+        escape_school21_demo-0.1.0-py3-none-any.whl
+        escape_school21_demo-0.1.0.tar.gz
+      \end{code}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile, c]{Upload to (Test-)PyPI}
+  \begin{itemize}
+    \item Create an Account at (Test-)PyPI
+    \item Install \texttt{twine} (already available in the \texttt{eschool21} environment)
+      \begin{code}{text}
+        $ python -m pip install twine
+      \end{code}
+    \item Run the upload (here to test.pypi.org):
+      \begin{code}{text}
+        $ twine upload --repository testpypi dist/*
+      \end{code}
+    \item Go to your uploaded project and check everything is ok
+
+    \onslide<2->{
+      \begin{center}
+        \Large\color{vertexDarkRed} For security reasons, PyPI does not allow replacing uploaded files.
+        You have to upload a new \emph{version}.
+      \end{center}
+    }
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c,fragile]{Entry Points}
+  \begin{itemize}
+    \item Console script entry points define scripts that get installed so they can be run from the command line
+
+    \begin{code}[title={setup.cfg}]{ini}
+    [options.entry_points]
+    console_scripts = 
+      fibonacci = escape_school21_demo.__main__:main
+    \end{code}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Including Data}
+  \begin{itemize}
+    \item To include non-code files into the source distribution and wheels you need to add
+      \begin{code}[title={setup.cfg}]{ini}
+      [options]
+      include_package_data = True
+      \end{code}
+    \item And define these additional files in an additional file \texttt{MANIFEST.in}
+  \end{itemize}
+\end{frame}
+
+
+\section{Versions and Semantic Versioning}
+\headlineframe{Versions and Semantic Versioning}
+\begin{frame}[fragile, c]{Versioning your Projects}
+  \begin{itemize}
+    \item \href{https://www.python.org/dev/peps/pep-0440}{PEP 440} prescribes a versioning scheme for all python projects:
+      \begin{code}{text}
+      [N!]N(.N)*[{a|b|rc}N][.postN][.devN]
+      \end{code}
+      \begin{description}[aN|bN|rcN]
+      \item[N!] Version epoch, extremely rare, needed only when switching the versioning scheme
+      \item[N(.N)*] Version identifier as arbitrarily many numbers separated by a dot
+      \item[aN|bN|rcN] Pre-releases (alpha, beta, release candidate) for testing
+      \item[.postN] Post releases, no changes to actual code, but e.\,g.\ better docs / fixed build system
+      \item[.devN] are development releases (N can be used e.g. to specify the number of commits since the last released)
+    \end{description}
+    \item By default, pip will not consider pre- and dev-releases
+    \item Versions are sortable
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile, c]{Version examples}
+  \begin{code}[title=Versions in sorted order]{text}
+    1.0.9
+    1.1.0.dev10
+    1.1.0a1
+    1.1.0a2
+    1.1.0b1
+    1.1.0rc1
+    1.1.0
+    1.1.0.post1
+    1.2.0
+  \end{code}
+\end{frame}
+
+\begin{frame}[c]{Semantic Versioning}
+  \begin{itemize}
+    \item See \url{https://semver.org}
+
+    \item SemVer uses a three part version like this:
+      \begin{center}
+        \Large\texttt{MAJOR.MINOR.PATCH}
+      \end{center}
+    \item Projects must increment:
+      \begin{enumerate}
+        \item \texttt{MAJOR} version when you make incompatible API changes,
+        \item \texttt{MINOR} version when you add functionality in a backwards compatible manner
+        \item \texttt{PATCH} version when you make backwards compatible bug fixes
+      \end{enumerate}
+    \item This makes depending on specific versions much easier
+  \end{itemize}
+
+  \bigskip
+  \begin{center}
+    Caveats:\\
+    Many python projects do not strictly follow SemVer (e.\,g.\ numpy) \\
+    Many projects make breaking changes in MINOR updates until reaching 1.0.0
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile, c]{Specifying Versions of Dependencies}
+  \begin{itemize}
+    \item One of the most important things for packages is defining the compatible versions
+  of the depedencies.
+    \item Projects can require smaller, larger, exactly equal and \enquote{compatible} versions
+    \item Projects can exclude versions
+    \item Versions may contain wildcards
+    \item Also defined in \href{https://www.python.org/dev/peps/pep-0440/#version-specifiers}{PEP 440}
+  \end{itemize}
+
+  \begin{code}[title={Depedency defintions}]{text}
+     pandas                 # no requirement on the version
+     pandas >=1.0           # at least 1.0
+     pandas >=1.0,<2.0.0a0  # at least 1.0 but smaller than 2.0.0a0
+     pandas ==1.*           # Any 1.x version
+     pandas ~=1.1           # Any 1.x version >=1.1
+     pandas ~=1.1.2         # Any 1.1.x version >=1.1.2
+     pandas >=1.1,!=1.1.1   # Exclude 1.1.1 (had a bug?)
+  \end{code}
+\end{frame}
+
+\begin{frame}[fragile, c]{Avoiding duplicated version definitions}
+  \begin{itemize}
+    \item A common problem is that version information is needed at multiple locations
+      \begin{itemize}
+        \item The git tag
+        \item The package version (e.\,g.\ in \texttt{setup.py} or \texttt{CMakeLists.txt})
+        \item Accessible version in the code (e.\,g.\ \mintinline{python}{escape_school21_demo.__version__})
+      \end{itemize}
+    \item Not having this information duplicated avoids errors
+    \item Setuptools supports reading this from the code
+    \item Tools like \texttt{setuptools\_scm} can extract version information from git tags, \\
+      but is a bit complicated to setup correctly
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile, c]{Defining the version in code}
+  \inputcode[title=\mintinline{text}+escape_school21_demo/__init__.py+]{../escape_school21_demo/escape_school21_demo/__init__.py}{python}
+
+  \begin{code}[title=setup.cfg]{ini}
+    [metadata]
+    version = attr: escape_school21_demo.__version__
+  \end{code}
+
+  This also works when \mintinline{text}+__init__.py+ already imports dependencies,
+  since setuptools is not actually importing the variable but parses the code.
+\end{frame}
+
+
+\section{Choosing a License}
+\headlineframe{Choosing a License}
+
+\begin{frame}[c]{Software Licenses}
+  \begin{itemize}
+    \item Disclaimer: I am a Physicist, not a Lawyer
+    \item Software licenses have two main purposes
+      \begin{enumerate}
+        \item Define what other people are allowed to do with your software
+        \item Free the authors from liability / waving warranties
+      \end{enumerate}
+    \item There are several \enquote{standard} free and open source licenses,\\
+      endorsed by the \emph{Open Source Initiative}: \url{https://opensource.org/licenses}
+    \item These licenses range from
+      \begin{itemize}
+        \item very short to very long
+        \item very restrictive to very permissive
+      \end{itemize}
+    \item \enquote{Free as in freedom, not as in free beer.}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{The MIT License}
+  \small
+  \input{../../LICENSE}
+\end{frame}
+
+\begin{frame}[c]{BSD-3-Clause}
+  \small
+  Copyright <YEAR> <COPYRIGHT HOLDER>
+
+  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+  1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+  2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+  3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+  \tiny
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+\end{frame}
+
+\begin{frame}[c]{GPL and LGPL}
+  \begin{itemize}
+    \item Allows redistribution, modification, running, ...
+    \item Requires that source code is always published for binary distributions
+    \item Requires that derivative works are licensed under the same or a compatible license (copyleft)
+    \item According to the FSF, applications linking GPL licenses libraries are derivative works and thus must also
+      be licensed under the GPL / a compatible license
+    \item This claim is contentious and has not been finally resolved
+    \item The LGPL removes this point (so allows proprietary software to link LGPL licensed libraries).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Scientific Software}
+  \begin{itemize}
+    \item Opinion: The scientific method requires all code and data to be accessible
+      \begin{itemize}
+        \item Reproducibility
+        \item Peer review
+      \end{itemize}
+    \item This is most often not the case, but starting to get traction
+      \begin{itemize}
+        \item Journals requiring release of software and data alongside publications
+        \item General trend towards more open development / open source scientific software
+        \item \enquote{Replication Crisis}
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\section{Publishing Binary Wheels}
+\headlineframe{Publishing Binary Wheels}
+\begin{frame}[c]{Publishing Binary Wheels}
+  \headline{\faIcon{windows} Windows}
+  With python >= 3.5, things got a lot easier
+  \begin{enumerate}
+    \item Install Visual Studio C/C++ Compilers and Windows SDK
+    \item Install all versions of python you want to support
+    \item Build the wheel for each version of python
+    \item Upload to PyPI
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}[c]{Publishing Binary Wheels}
+  \headline{\faIcon{apple} macOS}
+  Decide the oldest supported macOS version (10.9 is most common)
+
+  \begin{enumerate}
+    \item Install compilers using \texttt{xcode install --select}
+    \item Install all versions of python you want to support (e.g. using pyenv or brew)
+    \item \mintinline{bash}+export MACOSX_DEPLOYMENT_TARGET=10.9+
+    \item Build the wheel for each version of python
+    \item Upload to PyPI
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[c]{Publishing Binary Wheels}
+  \headline{\faIcon{linux} Linux}
+  \begin{itemize}
+    \item The many different Linux distributions and versions make things a bit harder
+    \item Standardized wheels to make sure they run on \enquote{manylinux} distributions
+    \item Essentially you have to compile with the oldest glibc you want to support
+    \item e.\,g.\ \texttt{manylinux2014} is based on CentOS 7, glibc 2.17
+  \end{itemize}
+
+  The python packaging authority (PyPA) provides docker containers for each of these standards,
+  which is the best way of building these, see \url{https://github.com/pypa/python-manylinux-demo}.
+\end{frame}
+
+\begin{frame}[c, fragile]{Publishing Binary Wheels – Including dependencies}
+  \begin{itemize}
+    \item Binary wheels are only allowed to link externally against basic system libraries defined in \href{https://www.python.org/dev/peps/pep-0513/}{PEP 513}/\href{https://www.python.org/dev/peps/pep-0599/}{PEP 599}.
+    \item All other libraries must be included in the wheel
+    \item \href{https://github.com/pypa/auditwheel}{\texttt{auditwheel}} (\faIcon{linux}) and \href{https://github.com/matthew-brett/delocate}{\texttt{delocate}} (\faIcon{apple}) take care of this
+    \item No off-the-shelve solution for \faIcon{windows}
+    \item \href{https://github.com/pypa/cibuildwheel}{\texttt{cibuildwheel}} offers CI build configurations for wheels for all platforms
+  \end{itemize}
+
+  \begin{code}[title={Inside the manylinux docker container}]{bash}
+    $ auditwheel repair --plat manylinux2014_x86_64 <wheel> -w <outputdir>
+  \end{code}
+\end{frame}
+
+
+\section{A new Alternative: poetry}
+\headlineframe{A new Alternative: poetry}
+\begin{frame}[c]{Poetry}
+  poetry aims to provide a complete solution for dependency management and packaging
+
+  \begin{itemize}
+    \item[\color{positive}\faPlus] Configured completely in \texttt{pyproject.toml}
+    \item[\color{positive}\faPlus] Automatic creation of virtual environments with all dependencies
+    \item[\color{positive}\faPlus] Exact versions of all dependencies (including transitive) using a \enquote{lock file}
+    \item[\color{positive}\faPlus] Building and publishing packages
+    \item[\color{positive}\faPlus] Initial setup of new projects
+    \item[\color{negative}\faMinus] No support for binary extensions / wheels yet
+  \end{itemize}
+\end{frame}
+
+\headlineframe{live demo}
+
+\section{Conda Packages and conda-forge}
+\headlineframe{Conda Packages and conda-forge}
+
+\begin{frame}[c, fragile]{Conda Packages}
+  \begin{itemize}
+    \item Conda packages for python packages should always start from a buildable package using the tools introduced before
+    \item Then, we only need to define build- and runtime depedencies as well as metadata in a yaml file \texttt{meta.yaml}
+      \begin{code}{bash}
+        $ conda build <path to recipe directory>
+        $ anaconda upload <path to package>
+      \end{code}
+    \item \href{https://conda-forge.org/}{\texttt{conda-forge}} provides CI infrastructure to automatically build conda packages for open source projects
+  \end{itemize}
+\end{frame}
+
+\section{Conclusions and Recommendations}
+\headlineframe{Conclusions and Recommendations}
+
+\begin{frame}[c]{Conclusions and Recommendations}
+  \begin{itemize}
+    \item Always make sure your code is a valid python package and declares its dependencies
+    \item Publishing sdists / any-wheels to PyPI is free and easy \\
+      → your code is just a \texttt{pip install} away
+    \item Choose a permissive FOSS License for scientific software (MIT or BSD 3-Clause)
+    \item When you expect your users to rely on conda, also publish conda packages
+    \item conda-forge is highly recommended, as it automatizes this process greatly
+    \item When using compiled python extensions, consider publishing wheels and/or conda packages \\
+      → Much easier installation for your users, but may be a bit complicated to setup
+    \item Consider using poetry instead of setuptools for applications / libraries without compiled components
+    \item The python packaging landscape has improved greatly in the last couple of years, check carefully if guides
+      you find are still up-to-date
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Further Reading}
+  \begin{description}[conda build docs]
+    \item[PyPA User Guide] \url{https://packaging.python.org}
+    \item[setuptools docs] \url{https://setuptools.readthedocs.io/}
+    \item[poetry] \url{https://python-poetry.org/}
+
+    \medskip
+    \item[conda-forge] \url{https://conda-forge.org/}
+    \item[conda build docs] \url{https://docs.conda.io/projects/conda-build}
+
+    \medskip
+    \item[cibuildhweel] \url{https://github.com/pypa/cibuildwheel}
+    \item[auditwheel] \url{https://github.com/pypa/auditwheel}
+    \item[delocate] \url{https://github.com/matthew-brett/delocate}
+    \item[manylinux demo] \url{https://github.com/pypa/python-manylinux-demo}
+  \end{description}
+\end{frame}
+
+\end{document}

@@ -1,6 +1,6 @@
 name: Python Package using Conda
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build-linux:
@@ -10,6 +10,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: recursive
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
       with:
@@ -30,5 +32,17 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        conda install pytest
-        # pytest
+        pytest
+
+    - name: Test packaging demo packages
+      run: |
+        python -m build packaging/escape_school21_demo
+        python -m build packaging/eschool21_wheel_demo
+        conda build packaging/eschool21_wheel_demo/conda-recipe
+
+    - name: Build slides
+      run: |
+        pip install https://github.com/maxnoe/texlive-batch-installation/archive/refs/tags/v0.3.0.tar.gz
+        install_texlive -p $HOME/texlive -t 2021 --collections="-a" --package-file packaging/slides/tex-packages.txt --update
+        export PATH="$HOME/texlive/2021/bin/x86_64-linux:$PATH"
+        make -C packaging/slides
