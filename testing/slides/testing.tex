@@ -30,38 +30,46 @@
 \usepackage[shortcuts]{extdash}
 \usepackage{fontawesome5}
 
-\newtcblisting{code}[2][]{
-  listing engine=minted,
-  minted language=#2,
-  minted options={
-    fontsize=\footnotesize,
-    breaklines,
-    autogobble,
-    linenos,
-    numbersep=3mm
-  },
-  colback=black!5!white,
-  colframe=vertexDarkGrey,
-  listing only,
-  left=5mm,
-  enhanced,
-  overlay={%
-    \begin{tcbclipinterior}
-      \fill[black!20!white] (frame.south west) rectangle ([xshift=5mm]frame.north west);
-    \end{tcbclipinterior}
-  },
-  #1
-}
 
 \definecolor{positive}{HTML}{15B01A}
 \colorlet{negative}{vertexDarkRed}
 \setmonofont{Fira Mono}
 
 \newcommand\headline[1]{\textbf{\Large\strut{}#1}\newline}
+\newcommand\headlineframe[1]{%
+  \begin{frame}[c]%
+    \begin{center}%
+      \Huge\color{vertexDarkRed}#1%
+    \end{center}%
+  \end{frame}%
+}%
+
+\renewcommand\theFancyVerbLine{%
+  \BeginAccSupp{method=escape,ActualText={}}%
+  {\ttfamily\tiny\arabic{FancyVerbLine}}%
+  \EndAccSupp{}%
+}%
+
+\tcbset{codebox/.style={
+  listing engine=minted,
+  colback=black!5!white,
+  colframe=vertexDarkGrey,
+  listing only,
+  left=5mm,
+  top=2pt,
+  bottom=0pt,
+  boxsep=3pt,
+  enhanced,
+  overlay={%
+    \begin{tcbclipinterior}
+      \fill[black!20!white] (frame.south west) rectangle ([xshift=5mm]frame.north west);
+    \end{tcbclipinterior}
+  },
+}}
 
 \DeclareTCBInputListing{inputcode} {O{} m m O{}} {
+  codebox,
   listing file=#2,
-  listing engine=minted,
   minted language=#3,
   minted options={
     fontsize=\footnotesize,
@@ -71,36 +79,20 @@
     numbersep=3mm,
     #4
   },
-  colback=black!5!white,
-  colframe=vertexDarkGrey,
-  listing only,
-  left=5mm,
-  enhanced,
-  overlay={%
-    \begin{tcbclipinterior}
-      \fill[black!20!white] (frame.south west) rectangle ([xshift=5mm]frame.north west);
-    \end{tcbclipinterior}
+  #1
+}
+\DeclareTCBListing{code} {O{} m} {
+  codebox,
+  minted language=#2,
+  minted options={
+    fontsize=\footnotesize,
+    breaklines,
+    autogobble,
+    linenos,
+    numbersep=3mm
   },
   #1
 }
-
-\renewcommand\theFancyVerbLine{%
-    \BeginAccSupp{method=escape,ActualText={}}%
-    {\ttfamily\tiny\arabic{FancyVerbLine}}%
-    \EndAccSupp{}%
-}%
-
-
-
-\newcommand\headlineframe[1]{%
-  \begin{frame}[c]%
-    \begin{center}%
-      \Huge\color{vertexDarkRed}#1%
-    \end{center}%
-  \end{frame}%
-}%
-
-
 
 \author[M. Nöthe]{Maximilian Nöthe}
 \title[Testing]{Testing \\ Test Driven Development \\ Continuous Integration}
@@ -201,22 +193,13 @@
 \end{frame}
 
 \begin{frame}[c, fragile]{First Unit Test}
-  \inputcode[title=\texttt{examples/step1/test\_fiboncacci.py}]{./examples/step1/test_fibonacci.py}{python}
+  \inputcode[title=\texttt{examples/step1/test\_fibonacci1.py}]{./examples/step1/test_fibonacci1.py}{python}
 
-  \begin{code}{text}
-    $ pytest
-    =========================== test session starts ==========================
-    platform linux -- Python 3.9.4, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
-    rootdir: /home/maxnoe/Uni/escape-school2021/testing/slides/examples/step1
-    collected 1 item
-
-    test_fibonacci.py .                                               [100%]
-
-    =========================== 1 passed in 0.00s ============================
-  \end{code}
+  \inputcode{./examples/pytest_output.txt}{text}
 \end{frame}
 
 \begin{frame}[c]{Testing Exceptions}
+  Make sure the correct exception is thrown, e.\,g.\ for invalid input:
   \inputcode[title=\texttt{examples/step2/fibonacci.py}]{./examples/step2/fibonacci.py}{python}[lastline=4]
   \inputcode[title=\texttt{examples/step2/test\_exception.py}]{./examples/step2/test_exception.py}{python}
 
@@ -225,8 +208,8 @@
 
 
 \begin{frame}[c, fragile]{Careful with floating point numbers}
-  \inputcode[title={Naive, this fails}]{./examples/floating/test_floating.py}{python}[firstline=4, lastline=5]
-  \inputcode[title={Correct approach, using \texttt{pytest.approx}}]{./examples/floating/test_floating.py}{python}[firstline=7]
+  \inputcode[title={Naive, this fails}]{./examples/floating/test_floating.py}{python}[firstline=3, lastline=4]
+  \inputcode[title={Correct approach, using \texttt{pytest.approx}}]{./examples/floating/test_floating.py}{python}[firstline=6]
 
   See \url{https://0.30000000000000004.com/}
 \end{frame}
@@ -286,6 +269,36 @@
   Run the test and checkout \mintinline{bash}+/tmp/pytest-of-$USER/pytest-current/test_to_csvcurrent+
 \end{frame}
 
+\begin{frame}[c]{Parametrized Tests and Fixtures}
+  \begin{itemize}
+    \item Parametrization allows to run the same test on multiple inputs
+    \item Very useful to reduce code repetition and get clearer messages
+  \end{itemize}
+
+  \inputcode[title={A parametrized test}]{./examples/step3/test_parametrized.py}{python}
+\end{frame}
+
+
+\begin{frame}[c, fragile]{Conditional tests}
+  Some tests can only be run under specific conditions
+    \begin{itemize}
+      \item Tests for features requiring optional dependencies
+        \inputcode[title={This test is skipped when numpy is not available}]{./examples/test_skipped.py}{python}[firstline=5, lastline=7]
+      \item Tests for specific operating systems or versions
+        \inputcode[title={This test is only executed on Windows}]{./examples/test_skipped.py}{python}[firstline=9]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c, fragile]{Expected failures}
+  It sometimes makes sense to implement tests that are expected to fail:
+  \begin{itemize}
+    \item Planned but not yet implemented features
+    \item Known but not yet fixed bugs
+    \item These tests shouldn't make your whole test suite fail
+  \end{itemize}
+
+  \inputcode[title={This test is expected to fail}]{./examples/test_xfail.py}{python}
+\end{frame}
 
 \begin{frame}[c, fragile]{Choosing which tests to run}
   pytest offers fine-grained control over which tests to run
@@ -298,6 +311,65 @@
     \item Run only tests that failed the last time pytest was run
       \begin{code}{bash}
         $ pytest --last-failed
+      \end{code}
+  \end{itemize}
+
+  \begin{columns}[onlytextwidth, c]%
+    \begin{column}{0.475\textwidth}%
+      \begin{itemize}
+        \item Stop after N failures
+      \end{itemize}
+    \end{column}%
+    \hfill%
+    \begin{column}{0.475\textwidth}%
+      \begin{code}{bash}
+        $ pytest --maxfail=2
+      \end{code}
+    \end{column}%
+  \end{columns}%
+
+  \begin{columns}[onlytextwidth, c]%
+    \begin{column}{0.475\textwidth}%
+      \begin{itemize}
+        \item Using matching expressions
+      \end{itemize}
+    \end{column}%
+    \hfill%
+    \begin{column}{0.475\textwidth}%
+      \begin{code}[nobeforeafter, width=\linewidth, box align=base]{bash}
+        $ pytest -k "fib"
+      \end{code}
+    \end{column}%
+  \end{columns}%
+
+  \begin{columns}[onlytextwidth, c]%
+    \begin{column}{0.475\textwidth}%
+      \begin{itemize}
+        \item Run tests for an installed package
+      \end{itemize}
+    \end{column}%
+    \hfill%
+    \begin{column}{0.475\textwidth}%
+      \begin{code}[nobeforeafter, width=\linewidth, box align=base]{bash}
+        $ pytest --pyargs fibonacci
+      \end{code}
+    \end{column}%
+  \end{columns}%
+\end{frame}
+
+\begin{frame}[c, fragile]{Choosing which tests to run – Using markers}
+  \begin{itemize}
+    \item Define markers in \texttt{pyproject.toml}
+      \begin{code}{toml}
+        [tool.pytest.ini_options]
+        markers = ["slow"]
+      \end{code}
+    \item Add the marker to a test
+      \inputcode{./examples/test_marks.py}{python}[firstline=4, lastline=7]
+    \item Run tests using marker expressions
+      \begin{code}{bash}
+        $ pytest -m "not slow"
+        $ pytest -m "slow"
       \end{code}
   \end{itemize}
 \end{frame}
@@ -335,8 +407,25 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}[c, fragile]{Create a coverage report}
+  \begin{itemize}
+    \item Print coverage after test suite
+      \begin{code}{bash}
+        $ pytest --cov=fibonacci
+      \end{code}
+    \item Create a detailed report in html format
+      \begin{code}{bash}
+        $ pytest --cov=fibonacci --cov-report=html
+      \end{code}
+    \item Serve the report using python's buildin http server and explore in the browser:
+      \begin{code}{bash}
+        $ python -m http.server -d htmlcov
+      \end{code}
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[c, fragile]{Limitations of coverage}
-  Hit lines of code are not a perfect measure.
+  Executed number of lines of code are not a perfect measure.
   \begin{code}{python}
     if some_condition is True:
         do_stuff()
@@ -358,15 +447,101 @@
   \onslide<4->{Calling functions from other packages can have arbitrarily many branches}
 \end{frame}
 
-\section{Mocking}
-\headlineframe{Mocking}
+\section{Mocking / Monkeypatching}
+\headlineframe{Mocking / Monkeypatching}
+\begin{frame}[c]{Mocking / Monkeypatching}
+  \begin{itemize}
+    \item Sometimes, classes or functions have behaviour that prevents unit testing
+    \item E.\,g.\ code that speaks to specific hardware, makes web requests, relies on system time ...
+    \item This is usually a sign of insufficient modularization / separation of concerns
+    \item A solution can be mocking or monkeypatching, if it is not possible to improve the actual code
+  \end{itemize}
+\end{frame}
 
 \section{Test Driven Development}
 \headlineframe{Test Driven Development}
 
-\section{Doctest}
-\headlineframe{Doctest}
+\begin{frame}[c]{Test Driven Development (TDD)}
+  \begin{itemize}
+    \item Test Driven Development is a powerful paradigm
+    \item Essentially, to implement a new feature
+      \begin{enumerate}
+        \item Write the tests before any implementation code
+        \item Run the tests → they should all fail
+        \item Write the minimal implementation that makes the test pass
+        \item All tests should now pass
+        \item Cleanup, refactor, tests must keep passing
+      \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Test Drive Development}
+  \begin{itemize}
+    \item TDD forces you to think about requirements and API \emph{before} writing the actual code
+    \item Especially usefull when
+      \begin{itemize}
+        \item you have clear specifications
+        \item investigating / trying to fix a bug
+        \item working on a new greenfield project
+      \end{itemize}
+    \item Not so easy to use when
+      \begin{itemize}
+        \item working in a large, historic codebase without good test coverage
+        \item doing explorative work
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\section{Doctests}
+\headlineframe{Doctests}
+
+\begin{frame}[c, fragile]{Doctests}
+  \begin{itemize}
+    \item Examples are an important part of every documentations
+      \inputcode{../fibonacci/fibonacci/__init__.py}{python}[firstline=1, lastline=8]
+    \item Important to verify that the examples stay up to date and are correct
+    \item Solution: run all the examples and check the expected output
+      \begin{code}{bash}
+        $ pytest --doctest-glob="*.rst" --doctest-modules
+      \end{code}
+    \item This will find and execute code blocks in docstrings and documentation rst-files
+    \item Checks the output is what is expected
+  \end{itemize}
+\end{frame}
 
 \section{Continuous Integration}
 \headlineframe{Continuous Integration}
+\begin{frame}[c]{Continuous Integration}
+  \begin{itemize}
+    \item CI systems run the build, unit tests and code quality checks automatically
+    \item They should run for each push event / opened pull request
+    \item All architectures, operating systems and versions you support should be tested
+    \item Many tools provide detailed reporting that help with code reviews
+    \item You should require the passing of the CI system for pull requests
+    \item All providers also support encrypted secrets for confidential information\\
+      \begin{itemize}
+        \item Automatize upload of releases
+        \item Access private data needed for tests
+        \item ...
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Providers}
+  \begin{description}[Github Actions\hspace{2em}]
+    \item[GitHub Actions]
+      \begin{itemize}
+        \item Free for all public GitHub repositories
+        \item Linux, Mac and Windows builds
+        \item Support for custom runners that you can self-host
+        \item Recommended for projects on GitHub
+      \end{itemize}
+    \item[GitLab CI]
+      \begin{itemize}
+        \item 400 minutes of build time per month with gitLab.com Free
+        \item Runners need to be setup for self-hosted GitLabs
+      \end{itemize}
+  \end{description}
+\end{frame}
+
 \end{document}
