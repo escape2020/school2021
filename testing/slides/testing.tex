@@ -112,7 +112,12 @@
 \begin{frame}[c]{Automated Software Testing}
   \begin{itemize}
     \item Verifying that a software works as intended is crucial
-    \item Doing this manually using whatever method you can think of is very tedious
+    \item Doing this manually using whatever method you can think of
+      \begin{itemize}
+        \item is very tedious
+        \item is errorprone
+        \item will result in the tests not being done most of the time
+      \end{itemize}
     \item[$\Rightarrow$] We need automated tests that verify our software
     \item Tests fall into three categories
       \begin{enumerate}
@@ -161,7 +166,7 @@
 \begin{frame}[c]{Performance tests}
   \begin{itemize}
     \item Unit and integration tests usually only test the correctness of code
-    \item Performance (regression) tests make sure the code does not get slower
+    \item Performance tests make sure the code does not get slower
     \item This introduction focuses on unit tests
   \end{itemize}
 \end{frame}
@@ -198,6 +203,16 @@
   \inputcode{./examples/pytest_output.txt}{text}
 \end{frame}
 
+\begin{frame}[c]{A note on imports}
+  \inputcode[title=\texttt{examples/step1/test\_fibonacci1.py}]{./examples/step1/test_fibonacci1.py}{python}
+
+  \begin{itemize}
+    \item Against usual python style, you should import what you test in the test function
+    \item Like this, the test discovery of pytest will also work when the import would fail and the failure is reported as part of the test
+    \item Everything else, like standard library imports or third-party dependencies, is imported normally at the top
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[c]{Testing Exceptions}
   Make sure the correct exception is thrown, e.\,g.\ for invalid input:
   \inputcode[title=\texttt{examples/step2/fibonacci.py}]{./examples/step2/fibonacci.py}{python}[lastline=4]
@@ -227,12 +242,11 @@
   \begin{itemize}
     \item Data and resources used by tests can be injected into tests using \enquote{fixtures}
     \item Fixtures are provided by functions decorated with \texttt{@fixture}
-    \item Fixtures have a scope $⇒$ same object used per session, module, or test
+    \item Fixtures have a scope $⇒$ same object used per session, module, class or function
+    \item Default is \mintinline{python}+scope=function+
   \end{itemize}
-
   \inputcode{./examples/fixtures/test_fixtures.py}{python}
 \end{frame}
-
 
 \begin{frame}[c]{Fixtures provided by pytest}
   pytest provides several builtin fixtures for
@@ -267,6 +281,28 @@
   \inputcode{./examples/fixtures/test_tmp_paths.py}{python}
 
   Run the test and checkout \mintinline{bash}+/tmp/pytest-of-$USER/pytest-current/test_to_csvcurrent+
+\end{frame}
+
+\begin{frame}[c, fragile]{Fixtures that need a cleanup step}
+  \begin{itemize}
+    \item Sometimes, resources or data need to be cleaned up after the test have run
+    \item This can be implemented using a generator fixture that yields the data cleans up after the yield
+  \end{itemize}
+
+  \begin{code}{python}
+    @pytest.fixture()
+    def database_connection():
+        connection = database.connect()
+        yield con
+        # close after use
+        connection.close()
+
+    @pytest.fixture()
+    def database_connection():
+        # even better, with a context manager
+        with database.connect() as con:
+            yield con
+  \end{code}
 \end{frame}
 
 \begin{frame}[c]{Parametrized Tests and Fixtures}
