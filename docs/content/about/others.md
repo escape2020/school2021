@@ -4,13 +4,15 @@ date: 2019-11-11T01:30:23+08:00
 lastmod: 2019-11-11T01:30:23+08:00
 ---
 
-**Slack**: https://escape-school.slack.com/
-
-**YouTube**: (to be added)
-
 **Indico**: https://indico.in2p3.fr/event/20306/
 
-**GatherTown**: Invitation only
+**GitHub**: https://github.com/escape2020/school2021
+
+**Slack**: https://escape-data-school.slack.com/ (by invitation only)
+
+**YouTube live**: https://www.youtube.com/channel/UC05braEQdP2rCSUamHm9I_Q/live
+
+**GatherTown**: By invitation only
 
 ---
 
