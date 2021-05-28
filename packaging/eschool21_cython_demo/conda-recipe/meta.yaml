@@ -6,7 +6,7 @@ source:
   path: ..
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
@@ -17,10 +17,10 @@ requirements:
     - pip
     - setuptools
     - cython
+    - numpy
   run:
     - python >=3.7
-    - numpy >=1.17
-    - astropy >=4,<5
+    - {{ pin_compatible('numpy') }}
 test:
   imports:
     - eschool21_cython_demo.fibonacci
@@ -35,5 +35,4 @@ about:
   license_family: MIT
   license_file: ../LICENSE
   description: Escape2020/school2021 packaging demo
-  doc_url: https://cta-observatory.github.io/ctapipe/
-  dev_url: https://github.com/cta-observatory/ctapipe
+  dev_url: https://github.com/escape2020/school2021

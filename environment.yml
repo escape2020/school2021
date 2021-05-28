@@ -2,11 +2,11 @@ name: eschool2021
 channels:
   - default
 dependencies:
+  - anaconda-client
   - astropy
   - conda-build
   - cython
   - h5py
-  - ipython
   - ipython
   - jupyter
   - jupyterlab

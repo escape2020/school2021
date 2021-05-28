@@ -45,6 +45,6 @@ jobs:
     - name: Test packaging demo packages
       shell: bash -leo pipefail {0}
       run: |
-        python -m build packaging/escape_school21_demo
-        python -m build packaging/eschool21_wheel_demo
-        conda build packaging/eschool21_wheel_demo/conda-recipe
+        python -m build packaging/eschool21_demo
+        python -m build packaging/eschool21_cython_demo
+        conda build packaging/eschool21_cython_demo/conda-recipe
