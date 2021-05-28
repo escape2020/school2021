@@ -4,13 +4,13 @@ all: build/testing.pdf
 
 
 build/testing.pdf: FORCE | build
-	max_print_line=1048576\
+	max_print_line=1048576 \
 	TEXINPUTS=../../.tex:../../.tex/beamertheme-vertex: \
 	latexmk $(TEXOPTIONS) testing.tex
 
 
 preview: FORCE | build
-	max_print_line=1048576\
+	max_print_line=1048576 \
 	TEXINPUTS=../../.tex:../../.tex/beamertheme-vertex: \
 	latexmk -pvc $(TEXOPTIONS) testing.tex
 
