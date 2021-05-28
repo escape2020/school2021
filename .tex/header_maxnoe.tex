@@ -1,0 +1,95 @@
+\PassOptionsToPackage{
+  unicode,
+  pdfusetitle,
+  colorlinks,
+  linkcolor=vertexDarkRed,
+  urlcolor=vertexDarkRed,
+  citecolor=vertexDarkRed,
+}{hyperref}
+\documentclass[
+  aspectratio=1610,
+]{beamer}
+\usetheme{vertex}
+\usepackage[american]{babel}
+
+\usepackage[autostyle]{csquotes}
+
+\usepackage{fontspec}
+\usepackage{graphicx}
+
+\usepackage[outputdir=build]{minted}
+\usepackage{xcolor}
+\usepackage{xparse}
+\usepackage{tcolorbox}
+\tcbuselibrary{minted}
+\tcbuselibrary{skins}
+\tcbuselibrary{xparse}
+\usepackage{accsupp}
+
+\usepackage{bookmark}
+\usepackage[shortcuts]{extdash}
+\usepackage{fontawesome5}
+
+
+\definecolor{positive}{HTML}{15B01A}
+\colorlet{negative}{vertexDarkRed}
+\setmonofont{Fira Mono}
+
+\newcommand\headline[1]{\textbf{\Large\strut{}#1}\newline}
+\newcommand\headlineframe[1]{%
+  \begin{frame}[c]%
+    \begin{center}%
+      \Huge\color{vertexDarkRed}#1%
+    \end{center}%
+  \end{frame}%
+}%
+
+\renewcommand\theFancyVerbLine{%
+  \BeginAccSupp{method=escape,ActualText={}}%
+  {\ttfamily\tiny\arabic{FancyVerbLine}}%
+  \EndAccSupp{}%
+}%
+
+\tcbset{codebox/.style={
+  listing engine=minted,
+  colback=black!5!white,
+  colframe=vertexDarkGrey,
+  listing only,
+  left=5mm,
+  top=2pt,
+  bottom=0pt,
+  boxsep=3pt,
+  enhanced,
+  overlay={%
+    \begin{tcbclipinterior}
+      \fill[black!20!white] (frame.south west) rectangle ([xshift=5mm]frame.north west);
+    \end{tcbclipinterior}
+  },
+}}
+
+\DeclareTCBInputListing{inputcode} {O{} m m O{}} {
+  codebox,
+  listing file=#2,
+  minted language=#3,
+  minted options={
+    fontsize=\footnotesize,
+    breaklines,
+    autogobble,
+    linenos,
+    numbersep=3mm,
+    #4
+  },
+  #1
+}
+\DeclareTCBListing{code} {O{} m} {
+  codebox,
+  minted language=#2,
+  minted options={
+    fontsize=\footnotesize,
+    breaklines,
+    autogobble,
+    linenos,
+    numbersep=3mm
+  },
+  #1
+}

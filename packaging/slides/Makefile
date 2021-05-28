@@ -4,11 +4,15 @@ all: build/packaging.pdf
 
 
 build/packaging.pdf: FORCE | build
-	TEXINPUTS=../../.tex/beamertheme-vertex: latexmk $(TEXOPTIONS) packaging.tex
+	max_print_line=1048576 \
+	TEXINPUTS=../../.tex:../../.tex/beamertheme-vertex: \
+	latexmk $(TEXOPTIONS) packaging.tex
 
 
 preview: FORCE | build
-	TEXINPUTS=../../.tex/beamertheme-vertex: latexmk -pvc $(TEXOPTIONS) packaging.tex
+	max_print_line=1048576 \
+	TEXINPUTS=../../.tex:../../.tex/beamertheme-vertex: \
+	latexmk -pvc $(TEXOPTIONS) packaging.tex
 
 build:
 	mkdir -p build
