@@ -119,8 +119,8 @@
   \begin{columns}[onlytextwidth, c]%
     \begin{column}{0.44\textwidth}%
       \begin{code}{text}
-        escape_school21_demo
-        ├── escape_school21_demo
+        eschool21_demo
+        ├── eschool21_demo
         │   ├── tests
         │   │   ├── __init__.py
         │   │   └── test_fibonacci.py
@@ -165,7 +165,7 @@
     \item Many other tools can also be configured through \texttt{pyproject.toml},\\ e.g. black, poetry, \ldots.
   \end{itemize}
 
-  \inputcode[title={Minimal pyproject.toml file for projects using setuptools}]{../escape_school21_demo/pyproject.toml}{toml}
+  \inputcode[title={Minimal pyproject.toml file for projects using setuptools}]{../eschool21_demo/pyproject.toml}{toml}
 \end{frame}
 
 \begin{frame}[c, fragile]{setup.py and setup.cfg}
@@ -178,7 +178,7 @@
     \item[$\Rightarrow$] For simple projects, only use the \texttt{setup.cfg}
     \item Editable installs currently require a minimal \texttt{setup.py}:
   \end{itemize}
-  \inputcode{../escape_school21_demo/setup.py}{python}
+  \inputcode{../eschool21_demo/setup.py}{python}
 \end{frame}
 
 \begin{frame}[c, fragile]{setup.cfg}
@@ -217,8 +217,8 @@
     \item You will get both the sdist and the wheel in the \texttt{dist} directory:
       \begin{code}{text}
         $ ls -1 dist
-        escape_school21_demo-0.1.0-py3-none-any.whl
-        escape_school21_demo-0.1.0.tar.gz
+        eschool21_demo-0.1.0-py3-none-any.whl
+        eschool21_demo-0.1.0.tar.gz
       \end{code}
   \end{itemize}
 \end{frame}
@@ -253,7 +253,7 @@
     \begin{code}[title={setup.cfg}]{ini}
     [options.entry_points]
     console_scripts = 
-      fibonacci = escape_school21_demo.__main__:main
+      fibonacci = eschool21_demo.__main__:main
     \end{code}
   \end{itemize}
 \end{frame}
@@ -362,7 +362,7 @@
       \end{code}
   \end{itemize}
 
-  \inputcode[title={\texttt{setup.cfg}}]{./../escape_school21_demo/setup.cfg}{ini}[firstline=22, lastline=30]
+  \inputcode[title={\texttt{setup.cfg}}]{./../eschool21_demo/setup.cfg}{ini}[firstline=22, lastline=30]
 \end{frame}
 
 \begin{frame}[fragile, c]{Avoiding duplicated version definitions}
@@ -371,7 +371,7 @@
       \begin{itemize}
         \item The git tag
         \item The package version (e.\,g.\ in \texttt{setup.py} or \texttt{CMakeLists.txt})
-        \item Accessible version in the code (e.\,g.\ \mintinline{python}{escape_school21_demo.__version__})
+        \item Accessible version in the code (e.\,g.\ \mintinline{python}{eschool21_demo.__version__})
       \end{itemize}
     \item Not having this information duplicated avoids errors
     \item Setuptools supports reading this from the code
@@ -381,11 +381,11 @@
 \end{frame}
 
 \begin{frame}[fragile, c]{Defining the version in code}
-  \inputcode[title=\mintinline{text}+escape_school21_demo/__init__.py+]{../escape_school21_demo/escape_school21_demo/__init__.py}{python}
+  \inputcode[title=\mintinline{text}+eschool21_demo/__init__.py+]{../eschool21_demo/eschool21_demo/__init__.py}{python}
 
   \begin{code}[title=setup.cfg]{ini}
     [metadata]
-    version = attr: escape_school21_demo.__version__
+    version = attr: eschool21_demo.__version__
   \end{code}
 
   This also works when \mintinline{text}+__init__.py+ already imports dependencies,
@@ -448,6 +448,17 @@
 
 \section{Publishing Binary Wheels}
 \headlineframe{Publishing Binary Wheels}
+
+\begin{frame}[c]{Example Project using cython and numpy}
+  \begin{itemize}
+    \item Demo project in \mintinline{text}+school21/packaging/eschool21_cython_demo+
+    \item Using cython and numpy's cython API to build a C-extension
+    \item We need Cython and numpy at build time
+    \item We need to compile against the oldest supported numpy version
+      \inputcode[title=\texttt{pyproject.toml}]{../eschool21_cython_demo/pyproject.toml}{toml}
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[c]{Publishing Binary Wheels}
   \headline{\faIcon{windows} Windows}
   With python >= 3.5, things got a lot easier

@@ -1,5 +1,5 @@
 def test_fibonacci():
-    from escape_school21_demo import fibonacci
+    from eschool21_demo import fibonacci
 
     assert fibonacci(0) == 0
     assert fibonacci(1) == 1

@@ -1,5 +1,5 @@
 package:
-  name: eschool21_wheel_demo
+  name: eschool21_cython_demo
   version: 0.1.0
 
 source:
@@ -23,7 +23,7 @@ requirements:
     - astropy >=4,<5
 test:
   imports:
-    - eschool21_wheel_demo.fibonacci
+    - eschool21_cython_demo.fibonacci
   commands:
     - pip check
   requires:
