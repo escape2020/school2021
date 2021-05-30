@@ -3,11 +3,28 @@ channels:
   - default
 dependencies:
   - python=3.9
-  - pip
+  - astropy
   - conda-build
+  - cython
+  - h5py
+  - ipython
+  - jupyter
+  - jupyterlab
+  - matplotlib
+  - numba
   - numpy
+  - pandas
+  - pip
+  - pytables
   - pytest
+  - python=3.9
+  - pyyaml
+  - scikit-learn
+  - scipy
+  - seaborn
   - setuptools
+  - snakeviz
+  - tqdm
   - twine
   - wheel
   - pip:
