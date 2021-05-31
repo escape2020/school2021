@@ -20,16 +20,17 @@ jobs:
       run: |
         # $CONDA is an environment variable pointing to the root of the miniconda directory
         echo $CONDA/bin >> $GITHUB_PATH
+        echo "source $CONDA/etc/profile.d/conda.sh" >> .bashrc
 
     - name: Install dependencies
       run: |
-        source $CONDA/etc/profile.d/conda.sh
+        bash --login
         conda install mamba -n base -c conda-forge
         mamba env create --file environment.yml
-        conda activate eschool2021
+        echo "conda activate eschool2021" >> .bashrc
     - name: Lint with flake8
       run: |
-        conda activate eschool2021
+        bash --login
         conda install flake8
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
@@ -37,19 +38,19 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        conda activate eschool2021
+        bash --login
         pytest
 
     - name: Test packaging demo packages
       run: |
-        conda activate eschool2021
+        bash --login
         python -m build packaging/escape_school21_demo
         python -m build packaging/eschool21_wheel_demo
         conda build packaging/eschool21_wheel_demo/conda-recipe
 
     - name: Build slides
       run: |
-        conda activate eschool2021
+        bash --login
         pip install https://github.com/maxnoe/texlive-batch-installation/archive/refs/tags/v0.3.0.tar.gz
         install_texlive -p $HOME/texlive -t 2021 --collections="-a" --package-file packaging/slides/tex-packages.txt --update
         export PATH="$HOME/texlive/2021/bin/x86_64-linux:$PATH"
