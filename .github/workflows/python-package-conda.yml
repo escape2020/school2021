@@ -26,8 +26,9 @@ jobs:
       run: |
         bash --login
         conda install mamba -n base -c conda-forge
-        mamba env create --file environment.yml
+        mamba env create --file environment.yml --name eschool2021
         echo "conda activate eschool2021" >> ~/.bashrc
+        echo "echo $CONDA_DEFAULT_ENV" >> ~/.bashrc
     - name: Lint with flake8
       run: |
         bash --login
@@ -39,6 +40,7 @@ jobs:
     - name: Test with pytest
       run: |
         bash --login
+        echo $CONDA_DEFAULT_ENV
         pytest
 
     - name: Test packaging demo packages
