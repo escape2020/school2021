@@ -23,14 +23,14 @@ jobs:
         echo "source $CONDA/etc/profile.d/conda.sh" >> ~/.bashrc
 
     - name: Install dependencies
-      shell: bash -o pipefail -o errexit -o nounset --login {0}
+      shell: bash -login -o pipefail -o errexit -o nounset
       run: |
         conda install mamba -n base -c conda-forge
         mamba env create --file environment.yml --name eschool2021
         echo "conda activate eschool2021" >> ~/.bashrc
         echo "echo $CONDA_DEFAULT_ENV" >> ~/.bashrc
     - name: Lint with flake8
-      shell: bash -o pipefail -o errexit -o nounset --login {0}
+      shell: bash -login -o pipefail -o errexit -o nounset
       run: |
         conda install flake8
         # stop the build if there are Python syntax errors or undefined names
@@ -38,7 +38,7 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
-      shell: bash -o pipefail -o errexit -o nounset --login {0}
+      shell: bash -login -o pipefail -o errexit -o nounset
       run: |
         source $CONDA/etc/profile.d/conda.sh
         conda activate eschool2021
@@ -46,14 +46,14 @@ jobs:
         pytest
 
     - name: Test packaging demo packages
-      shell: bash -o pipefail -o errexit -o nounset --login {0}
+      shell: bash -login -o pipefail -o errexit -o nounset
       run: |
         python -m build packaging/escape_school21_demo
         python -m build packaging/eschool21_wheel_demo
         conda build packaging/eschool21_wheel_demo/conda-recipe
 
     - name: Build slides
-      shell: bash -o pipefail -o errexit -o nounset --login {0}
+      shell: bash -login -o pipefail -o errexit -o nounset
       run: |
         pip install https://github.com/maxnoe/texlive-batch-installation/archive/refs/tags/v0.3.0.tar.gz
         install_texlive -p $HOME/texlive -t 2021 --collections="-a" --package-file packaging/slides/tex-packages.txt --update
