@@ -65,14 +65,20 @@
     \item Test single \enquote{units} of the code in isolation
     \item Require modular design of the code base
     \item Are the bedrock of any more complicated tests
-    \item Good unit tests serve multiple purposes
-      \begin{itemize}
-        \item They check correctness of the current code
-        \item They provide a safety net for developers changing parts of the code
-        \item They provide examples / documentation for how your code is meant to be used
-      \end{itemize}
-    \item Writing good unit tests can be hard
+    \item Must be fast and easy to run $⇒$ or they would not be run most of the time
   \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Properties of good unit tests}
+  \begin{description}[Demonstrability]
+    \item[Existence] \faSmileWink[regular]
+    \item[Correctness] The code under test behaves according to requirements / specifications
+    \item[Completeness] The tests cover all required features / use cases
+    \item[Readability] Writing tests for tests would result in infinite recursion\\
+      $⇒$ tests must readable, so they can be easily verified by inspection
+    \item[Demonstrability] Good tests show how your code is meant to be used
+    \item[Resilience] Tests should only fail if what they test breaks
+  \end{description}
 \end{frame}
 
 \begin{frame}[c]{Frameworks}
