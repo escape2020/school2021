@@ -36,8 +36,8 @@ jobs:
 
     - name: Test packaging demo packages
       run: |
-        python -m build packaging/escape_school21_demo
-        python -m build packaging/eschool21_wheel_demo
+        python -m build packaging/eschool21_demo
+        python -m build packaging/eschool21_cython_demo
         conda build packaging/eschool21_wheel_demo/conda-recipe
 
     - name: Build slides
