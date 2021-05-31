@@ -21,7 +21,6 @@ dependencies:
   - pyyaml
   - scikit-learn
   - scipy
-  - snakeviz
   - tqdm
   - twine
   - wheel
