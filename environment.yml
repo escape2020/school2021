@@ -21,8 +21,6 @@ dependencies:
   - pyyaml
   - scikit-learn
   - scipy
-  - seaborn
-  - setuptools
   - snakeviz
   - tqdm
   - twine
