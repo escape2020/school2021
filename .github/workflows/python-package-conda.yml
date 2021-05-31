@@ -20,15 +20,15 @@ jobs:
       run: |
         # $CONDA is an environment variable pointing to the root of the miniconda directory
         echo $CONDA/bin >> $GITHUB_PATH
-        echo "source $CONDA/etc/profile.d/conda.sh" >> $HOME/.bashrc
+        echo "source $CONDA/etc/profile.d/conda.sh" >> $HOME/.bash_profile
 
     - name: Install dependencies
       shell: bash -leo pipefail {0}
       run: |
         conda install mamba -n base -c conda-forge
         mamba env create --file environment.yml --name eschool2021
-        echo "conda activate eschool2021" >> $HOME/.bashrc
-        echo "echo $CONDA_DEFAULT_ENV" >> $HOME/.bashrc
+        echo "conda activate eschool2021" >> $HOME/.bash_profile
+        echo "echo $CONDA_DEFAULT_ENV" >> $HOME/.bash_profile
     - name: Lint with flake8
       shell: bash -leo pipefail {0}
       run: |
