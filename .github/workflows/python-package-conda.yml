@@ -20,7 +20,7 @@ jobs:
       run: |
         # $CONDA is an environment variable pointing to the root of the miniconda directory
         echo $CONDA/bin >> $GITHUB_PATH
-        source $HOME/anaconda3/etc/profile.d/conda.sh
+        source $CONDA/etc/profile.d/conda.sh
 
     - name: Install dependencies
       run: |
