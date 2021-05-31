@@ -46,6 +46,8 @@ jobs:
       shell: bash -leo pipefail {0}
       run: |
         echo $CONDA_DEFAULT_ENV
+        source $HOME/.bashrc
+        echo $CONDA_DEFAULT_ENV
         python -m build packaging/escape_school21_demo
         python -m build packaging/eschool21_wheel_demo
         conda build packaging/eschool21_wheel_demo/conda-recipe
