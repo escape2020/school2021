@@ -29,6 +29,7 @@ jobs:
         conda activate eschool2021
     - name: Lint with flake8
       run: |
+        conda activate eschool2021
         conda install flake8
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
@@ -36,16 +37,19 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
+        conda activate eschool2021
         pytest
 
     - name: Test packaging demo packages
       run: |
+        conda activate eschool2021
         python -m build packaging/escape_school21_demo
         python -m build packaging/eschool21_wheel_demo
         conda build packaging/eschool21_wheel_demo/conda-recipe
 
     - name: Build slides
       run: |
+        conda activate eschool2021
         pip install https://github.com/maxnoe/texlive-batch-installation/archive/refs/tags/v0.3.0.tar.gz
         install_texlive -p $HOME/texlive -t 2021 --collections="-a" --package-file packaging/slides/tex-packages.txt --update
         export PATH="$HOME/texlive/2021/bin/x86_64-linux:$PATH"
