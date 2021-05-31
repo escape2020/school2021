@@ -22,8 +22,9 @@ jobs:
         echo $CONDA/bin >> $GITHUB_PATH
     - name: Install dependencies
       run: |
-        conda env create --file environment.yml
-        conda activate eschool2021
+        conda install mamba -n base -c conda-forge
+        mamba env create --file environment.yml
+        mamba activate eschool2021
     - name: Lint with flake8
       run: |
         conda install flake8
