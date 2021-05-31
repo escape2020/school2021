@@ -48,6 +48,8 @@ jobs:
         echo $CONDA_DEFAULT_ENV
         source $HOME/.bashrc
         echo $CONDA_DEFAULT_ENV
+        source $CONDA/etc/profile.d/conda.sh
+        conda activate eschool2021
         python -m build packaging/escape_school21_demo
         python -m build packaging/eschool21_wheel_demo
         conda build packaging/eschool21_wheel_demo/conda-recipe
