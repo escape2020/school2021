@@ -20,10 +20,16 @@ jobs:
       run: |
         # $CONDA is an environment variable pointing to the root of the miniconda directory
         echo $CONDA/bin >> $GITHUB_PATH
+        echo "source $CONDA/etc/profile.d/conda.sh" >> $HOME/.bash_profile
+
     - name: Install dependencies
+      shell: bash -leo pipefail {0}
       run: |
-        conda env update --file environment.yml --name base
+        conda install mamba -n base -c conda-forge
+        mamba env create --file environment.yml --name eschool2021
+        echo "conda activate eschool2021" >> $HOME/.bash_profile
     - name: Lint with flake8
+      shell: bash -leo pipefail {0}
       run: |
         conda install flake8
         # stop the build if there are Python syntax errors or undefined names
@@ -31,16 +37,19 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
+      shell: bash -leo pipefail {0}
       run: |
         pytest
 
     - name: Test packaging demo packages
+      shell: bash -leo pipefail {0}
       run: |
         python -m build packaging/escape_school21_demo
         python -m build packaging/eschool21_wheel_demo
         conda build packaging/eschool21_wheel_demo/conda-recipe
 
     - name: Build slides
+      shell: bash -leo pipefail {0}
       run: |
         pip install https://github.com/maxnoe/texlive-batch-installation/archive/refs/tags/v0.3.0.tar.gz
         install_texlive -p $HOME/texlive -t 2021 --collections="-a" --package-file packaging/slides/tex-packages.txt --update
