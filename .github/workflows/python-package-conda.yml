@@ -40,6 +40,8 @@ jobs:
     - name: Test with pytest
       run: |
         bash --login
+        source $CONDA/etc/profile.d/conda.sh
+        conda activate eschool2021
         echo $CONDA_DEFAULT_ENV
         pytest
 
