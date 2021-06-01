@@ -104,8 +104,9 @@
 \begin{frame}[c]{Performance tests}
   \begin{itemize}
     \item Unit and integration tests usually only test the correctness of code
-    \item Performance tests make sure the code does not get slower
+    \item Performance tests make sure the code fulfills requirements and does not get slower
     \item This introduction focuses on unit tests
+    \item See the profiling lecture for more information on how to actually measure performance
   \end{itemize}
 \end{frame}
 
@@ -224,7 +225,7 @@
 \begin{frame}[c, fragile]{Fixtures that need a cleanup step}
   \begin{itemize}
     \item Sometimes, resources or data need to be cleaned up after the test have run
-    \item This can be implemented using a generator fixture that yields the data cleans up after the yield
+    \item This can be implemented using a generator fixture that yields the data and cleans up after the yield
   \end{itemize}
 
   \begin{code}{python}
