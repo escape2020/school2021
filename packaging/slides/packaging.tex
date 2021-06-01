@@ -1,101 +1,7 @@
-\PassOptionsToPackage{
-  unicode,
-  pdfusetitle,
-  colorlinks,
-  linkcolor=vertexDarkRed,
-  urlcolor=vertexDarkRed,
-  citecolor=vertexDarkRed,
-}{hyperref}
-\documentclass[
-  aspectratio=1610,
-]{beamer}
-\usetheme{vertex}
-\usepackage[american]{babel}
-
-\usepackage[autostyle]{csquotes}
-
-\usepackage{fontspec}
-\usepackage{graphicx}
-
-\usepackage[outputdir=build]{minted}
-\usepackage{xcolor}
-\usepackage{tcolorbox}
-\tcbuselibrary{minted}
-\usepackage{accsupp}
-
-\usepackage{bookmark}
-\usepackage[shortcuts]{extdash}
-\usepackage{fontawesome5}
-
-\tcbuselibrary{skins}
-\newtcblisting{code}[2][]{
-  listing engine=minted,
-  minted language=#2,
-  minted options={fontsize=\footnotesize,breaklines,autogobble,linenos,numbersep=3mm},
-  colback=black!5!white,
-  colframe=black!75!white,
-  listing only,
-  left=5mm,
-  enhanced,
-  overlay={%
-    \begin{tcbclipinterior}
-      \fill[black!20!white] (frame.south west) rectangle ([xshift=5mm]frame.north west);
-    \end{tcbclipinterior}
-  },
-  #1
-}
-
-\definecolor{positive}{HTML}{15B01A}
-\colorlet{negative}{vertexDarkRed}
-\setmonofont{Fira Mono}
-
-\newcommand\headline[1]{\textbf{\Large\strut{}#1}\newline}
-
-\newtcbinputlisting{inputcode}[3][]{
-  listing file=#2,
-  listing engine=minted,
-  minted language=#3,
-  minted options={
-    fontsize=\footnotesize,
-    breaklines,
-    autogobble,
-    linenos,
-    numbersep=3mm
-  },
-  colback=black!5!white,
-  colframe=black!75!white,
-  listing only,
-  left=5mm,
-  enhanced,
-  overlay={%
-    \begin{tcbclipinterior}
-      \fill[black!20!white] (frame.south west) rectangle ([xshift=5mm]frame.north west);
-    \end{tcbclipinterior}
-  },
-  #1
-}
-
-\renewcommand\theFancyVerbLine{%
-    \BeginAccSupp{method=escape,ActualText={}}%
-    {\ttfamily\tiny\arabic{FancyVerbLine}}%
-    \EndAccSupp{}%
-}%
-
-
-
-\newcommand\headlineframe[1]{%
-  \begin{frame}[c]%
-    \begin{center}%
-      \Huge\color{vertexDarkRed}#1%
-    \end{center}%
-  \end{frame}%
-}%
-
-
-
+\input{header_maxnoe.tex}
 \author[M. Nöthe]{Maximilian Nöthe}
 \title[Packaging]{Packaging and Distributing Python Projects}
-\date[2021-03-10]{Escape Summer School 2021 – 2021-06-10}
+\date[2021-06-10]{Escape Summer School – 2021-06-10}
 \institute[TU Dortmund]{Astroparticle Physics, TU Dortmund}
 
 \begin{document}
@@ -104,6 +10,33 @@
 
 \begin{frame}[c]{overview}
   \tableofcontents
+\end{frame}
+
+\begin{frame}[c]{Warning}
+  \centering
+  \Large\color{vertexDarkRed}
+  \vspace{3\baselineskip}
+
+  \begin{columns}[onlytextwidth, c]%
+    \begin{column}{0.15\textwidth}%
+      \fontsize{60}{60}\selectfont%
+      \faIcon{biohazard}%
+    \end{column}%
+    \hfill%
+    \begin{column}{0.7\textwidth}%
+      \centering
+      Copying code from PDF files is dangerous \\
+    \end{column}%
+    \hfill%
+    \begin{column}{0.15\textwidth}%
+      \hfill%
+      \fontsize{60}{60}\selectfont%
+      \hfill\faIcon{radiation}%
+    \end{column}%
+  \end{columns}%
+
+  \vspace{2\baselineskip}
+  Copy from the example files in the repository or type by hand.
 \end{frame}
 
 \section{Introduction}
@@ -186,8 +119,8 @@
   \begin{columns}[onlytextwidth, c]%
     \begin{column}{0.44\textwidth}%
       \begin{code}{text}
-        escape_school21_demo
-        ├── escape_school21_demo
+        eschool21_demo
+        ├── eschool21_demo
         │   ├── tests
         │   │   ├── __init__.py
         │   │   └── test_fibonacci.py
@@ -232,7 +165,7 @@
     \item Many other tools can also be configured through \texttt{pyproject.toml},\\ e.g. black, poetry, \ldots.
   \end{itemize}
 
-  \inputcode[title={Minimal pyproject.toml file for projects using setuptools}]{../escape_school21_demo/pyproject.toml}{toml}
+  \inputcode[title={Minimal pyproject.toml file for projects using setuptools}]{../eschool21_demo/pyproject.toml}{toml}
 \end{frame}
 
 \begin{frame}[c, fragile]{setup.py and setup.cfg}
@@ -244,8 +177,8 @@
       \end{itemize}
     \item[$\Rightarrow$] For simple projects, only use the \texttt{setup.cfg}
     \item Editable installs currently require a minimal \texttt{setup.py}:
-      \inputcode{../escape_school21_demo/setup.py}{python}
   \end{itemize}
+  \inputcode{../eschool21_demo/setup.py}{python}
 \end{frame}
 
 \begin{frame}[c, fragile]{setup.cfg}
@@ -284,8 +217,8 @@
     \item You will get both the sdist and the wheel in the \texttt{dist} directory:
       \begin{code}{text}
         $ ls -1 dist
-        escape_school21_demo-0.1.0-py3-none-any.whl
-        escape_school21_demo-0.1.0.tar.gz
+        eschool21_demo-0.1.0-py3-none-any.whl
+        eschool21_demo-0.1.0.tar.gz
       \end{code}
   \end{itemize}
 \end{frame}
@@ -320,7 +253,7 @@
     \begin{code}[title={setup.cfg}]{ini}
     [options.entry_points]
     console_scripts = 
-      fibonacci = escape_school21_demo.__main__:main
+      fibonacci = eschool21_demo.__main__:main
     \end{code}
   \end{itemize}
 \end{frame}
@@ -418,13 +351,27 @@
   \end{code}
 \end{frame}
 
+\begin{frame}[c, fragile]{Extras}
+  \begin{itemize}
+    \item You can use \texttt{extras} to define sets of optional dependencies
+    \item Usefull especially for test and docs dependencies
+    \item Consider providing an \texttt{all} extra to make it simple
+    \item Extras can be requested in \mintinline{python}+[]+
+      \begin{code}{bash}
+        $ pip install "package[extra1,extra2]"
+      \end{code}
+  \end{itemize}
+
+  \inputcode[title={\texttt{setup.cfg}}]{./../eschool21_demo/setup.cfg}{ini}[firstline=22, lastline=30]
+\end{frame}
+
 \begin{frame}[fragile, c]{Avoiding duplicated version definitions}
   \begin{itemize}
     \item A common problem is that version information is needed at multiple locations
       \begin{itemize}
         \item The git tag
         \item The package version (e.\,g.\ in \texttt{setup.py} or \texttt{CMakeLists.txt})
-        \item Accessible version in the code (e.\,g.\ \mintinline{python}{escape_school21_demo.__version__})
+        \item Accessible version in the code (e.\,g.\ \mintinline{python}{eschool21_demo.__version__})
       \end{itemize}
     \item Not having this information duplicated avoids errors
     \item Setuptools supports reading this from the code
@@ -434,11 +381,11 @@
 \end{frame}
 
 \begin{frame}[fragile, c]{Defining the version in code}
-  \inputcode[title=\mintinline{text}+escape_school21_demo/__init__.py+]{../escape_school21_demo/escape_school21_demo/__init__.py}{python}
+  \inputcode[title=\mintinline{text}+eschool21_demo/__init__.py+]{../eschool21_demo/eschool21_demo/__init__.py}{python}
 
   \begin{code}[title=setup.cfg]{ini}
     [metadata]
-    version = attr: escape_school21_demo.__version__
+    version = attr: eschool21_demo.__version__
   \end{code}
 
   This also works when \mintinline{text}+__init__.py+ already imports dependencies,
@@ -473,31 +420,13 @@
   \input{../../LICENSE}
 \end{frame}
 
-\begin{frame}[c]{BSD-3-Clause}
-  \small
-  Copyright <YEAR> <COPYRIGHT HOLDER>
-
-  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-
-  1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-
-  2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-  3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-
-  \tiny
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-\end{frame}
-
 \begin{frame}[c]{GPL and LGPL}
   \begin{itemize}
     \item Allows redistribution, modification, running, ...
     \item Requires that source code is always published for binary distributions
     \item Requires that derivative works are licensed under the same or a compatible license (copyleft)
-    \item According to the FSF, applications linking GPL licenses libraries are derivative works and thus must also
-      be licensed under the GPL / a compatible license
-    \item This claim is contentious and has not been finally resolved
-    \item The LGPL removes this point (so allows proprietary software to link LGPL licensed libraries).
+    \item If linking linking libraries constitutes a derivative work is contentious
+    \item The LGPL explicitly allows proprietary software to link LGPL licensed libraries
   \end{itemize}
 \end{frame}
 
@@ -519,6 +448,17 @@
 
 \section{Publishing Binary Wheels}
 \headlineframe{Publishing Binary Wheels}
+
+\begin{frame}[c]{Example Project using cython and numpy}
+  \begin{itemize}
+    \item Demo project in \mintinline{text}+school21/packaging/eschool21_cython_demo+
+    \item Using cython and numpy's cython API to build a C-extension
+    \item We need Cython and numpy at build time
+    \item We need to compile against the oldest supported numpy version
+      \inputcode[title=\texttt{pyproject.toml}]{../eschool21_cython_demo/pyproject.toml}{toml}
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[c]{Publishing Binary Wheels}
   \headline{\faIcon{windows} Windows}
   With python >= 3.5, things got a lot easier
@@ -634,7 +574,7 @@
     \item[conda build docs] \url{https://docs.conda.io/projects/conda-build}
 
     \medskip
-    \item[cibuildhweel] \url{https://github.com/pypa/cibuildwheel}
+    \item[cibuildwheel] \url{https://github.com/pypa/cibuildwheel}
     \item[auditwheel] \url{https://github.com/pypa/auditwheel}
     \item[delocate] \url{https://github.com/matthew-brett/delocate}
     \item[manylinux demo] \url{https://github.com/pypa/python-manylinux-demo}

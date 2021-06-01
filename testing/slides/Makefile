@@ -1,18 +1,18 @@
 TEXOPTIONS=--lualatex --halt-on-error --interaction=nonstopmode --shell-escape --output-directory=build
 
-all: build/packaging.pdf
+all: build/testing.pdf
 
 
-build/packaging.pdf: FORCE | build
+build/testing.pdf: FORCE | build
 	max_print_line=1048576 \
 	TEXINPUTS=../../.tex:../../.tex/beamertheme-vertex: \
-	latexmk $(TEXOPTIONS) packaging.tex
+	latexmk $(TEXOPTIONS) testing.tex
 
 
 preview: FORCE | build
 	max_print_line=1048576 \
 	TEXINPUTS=../../.tex:../../.tex/beamertheme-vertex: \
-	latexmk -pvc $(TEXOPTIONS) packaging.tex
+	latexmk -pvc $(TEXOPTIONS) testing.tex
 
 build:
 	mkdir -p build

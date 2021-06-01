@@ -2,5 +2,5 @@
 	path = docs/docs/themes/dream
 	url = https://github.com/g1eny0ung/hugo-theme-dream.git
 [submodule "packaging/slides/beamertheme-vertex"]
-	path = packaging/slides/beamertheme-vertex
+	path = .tex/beamertheme-vertex
 	url = https://github.com/maxnoe/beamertheme-vertex

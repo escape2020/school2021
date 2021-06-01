@@ -1,0 +1,544 @@
+\input{header_maxnoe.tex}
+\author[M. Nöthe]{Maximilian Nöthe}
+\title[Testing]{Testing \\ Test Driven Development \\ Continuous Integration}
+\date[2021-03-10]{Escape Summer School 2021 – 2021-06-10}
+\institute[TU Dortmund]{Astroparticle Physics, TU Dortmund}
+
+\begin{document}
+\maketitle
+
+\begin{frame}[c]{overview}
+  \tableofcontents
+\end{frame}
+
+\begin{frame}[c]{Warning}
+  \centering
+  \Large\color{vertexDarkRed}
+  \vspace{3\baselineskip}
+
+  \begin{columns}[onlytextwidth, c]%
+    \begin{column}{0.15\textwidth}%
+      \fontsize{60}{60}\selectfont%
+      \faIcon{biohazard}%
+    \end{column}%
+    \hfill%
+    \begin{column}{0.7\textwidth}%
+      \centering
+      Copying code from PDF files is dangerous \\
+    \end{column}%
+    \hfill%
+    \begin{column}{0.15\textwidth}%
+      \hfill%
+      \fontsize{60}{60}\selectfont%
+      \hfill\faIcon{radiation}%
+    \end{column}%
+  \end{columns}%
+
+  \vspace{2\baselineskip}
+  Copy from the example files in the repository or type by hand.
+\end{frame}
+
+\section{Introduction}
+\headlineframe{Introduction}
+
+\begin{frame}[c]{Automated Software Testing}
+  \begin{itemize}
+    \item Verifying that a software works as intended is crucial
+    \item Doing this manually using whatever method you can think of
+      \begin{itemize}
+        \item is very tedious
+        \item is errorprone
+        \item will result in the tests not being done most of the time
+      \end{itemize}
+    \item[$\Rightarrow$] We need automated tests that verify our software
+    \item Tests fall into three categories
+      \begin{enumerate}
+        \item Unit tests
+        \item Integration tests
+        \item Performance tests
+      \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Unit tests}
+  \begin{itemize}
+    \item Test single \enquote{units} of the code in isolation
+    \item Require modular design of the code base
+    \item Are the bedrock of any more complicated tests
+    \item Must be fast and easy to run $⇒$ or they would not be run most of the time
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Properties of good unit tests}
+  \begin{description}[Demonstrability]
+    \item[Existence] \faSmileWink[regular]
+    \item[Correctness] The code under test behaves according to requirements / specifications
+    \item[Completeness] The tests cover all required features / use cases
+    \item[Readability] Writing tests for tests would result in infinite recursion\\
+      $⇒$ tests must readable, so they can be easily verified by inspection
+    \item[Demonstrability] Good tests show how your code is meant to be used
+    \item[Resilience] Tests should only fail if what they test breaks
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Frameworks}
+  All modern languages have one or more frameworks for tests, a small selection:
+
+  \begin{description}[Python]
+    \item[Python] pytest
+    \item[C++] Catch2, GoogleTest
+    \item[Java] JUnit
+    \item[Rust] Part of the language
+    \item[Julia] \texttt{Test} module in the standard library
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Integration tests}
+  \begin{itemize}
+    \item Test that multiple \emph{units} are working together
+    \item E.\,g.\ testing a whole command line application
+    \item Can grow arbitrarily large / complicated
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Performance tests}
+  \begin{itemize}
+    \item Unit and integration tests usually only test the correctness of code
+    \item Performance tests make sure the code fulfills requirements and does not get slower
+    \item This introduction focuses on unit tests
+    \item See the profiling lecture for more information on how to actually measure performance
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c, fragile]{Example python code}
+  We are going to use this simple function as example for our first unit tests:
+  \inputcode[title=\texttt{examples/step1/fibonacci.py}]{./examples/step1/fibonacci.py}{python}
+\end{frame}
+
+\section{pytest}
+\headlineframe{pytest}
+
+\begin{frame}[c, fragile]{pytest}
+  \begin{itemize}
+    \item Standard framework for writing unit tests for Python projects
+    \item Uses the \mintinline{python}+assert+ statement for tests
+    \item Tests fail if an assertion fails or an exception is raised
+    \item Uses introspection of the assertion to give detailed error messages
+    \item Automatic test detection using patterns:
+      \begin{itemize}
+        \item Modules matching \mintinline{text}+test_*.py+ or \mintinline{text}+*_test.py+
+        \item Functions called \mintinline{text}+test*+
+        \item Methods named \mintinline{text}+test*+ of classes named \mintinline{text}+Test*+
+      \end{itemize}
+
+    \item Docs: \url{https://pytest.org}
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}[c, fragile]{First Unit Test}
+  \inputcode[title=\texttt{examples/step1/test\_fibonacci1.py}]{./examples/step1/test_fibonacci1.py}{python}
+
+  \inputcode{./examples/pytest_output.txt}{text}
+\end{frame}
+
+\begin{frame}[c]{A note on imports}
+  \inputcode[title=\texttt{examples/step1/test\_fibonacci1.py}]{./examples/step1/test_fibonacci1.py}{python}
+
+  \begin{itemize}
+    \item Against usual python style, you should import what you test in the test function
+    \item Like this, the test discovery of pytest will also work when the import would fail and the failure is reported as part of the test
+    \item Everything else, like standard library imports or third-party dependencies, is imported normally at the top
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Testing Exceptions}
+  Make sure the correct exception is thrown, e.\,g.\ for invalid input:
+  \inputcode[title=\texttt{examples/step2/fibonacci.py}]{./examples/step2/fibonacci.py}{python}[lastline=4]
+  \inputcode[title=\texttt{examples/step2/test\_exception.py}]{./examples/step2/test_exception.py}{python}
+
+  The same can be done for warnings using \mintinline{python}+pytest.warns+
+\end{frame}
+
+
+\begin{frame}[c, fragile]{Careful with floating point numbers}
+  \inputcode[title={Naive, this fails}]{./examples/floating/test_floating.py}{python}[firstline=3, lastline=4]
+  \inputcode[title={Correct approach, using \texttt{pytest.approx}}]{./examples/floating/test_floating.py}{python}[firstline=6]
+
+  See \url{https://0.30000000000000004.com/}
+\end{frame}
+
+\begin{frame}[c, fragile]{Using numpy testing utitlities}
+  \inputcode[title={Using numpy}]{./examples/floating/test_numpy.py}{python}
+  See \url{https://numpy.org/doc/stable/reference/routines.testing.html}
+\end{frame}
+
+\begin{frame}[c, fragile]{Using astropy quantity support}
+  \inputcode[title={Using astropy units}]{./examples/floating/test_astropy.py}{python}
+\end{frame}
+
+\begin{frame}[c]{Fixtures}
+  \begin{itemize}
+    \item Data and resources used by tests can be injected into tests using \enquote{fixtures}
+    \item Fixtures are provided by functions decorated with \texttt{@fixture}
+    \item Fixtures have a scope $⇒$ same object used per session, module, class or function
+    \item Default is \mintinline{python}+scope=function+
+  \end{itemize}
+  \inputcode{./examples/fixtures/test_fixtures.py}{python}
+\end{frame}
+
+\begin{frame}[c]{Fixtures provided by pytest}
+  pytest provides several builtin fixtures for
+  \begin{itemize}
+    \item temporary directories \mintinline{python}+tmp_path+ / \mintinline{python}+tmp_path_factory+
+    \item Testing output to stdout / stderr \mintinline{python}+capsys+
+    \item Testing logging \mintinline{python}+caplog+
+    \item Monkeypatching \mintinline{python}+monkeypatch+
+  \end{itemize}
+  More at \url{https://docs.pytest.org/en/6.2.x/fixture.html}
+\end{frame}
+
+\begin{frame}[c]{capsys – Fixture for testing the standard streams}
+  \inputcode{./examples/fixtures/test_capsys.py}{python}
+\end{frame}
+
+\begin{frame}[c]{caplog – Fixture for testing logging}
+  \inputcode{./examples/fixtures/test_logging.py}{python}
+\end{frame}
+
+\begin{frame}[c]{Temporary paths}
+  \begin{itemize}
+    \item For tests that need to create files, use the \mintinline{python}+tmp_path+ fixture \\
+      $⇒$ Avoids cluttering and conflicts when running tests multiple times / between tests
+    \item \mintinline{python}+tmp_path+ has scope test, so each test gets its own temporary directory
+    \item These directories are not cleaned up after the tests, so you can inspect the results
+    \item If you need a temporary path with a wider scope, add a new fixture using \mintinline{python}+tmp_path_factory+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Temporary paths}
+  \inputcode{./examples/fixtures/test_tmp_paths.py}{python}
+
+  Run the test and checkout \mintinline{bash}+/tmp/pytest-of-$USER/pytest-current/test_to_csvcurrent+
+\end{frame}
+
+\begin{frame}[c, fragile]{Fixtures that need a cleanup step}
+  \begin{itemize}
+    \item Sometimes, resources or data need to be cleaned up after the test have run
+    \item This can be implemented using a generator fixture that yields the data and cleans up after the yield
+  \end{itemize}
+
+  \begin{code}{python}
+    @pytest.fixture()
+    def database_connection():
+        connection = database.connect()
+        yield con
+        # close after use
+        connection.close()
+
+    @pytest.fixture()
+    def database_connection():
+        # even better, with a context manager
+        with database.connect() as con:
+            yield con
+  \end{code}
+\end{frame}
+
+\begin{frame}[c]{Parametrized Tests and Fixtures}
+  \begin{itemize}
+    \item Parametrization allows to run the same test on multiple inputs
+    \item Very useful to reduce code repetition and get clearer messages
+  \end{itemize}
+
+  \inputcode[title={A parametrized test}]{./examples/step3/test_parametrized.py}{python}
+\end{frame}
+
+
+\begin{frame}[c, fragile]{Conditional tests}
+  Some tests can only be run under specific conditions
+    \begin{itemize}
+      \item Tests for features requiring optional dependencies
+        \inputcode[title={This test is skipped when numpy is not available}]{./examples/test_skipped.py}{python}[firstline=5, lastline=7]
+      \item Tests for specific operating systems or versions
+        \inputcode[title={This test is only executed on Windows}]{./examples/test_skipped.py}{python}[firstline=9]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c, fragile]{Expected failures}
+  It sometimes makes sense to implement tests that are expected to fail:
+  \begin{itemize}
+    \item Planned but not yet implemented features
+    \item Known but not yet fixed bugs
+    \item These tests shouldn't make your whole test suite fail
+  \end{itemize}
+
+  \inputcode[title={This test is expected to fail}]{./examples/test_xfail.py}{python}
+\end{frame}
+
+\begin{frame}[c, fragile]{Choosing which tests to run}
+  pytest offers fine-grained control over which tests to run
+
+  \begin{itemize}
+    \item Select a specific test:
+      \begin{code}{bash}
+        $ pytest test_module.py::test_name
+      \end{code}
+    \item Run only tests that failed the last time pytest was run
+      \begin{code}{bash}
+        $ pytest --last-failed
+      \end{code}
+  \end{itemize}
+
+  \begin{columns}[onlytextwidth, c]%
+    \begin{column}{0.475\textwidth}%
+      \begin{itemize}
+        \item Stop after N failures
+      \end{itemize}
+    \end{column}%
+    \hfill%
+    \begin{column}{0.475\textwidth}%
+      \begin{code}{bash}
+        $ pytest --maxfail=2
+      \end{code}
+    \end{column}%
+  \end{columns}%
+
+  \begin{columns}[onlytextwidth, c]%
+    \begin{column}{0.475\textwidth}%
+      \begin{itemize}
+        \item Using matching expressions
+      \end{itemize}
+    \end{column}%
+    \hfill%
+    \begin{column}{0.475\textwidth}%
+      \begin{code}[nobeforeafter, width=\linewidth, box align=base]{bash}
+        $ pytest -k "fib"
+      \end{code}
+    \end{column}%
+  \end{columns}%
+
+  \begin{columns}[onlytextwidth, c]%
+    \begin{column}{0.475\textwidth}%
+      \begin{itemize}
+        \item Run tests for an installed package
+      \end{itemize}
+    \end{column}%
+    \hfill%
+    \begin{column}{0.475\textwidth}%
+      \begin{code}[nobeforeafter, width=\linewidth, box align=base]{bash}
+        $ pytest --pyargs fibonacci
+      \end{code}
+    \end{column}%
+  \end{columns}%
+\end{frame}
+
+\begin{frame}[c, fragile]{Choosing which tests to run – Using markers}
+  \begin{itemize}
+    \item Define markers in \texttt{pyproject.toml}
+      \begin{code}{toml}
+        [tool.pytest.ini_options]
+        markers = ["slow"]
+      \end{code}
+    \item Add the marker to a test
+      \inputcode{./examples/test_marks.py}{python}[firstline=4, lastline=7]
+    \item Run tests using marker expressions
+      \begin{code}{bash}
+        $ pytest -m "not slow"
+        $ pytest -m "slow"
+      \end{code}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c, fragile]{Debugging}
+  \begin{itemize}
+    \item Unit tests can be very useful for debugging
+
+    \item E.\,g.\ Write a new test that triggers the bug → investigate → make it pass
+
+    \item pytest allows you to jump into pdb when a test fails:
+      \begin{code}{bash}
+        $ pytest --pdb
+      \end{code}
+
+    \item or any other debugger, e.\,g.\ ipython's:
+      \begin{code}{bash}
+        $ pytest --pdb --pdbcls=IPython.terminal.debugger:TerminalPdb
+      \end{code}
+  \end{itemize}
+\end{frame}
+
+\section{Test Coverage}
+\headlineframe{Test Coverage}
+
+\begin{frame}[c, fragile]{Test Coverage}
+  \begin{itemize}
+    \item Test coverage is a metric measuring how much of the code is tested:
+      \begin{equation*}
+        \operatorname{coverage} = \frac{\text{Lines of code executed during tests}}{\text{Total lines of code}}
+      \end{equation*}
+    \item Can be helpful to find parts of code that are not tested (enough).
+    \item Especially useful in CI system to check that new / changed code is tested
+    \item One more badge \faSmileWink[regular]{}! \includegraphics[height=0.5cm]{badge.pdf}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c, fragile]{Create a coverage report}
+  \begin{itemize}
+    \item Print coverage after test suite
+      \begin{code}{bash}
+        $ pytest --cov=fibonacci
+      \end{code}
+    \item Create a detailed report in html format
+      \begin{code}{bash}
+        $ pytest --cov=fibonacci --cov-report=html
+      \end{code}
+    \item Serve the report using python's built-in http server and explore in the browser:
+      \begin{code}{bash}
+        $ python -m http.server -d htmlcov
+      \end{code}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c, fragile]{Limitations of line coverage}
+  Executed number of lines of code are not a perfect measure.
+  \begin{code}{python}
+    if some_condition is True:
+        do_stuff()
+    do_other_stuff()
+  \end{code}
+
+  \onslide<2->{%
+    When during the tests \mintinline{python}+some_condition is True+, this code will have 100\,\% coverage.
+    \bigskip
+    But what about \mintinline{python}+some_condition is not True+?
+  }
+
+  \onslide<3->
+
+  \begin{code}{python}
+    result = scipy.optimize.minimize(likelihood, ...)
+  \end{code}
+
+  \onslide<4->
+  Calling functions from other packages can have arbitrarily many branches
+  \begin{code}[title={Run pytest with branch coverage}]{bash}
+    $ pytest --cov=fibonacci --cov-report=html --cov-branch
+  \end{code}
+\end{frame}
+
+\section{Mocking / Monkeypatching}
+\headlineframe{Mocking / Monkeypatching}
+\begin{frame}[c]{Mocking / Monkeypatching}
+  \begin{itemize}
+    \item Sometimes, classes or functions have behaviour that prevents unit testing
+    \item E.\,g.\ code that speaks to specific hardware, makes web requests, relies on system time ...
+    \item This is usually a sign of insufficient modularization / separation of concerns
+    \item A solution can be mocking or monkeypatching, if it is not possible to improve the actual code
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Mocking / Monkeypatching}
+  \inputcode{./examples/test_monkeypatching.py}{python}
+\end{frame}
+
+\section{Test Driven Development}
+\headlineframe{Test Driven Development}
+
+\begin{frame}[c]{Test Driven Development (TDD)}
+  \begin{itemize}
+    \item Test Driven Development is a powerful paradigm
+    \item Essentially, to implement a new feature
+      \begin{enumerate}
+        \item Write the tests before any implementation code
+        \item Run the tests → they should all fail
+        \item Write the minimal implementation that makes the test pass
+        \item All tests should now pass
+        \item Cleanup, refactor, tests must keep passing
+      \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Test Drive Development}
+  \begin{itemize}
+    \item TDD forces you to think about requirements and API \emph{before} writing the actual code
+    \item Especially usefull when
+      \begin{itemize}
+        \item you have clear specifications
+        \item investigating / trying to fix a bug
+        \item working on a new greenfield project
+      \end{itemize}
+    \item Not so easy to use when
+      \begin{itemize}
+        \item working in a large, historic codebase without good test coverage
+        \item doing explorative work
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\section{Doctests}
+\headlineframe{Doctests}
+
+\begin{frame}[c, fragile]{Doctests}
+  \begin{itemize}
+    \item Examples are an important part of every documentations
+      \inputcode{../fibonacci/fibonacci/__init__.py}{python}[firstline=1, lastline=8]
+    \item Important to verify that the examples stay up to date and are correct
+    \item Solution: run all the examples and check the expected output
+      \begin{code}{bash}
+        $ pytest --doctest-glob="*.rst" --doctest-modules
+      \end{code}
+    \item This will find and execute code blocks in docstrings and documentation rst-files
+    \item Checks the output is what is expected
+  \end{itemize}
+\end{frame}
+
+\section{Continuous Integration}
+\headlineframe{Continuous Integration}
+\begin{frame}[c]{Continuous Integration}
+  \begin{itemize}
+    \item CI systems run the build, unit tests and code quality checks automatically
+    \item They should run for each push event / opened pull request
+    \item All architectures, operating systems and versions you support should be tested
+    \item Many tools provide detailed reporting that help with code reviews
+    \item You should require the passing of the CI system for pull requests
+    \item All providers also support encrypted secrets for confidential information\\
+      \begin{itemize}
+        \item Automatize upload of releases
+        \item Access private data needed for tests
+        \item ...
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Providers}
+  \begin{description}[Github Actions\hspace{2em}]
+    \item[GitHub Actions]
+      \begin{itemize}
+        \item Free for all public GitHub repositories
+        \item Linux, Mac and Windows builds
+        \item Support for custom runners that you can self-host
+        \item Recommended for projects on GitHub
+      \end{itemize}
+    \item[GitLab CI]
+      \begin{itemize}
+        \item 400 minutes of build time per month with gitLab.com Free
+        \item Runners need to be setup for self-hosted GitLabs
+      \end{itemize}
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{A minimal github actions example}
+  \begin{itemize}
+    \item See the demo project at \url{https://github.com/maxnoe/pyfibonacci}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{Some CI helpful Tools}
+  \begin{description}[\url{https://reviewnb.com/}]
+    \item[\url{https://codecov.io/}] Explore coverage reports and adds coverage checks to pull requests
+    \item[\url{https://reviewnb.com/}] Makes reviewing jupyter notebooks easier / possible
+    \item[\url{https://codacy.com/}] Static code analysis, e.\,g.\ style linting
+  \end{description}
+\end{frame}
+\end{document}

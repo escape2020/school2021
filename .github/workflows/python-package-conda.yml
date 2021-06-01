@@ -1,4 +1,4 @@
-name: Python Package using Conda
+name: Tests
 
 on: [push, pull_request]
 
@@ -36,22 +36,18 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
+
+    - name: Run tests in testing demo project
       shell: bash -leo pipefail {0}
       run: |
-        pytest
+        cd testing/fibonacci
+        python -m pytest --cov=fibonacci --doctest-modules --doctest-glob='*.rst' -v
+        cd ../slides/examples
+        python -m pytest -k 'not naive' -v
 
     - name: Test packaging demo packages
       shell: bash -leo pipefail {0}
       run: |
-        python -m build packaging/escape_school21_demo
-        python -m build packaging/eschool21_wheel_demo
-        conda build packaging/eschool21_wheel_demo/conda-recipe
-
-    - name: Build slides
-      shell: bash -leo pipefail {0}
-      run: |
-        pip install https://github.com/maxnoe/texlive-batch-installation/archive/refs/tags/v0.3.0.tar.gz
-        install_texlive -p $HOME/texlive -t 2021 --collections="-a" --package-file packaging/slides/tex-packages.txt --update
-        export PATH="$HOME/texlive/2021/bin/x86_64-linux:$PATH"
-        make -C packaging/slides
+        python -m build packaging/eschool21_demo
+        python -m build packaging/eschool21_cython_demo
+        conda build packaging/eschool21_cython_demo/conda-recipe

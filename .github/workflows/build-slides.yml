@@ -1,0 +1,29 @@
+name: Build LaTeX Slides
+
+on: [push, pull_request]
+
+jobs:
+  build-slides:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Add conda to system path
+      run: |
+        # $CONDA is an environment variable pointing to the root of the miniconda directory
+        echo $CONDA/bin >> $GITHUB_PATH
+
+    - name: Build slides
+      run: |
+        pip install 'pygments>=2.4' https://github.com/maxnoe/texlive-batch-installation/archive/refs/tags/v0.3.0.tar.gz
+        install_texlive -p $HOME/texlive -t 2021 --collections="-a" --package-file .tex/tex-packages.txt --update
+        export PATH="$HOME/texlive/2021/bin/x86_64-linux:$PATH"
+        make -C packaging/slides
+        make -C testing/slides
