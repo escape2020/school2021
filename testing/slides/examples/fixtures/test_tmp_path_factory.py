@@ -13,4 +13,4 @@ def test_to_csv(my_tmp_path):
     t.write(my_tmp_path / 'test.csv')
 
     read = Table.read(my_tmp_path / 'test.csv')
-    assert np.all(read != t)
+    assert np.all(read == t)
