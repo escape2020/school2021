@@ -36,7 +36,7 @@ If you cloned without recursive and need the submodules, run
 ```
 git submodules update --init --recursive
 ```
-o
+
 ### Setup the conda environment
 
 ```
