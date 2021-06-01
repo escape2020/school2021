@@ -38,6 +38,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     - name: Run tests in testing demo project
+      shell: bash -leo pipefail {0}
       run: |
         cd testing/fibonacci
         python -m pytest --cov=fibonacci --doctest-modules --doctest-glob='*.rst' -v
