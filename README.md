@@ -16,9 +16,9 @@ https://escape2020.github.io/school2021/
 ![env workflow](https://github.com/escape2020/school2021/actions/workflows/python-package-conda.yml/badge.svg)
 
 
-### Install anaconda
+### Install anaconda and mamba
 
-[Go to anaconda](https://www.anaconda.com/products/individual) and install it.
+[Go to anaconda](https://www.anaconda.com/products/individual) and follow install instructions for your OS.
 
 
 ### clone the repository
