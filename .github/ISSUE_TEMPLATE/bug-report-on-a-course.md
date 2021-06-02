@@ -7,6 +7,8 @@ assignees: ''
 
 ---
 
+Please, make sure this issue has not been reported in [the (open and closed) issues](https://github.com/escape2020/school2021/issues?q=is%3Aissue+) already.
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
