@@ -6,6 +6,7 @@ dependencies:
   - anaconda-client
   - astropy=4.2
   - conda-build
+  - conda-verify
   - cython
   - h5py
   - ipython
