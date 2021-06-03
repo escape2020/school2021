@@ -28,7 +28,18 @@ dependencies:
   - tqdm
   - twine
   - wheel
-  - zfit>0.5,<0.7
-  - phasespace>1.0,<1.4
+  # for zfit
+  - iminuit
+  - nlopt
+  - numdifftools
+  - tensorflow
+  - tensorflow-probability
+  - texttable
+  - ordered-set
+  - tabulate
+  - uproot
+  - dotmap
   - pip:
+    - zfit>0.5,<0.7
+    - phasespace>1.0,<1.4
     - build
