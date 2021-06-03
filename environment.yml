@@ -16,6 +16,7 @@ dependencies:
   - numba
   - numpy=1.19 # needed for tensorflow, as installed by zfit/phasespace
   - pandas
+  - flake8
   - pip
   - pytables
   - pytest
@@ -32,8 +33,6 @@ dependencies:
   - iminuit
   - nlopt
   - numdifftools
-  - tensorflow
-  - tensorflow-probability
   - texttable
   - ordered-set
   - tabulate
