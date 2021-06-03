@@ -14,10 +14,9 @@ dependencies:
   - matplotlib
   - seaborn
   - numba
-  - numpy
+  - numpy=1.19 # needed for tensorflow, as installed by zfit/phasespace
   - pandas
   - pip
-  - pyerfa=1.7.3
   - pytables
   - pytest
   - pytest-cov

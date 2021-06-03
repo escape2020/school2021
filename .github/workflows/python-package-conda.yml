@@ -3,10 +3,12 @@ name: Tests
 on: [push, pull_request]
 
 jobs:
-  build-linux:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ${{ matrix.os }}
     strategy:
       max-parallel: 5
+      matrix:
+        os: ["ubuntu-latest", "macos-latest"]
 
     steps:
     - uses: actions/checkout@v2
