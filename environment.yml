@@ -1,6 +1,7 @@
 name: eschool2021
 channels:
   - default
+  - conda-forge
 dependencies:
   - anaconda-client
   - astropy
