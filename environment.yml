@@ -28,5 +28,4 @@ dependencies:
   - twine
   - wheel
   - pip:
-    - phasespace>1.0,<1.4
     - build
