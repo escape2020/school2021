@@ -21,7 +21,7 @@ dependencies:
   - pytest-cov
   - python=3.9
   - pyyaml
-  - scikit-hep>=3.2.0,<3.3
+  - scikit-hep>3.1,<3.3
   - scikit-learn
   - scipy
   - tqdm
