@@ -2,9 +2,10 @@ name: Tests
 
 on: [push, pull_request]
 
+
 jobs:
-  build-linux:
-    runs-on: [ubuntu-latest, macOS-latest]
+  build:
+    runs-on: [ubuntu-latest, macos-latest]
     strategy:
       max-parallel: 5
 
