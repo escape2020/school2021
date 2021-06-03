@@ -41,7 +41,8 @@ git submodules update --init --recursive
 
 ```
 cd school2021
-conda env create -f environment.yml
+conda install mamba -n base -c conda-forge
+mamba env create -f environment.yml
 conda activate eschool2021
 ```
 
