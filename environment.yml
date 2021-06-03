@@ -28,7 +28,7 @@ dependencies:
   - tqdm
   - twine
   - wheel
+  - zfit>0.5,<0.7
+  - phasespace>1.0,<1.4
   - pip:
     - build
-    - phasespace>1.0,<1.4
-    - zfit>0.5,<0.7
