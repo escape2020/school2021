@@ -13,18 +13,17 @@ jobs:
         python-version: ["3.9"]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: conda-incubator/setup-miniconda@v2
       with:
         submodules: recursive
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
-    - name: Add conda to system path
+        auto-update-conda: true
+        python-version: ${{ matrix.python-version }}
+    - name: conda setup
       run: |
         # $CONDA is an environment variable pointing to the root of the miniconda directory
         echo $CONDA/bin >> $GITHUB_PATH
         echo "source $CONDA/etc/profile.d/conda.sh" >> $HOME/.bash_profile
+        conda info
 
     - name: Install dependencies
       shell: bash -leo pipefail {0}
