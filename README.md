@@ -34,7 +34,8 @@ the web page. You can leave it out in case you don't want to build the slides or
 
 If you cloned without recursive and need the submodules, run
 ```
-git submodules update --init --recursive
+cd school2021
+git submodule update --init --recursive
 ```
 
 ### Setup the conda environment
