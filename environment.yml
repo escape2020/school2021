@@ -39,6 +39,7 @@ dependencies:
   - uproot
   - dotmap
   - pip:
+    - pyerfa
     - zfit>0.6,<0.8
     - phasespace>1.0,<1.4
     - build
