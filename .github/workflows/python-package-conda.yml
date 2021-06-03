@@ -4,10 +4,13 @@ on: [push, pull_request]
 
 
 jobs:
-  build-linux:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ${{ matrix.os }}
     strategy:
       max-parallel: 5
+      matrix:
+        os: ["ubuntu-latest", "macos-latest", "windows-latest"]
+        python-version: ["3.9"]
 
     steps:
     - uses: actions/checkout@v2
@@ -53,29 +56,3 @@ jobs:
         python -m build packaging/eschool21_cython_demo
         conda build packaging/eschool21_cython_demo/conda-recipe
 
-
-  build-macos:
-     runs-on: macos-latest
-     strategy:
-       max-parallel: 5
-
-     steps:
-       - uses: actions/checkout@v2
-         with:
-           submodules: recursive
-       - name: Set up Python 3.8
-         uses: actions/setup-python@v2
-         with:
-           python-version: 3.8
-       - name: Add conda to system path
-         run: |
-           # $CONDA is an environment variable pointing to the root of the miniconda directory
-           echo $CONDA/bin >> $GITHUB_PATH
-           echo "source $CONDA/etc/profile.d/conda.sh" >> $HOME/.bash_profile
-
-       - name: Install dependencies
-         shell: bash -leo pipefail {0}
-         run: |
-           conda install mamba -n base -c conda-forge
-           mamba env create --file environment.yml --name eschool2021
-           echo "conda activate eschool2021" >> $HOME/.bash_profile
