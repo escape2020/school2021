@@ -29,6 +29,10 @@ dependencies:
   - twine
   - wheel
   # for zfit
+  - colored
+  - colorlog
+  - grpcio
+  - keras
   - iminuit
   - nlopt
   - numdifftools
