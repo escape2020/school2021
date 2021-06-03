@@ -21,7 +21,7 @@ jobs:
         auto-update-conda: true
         python-version: 3.9
         mamba-version: "*"
-        channels: conda-forge-defaults
+        channels: conda-forge,defaults
         activate-environment: eschool2021
         environment-file: environment.yml
 
