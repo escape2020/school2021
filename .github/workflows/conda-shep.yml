@@ -1,0 +1,35 @@
+name: Tests
+
+on: [push, pull_request]
+
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      max-parallel: 5
+      matrix:
+        os: ["ubuntu-latest", "macos-latest"]
+        python-version: ["3.9"]
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        auto-update-conda: true
+        python-version: ${{ matrix.python-version }}
+    - name: Add conda to system path
+      run: |
+        # $CONDA is an environment variable pointing to the root of the miniconda directory
+        echo $CONDA/bin >> $GITHUB_PATH
+        echo "source $CONDA/etc/profile.d/conda.sh" >> $HOME/.bash_profile
+        conda info
+
+    - name: Install dependencies
+      shell: bash -leo pipefail {0}
+      run: |
+        conda install mamba -n base -c conda-forge
+        mamba env create --file scikit-hep/environment.yml --name eschool2021_shep
+        echo "conda activate eschool2021_shep" >> $HOME/.bash_profile
+
