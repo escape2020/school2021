@@ -4,7 +4,7 @@ channels:
   - conda-forge
 dependencies:
   - anaconda-client
-  - astropy
+  - astropy=4.2
   - conda-build
   - cython
   - h5py
@@ -16,7 +16,7 @@ dependencies:
   - numpy
   - pandas
   - pip
-  - pyerfa
+  - pyerfa=1.7
   - pytables
   - pytest
   - pytest-cov
