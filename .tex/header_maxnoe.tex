@@ -15,7 +15,10 @@
 \usepackage[autostyle]{csquotes}
 
 \usepackage{fontspec}
+\usepackage{fontawesome5}
 \usepackage{graphicx}
+
+\usepackage{tabu}
 
 \usepackage[outputdir=build]{minted}
 \usepackage{xcolor}
@@ -26,9 +29,13 @@
 \tcbuselibrary{xparse}
 \usepackage{accsupp}
 
+\usepackage{tikz}
+\usetikzlibrary{
+  graphs, arrows, positioning, graphdrawing
+}
+
 \usepackage{bookmark}
 \usepackage[shortcuts]{extdash}
-\usepackage{fontawesome5}
 
 
 \definecolor{positive}{HTML}{15B01A}
@@ -92,4 +99,36 @@
     numbersep=3mm
   },
   #1
+}
+
+\newcommand\copywarning{%
+  \begin{frame}[c]{Warning}%
+    \centering%
+    \Large\color{vertexDarkRed}%
+    \vspace{3\baselineskip}
+
+    \begin{columns}[onlytextwidth, c]%
+      \begin{column}{0.15\textwidth}%
+        \fontsize{60}{60}\selectfont%
+        \faIcon{biohazard}%
+      \end{column}%
+      \hfill%
+      \begin{column}{0.7\textwidth}%
+        \centering
+        Copying commands or code from PDF files is\\ \textbf{dangerous}
+      \end{column}%
+      \hfill%
+      \begin{column}{0.15\textwidth}%
+        \hfill%
+        \fontsize{60}{60}\selectfont%
+        \hfill\faIcon{radiation}%
+      \end{column}%
+    \end{columns}%
+
+    \vspace{2\baselineskip}
+    Copy from the example files in the repository or type by hand.
+
+    \bigskip
+    Typing by hand is best for learning.
+  \end{frame}
 }

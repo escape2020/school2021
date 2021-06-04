@@ -1,42 +1,20 @@
 \input{header_maxnoe.tex}
 \author[M. Nöthe]{Maximilian Nöthe}
-\title[Testing]{Testing \\ Test Driven Development \\ Continuous Integration}
-\date[2021-03-10]{Escape Summer School 2021 – 2021-06-10}
+\title[Testing]{Unit Testing \\ Test Driven Development \\ Continuous Integration}
+\date[2021-06-10]{%
+  \raisebox{-1.5cm}{\includegraphics[height=3cm]{../../logo-Escape_cropped.png}}
+  \Large Summer School – 2021-06-10
+}
 \institute[TU Dortmund]{Astroparticle Physics, TU Dortmund}
 
 \begin{document}
 \maketitle
 
-\begin{frame}[c]{overview}
+\begin{frame}[c]{Overview}
   \tableofcontents
 \end{frame}
 
-\begin{frame}[c]{Warning}
-  \centering
-  \Large\color{vertexDarkRed}
-  \vspace{3\baselineskip}
-
-  \begin{columns}[onlytextwidth, c]%
-    \begin{column}{0.15\textwidth}%
-      \fontsize{60}{60}\selectfont%
-      \faIcon{biohazard}%
-    \end{column}%
-    \hfill%
-    \begin{column}{0.7\textwidth}%
-      \centering
-      Copying code from PDF files is dangerous \\
-    \end{column}%
-    \hfill%
-    \begin{column}{0.15\textwidth}%
-      \hfill%
-      \fontsize{60}{60}\selectfont%
-      \hfill\faIcon{radiation}%
-    \end{column}%
-  \end{columns}%
-
-  \vspace{2\baselineskip}
-  Copy from the example files in the repository or type by hand.
-\end{frame}
+\copywarning{}
 
 \section{Introduction}
 \headlineframe{Introduction}
@@ -182,7 +160,7 @@
     \item Data and resources used by tests can be injected into tests using \enquote{fixtures}
     \item Fixtures are provided by functions decorated with \texttt{@fixture}
     \item Fixtures have a scope $⇒$ same object used per session, module, class or function
-    \item Default is \mintinline{python}+scope=function+
+    \item Default is \mintinline{python}+scope="function"+
   \end{itemize}
   \inputcode{./examples/fixtures/test_fixtures.py}{python}
 \end{frame}
@@ -210,7 +188,7 @@
   \begin{itemize}
     \item For tests that need to create files, use the \mintinline{python}+tmp_path+ fixture \\
       $⇒$ Avoids cluttering and conflicts when running tests multiple times / between tests
-    \item \mintinline{python}+tmp_path+ has scope test, so each test gets its own temporary directory
+    \item \mintinline{python}+tmp_path+ has scope \emph{function}, so each test gets its own temporary directory
     \item These directories are not cleaned up after the tests, so you can inspect the results
     \item If you need a temporary path with a wider scope, add a new fixture using \mintinline{python}+tmp_path_factory+
   \end{itemize}
@@ -232,15 +210,15 @@
     @pytest.fixture()
     def database_connection():
         connection = database.connect()
-        yield con
+        yield connection
         # close after use
         connection.close()
 
     @pytest.fixture()
     def database_connection():
         # even better, with a context manager
-        with database.connect() as con:
-            yield con
+        with database.connect() as connection:
+            yield connection
   \end{code}
 \end{frame}
 

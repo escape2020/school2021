@@ -1,7 +1,10 @@
 \input{header_maxnoe.tex}
 \author[M. Nöthe]{Maximilian Nöthe}
 \title[Packaging]{Packaging and Distributing Python Projects}
-\date[2021-06-10]{Escape Summer School – 2021-06-10}
+\date[2021-06-10]{%
+  \raisebox{-1.5cm}{\includegraphics[height=3cm]{../../logo-Escape_cropped.png}}
+  \Large Summer School – 2021-06-10
+}
 \institute[TU Dortmund]{Astroparticle Physics, TU Dortmund}
 
 \begin{document}
@@ -12,32 +15,7 @@
   \tableofcontents
 \end{frame}
 
-\begin{frame}[c]{Warning}
-  \centering
-  \Large\color{vertexDarkRed}
-  \vspace{3\baselineskip}
-
-  \begin{columns}[onlytextwidth, c]%
-    \begin{column}{0.15\textwidth}%
-      \fontsize{60}{60}\selectfont%
-      \faIcon{biohazard}%
-    \end{column}%
-    \hfill%
-    \begin{column}{0.7\textwidth}%
-      \centering
-      Copying code from PDF files is dangerous \\
-    \end{column}%
-    \hfill%
-    \begin{column}{0.15\textwidth}%
-      \hfill%
-      \fontsize{60}{60}\selectfont%
-      \hfill\faIcon{radiation}%
-    \end{column}%
-  \end{columns}%
-
-  \vspace{2\baselineskip}
-  Copy from the example files in the repository or type by hand.
-\end{frame}
+\copywarning{}
 
 \section{Introduction}
 

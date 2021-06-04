@@ -1,0 +1,425 @@
+
+\section{Git}
+\headlineframe{
+    \includegraphics[width=0.7\textwidth]{logos/git.pdf}
+}
+\begin{frame}[c]
+    \begin{columns}[onlytextwidth, c]%
+      \begin{column}{0.3\textwidth}%
+        \includegraphics[width=\textwidth]{build/figures/xkcd_git.png}\\%
+        \small \href{https://xkcd.com/1597/}{R. Munroe, xkcd.com/1597}
+      \end{column}%
+      \hfill%
+      \begin{column}{0.695\textwidth}%
+        \begin{itemize}
+          \item Created by Linus Torvalds in 2005 for the \href{https://github.com/torvalds/linux}{Linux Kernel}
+          \item Most widely used VCS in FOSS
+          \item Distributed, allows offline usage
+          \item Much better branching model than precursors like SVN
+        \end{itemize}
+      \end{column}%
+    \end{columns}%
+\end{frame}
+
+\headlineframe{The Git Repository}
+\begin{frame}{Central Concept: Repository}
+  \begin{itemize}
+    \item \texttt{git init} creates a git repository in the current working directory
+    \item All git data is stored in the \texttt{.git} directory.
+    \item Git has three different areas, data can reside in:
+  \end{itemize}
+
+  \centering
+  \begin{tikzpicture}[
+      line width=1.5,
+      gitstep/.style={
+        draw,
+        rounded corners,
+        thick,
+        minimum width=4cm,
+        minimum height=1.2cm,
+      },
+    ]
+    \node (wd) at (0, 0) [gitstep, fill=red!20, visible on=<1->] {Working directory};
+    \node (idx) [gitstep, fill=yellow!20, below=0.4cm of wd] {Staging};
+    \node (hist) [gitstep, fill=green!20, below=0.4cm of idx] {History};
+    \node [right=1cm of wd, text width=0.5\textwidth, align=flush left] {
+      What actually is on disk in the current working directory. 
+    };
+    \node [right=1cm of idx, text width=0.5\textwidth, align=flush left] {
+      Changes that are saved to go into the next commit.
+    };
+    \node [right=1cm of hist, text width=0.5\textwidth, align=flush left] {
+      The history of the project. All changes ever made. A \emph{Directed Acyclic Graph} of commits.
+    };
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Central Concept: Repository}
+
+  \vspace{3em}
+  \centering
+  \begin{tikzpicture}[
+      line width=1.5,
+      gitstep/.style={
+        draw,
+        rounded corners,
+        thick,
+        minimum width=4cm,
+        minimum height=1.2cm,
+      },
+    ]
+    \node (wd) at (0, 0) [gitstep, fill=red!20, visible on=<1->] {Working directory};
+    \node (idx) [gitstep, fill=yellow!20, visible on=<1->, below=0.4cm of wd] {Staging};
+    \node (hist) [gitstep, fill=green!20, visible on=<1->, below=0.4cm of idx] {History};
+    \draw[thick,->, visible on=<2->] (wd.east) to[out=0,in=0] node[right] {\texttt{git add}} (idx.east);
+    \draw[thick,->, visible on=<3->] (idx.west) to[out=180,in=180] node[left] {\texttt{git commit}} (hist.west);
+  \end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}{Remotes}
+  Remotes are central places, e.\,g.\ servers, where repositories can be saved and which can be used to synchronize different clients.
+  \begin{center}
+  \begin{tikzpicture}[line width=1.5]
+    \node (hist) [draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=green!20] {History};
+    \node (remote) [below=0.4cm of hist,draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=blue!20] {Remote};
+    \draw[thick,->] (hist.east) to[out=0,in=0] node[right] {\texttt{git push}} (remote.east);
+    \draw[thick,->] (remote.west) to[out=180,in=180] node[left] {\texttt{git fetch}} (hist.west);
+  \end{tikzpicture}
+  \end{center}
+
+  \texttt{git remote add <name> <url>}
+
+  Your default remote is canonically named \texttt{origin}. \\
+  \texttt{\small git remote add origin https://github.com/escape2020/school2021}
+
+  The main repository of a forked project is canonically called \texttt{upstream}\\
+  \texttt{\small git remote add upstream https://github.com/matplotlib/matplotlib}
+\end{frame}
+
+\begin{frame}[fragile]{Most common commands}
+
+  A bit our plan for today.
+
+  \centering
+  \begin{tikzpicture}[
+      line width=1.5,
+      gitstep/.style={
+        draw,
+        rounded corners,
+        thick,
+        minimum width=4cm,
+        minimum height=1.2cm,
+      },
+    ]
+    \node (wd) at (0, 0) [gitstep, fill=red!20, visible on=<1->] {Working directory};
+    \node (idx) [gitstep, fill=yellow!20, visible on=<1->, below=0.4cm of wd] {Staging};
+    \node (hist) [gitstep, fill=green!20, visible on=<1->, below=0.4cm of idx] {History};
+    \node (remote) [below=0.4cm of hist,draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=blue!20] {Remote};
+
+    \draw[thick,<-] ([yshift=-0.15cm] wd.east) to[out=0,in=0] node[right] {\texttt{git reset}} (idx.east);
+    \draw[thick,->] ([yshift=-0.15cm] idx.west) to[out=180,in=180] node[left] {\texttt{git commit}} ([yshift=0.15cm]hist.west);
+
+    \draw[thick,->, text width=12em] ([yshift=0.15cm] hist.east) to[out=0, in=0, looseness=3.2] node[right]{\texttt{%
+      git restore\\
+      git switch\\
+      git checkout
+    }} ([yshift=0.15cm]wd.east);
+    \draw[thick,<-] ([yshift=0.15cm] idx.west) to[out=180, in=180] node[left]{\texttt{git add}} (wd.west);
+
+    \draw[thick,<-] ([yshift=-0.15cm] hist.east) to[out=0,in=0] node[right] {\texttt{git fetch}} (remote.east);
+    \draw[thick,<-] (remote.west) to[out=180,in=180] node[left] {\texttt{git push}} ([yshift=-0.15cm]hist.west);
+  \end{tikzpicture}
+
+  \mintinline{text}+git pull = git fetch && git merge <default remote>/<branch>+
+\end{frame}
+
+
+\begin{frame}{History}
+  \only<1-2>{
+    \begin{tikzpicture}
+      \graph [
+        grow right=1.5cm,
+        nodes={
+          blue!70!black,
+          node font=\ttfamily,
+        },
+      ]{
+        "v1.0.0" [visible on=<4->, green!60!black, x=6];
+        a <- b <- c <- d <- main [vertexDarkRed];
+        c <-[visible on=<2>] "\strut e"[x=4.5, visible on=<2>] <-[visible on=<2>] foo [vertexDarkRed, visible on=<2>, x=4.1];
+      };
+    \end{tikzpicture}
+  }
+  \only<3->{
+    \begin{tikzpicture}
+      \graph [
+        grow right=1.5cm,
+        nodes={
+          blue!70!black,
+          node font=\ttfamily,
+        },
+      ]{
+        "v1.0.0" [visible on=<4->, green!60!black, x=6],
+        "\strut a" <- b <- c <- {
+          d <- f,
+          "\strut e",
+        } <- g [x=0] <- h <- {i <-[visible on=<2->] main [vertexDarkRed, visible on=<3->]};
+        "v1.0.0" ->[visible on=<4->] f;
+      };
+    \end{tikzpicture}
+  }
+
+  \begin{itemize}
+    \item<1-> \textcolor{blue}{Commit}: State/Content at a given time
+      \begin{itemize}
+        \item Contains a commit message to describe the changes
+        \item Always points to its parent(s)
+        \item Is identified by a hash of the content, message, author, parent(s), time
+      \end{itemize}
+    \item<2-> \textcolor{vertexDarkRed}{Branch}: A named pointer to a commit
+      \begin{itemize}
+        \item Development branches
+        \item Default branch: \texttt{master} or \texttt{main}
+        \item Moves to the next child if a commit is added
+      \end{itemize}
+    \item<4-> \textcolor{green!60!black}{Tag}: Fixed, named pointer to a commit
+      \begin{itemize}
+        \item For important revisions, e.g. release versions or version used for a certain paper
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Typical single-branch workflow}
+
+  \begin{enumerate}
+    \item[0.] Get / create / update the repository
+      \begin{description}[if exists]
+        \item[If new] Create or clone repository : \texttt{git init}, \texttt{git clone <url>}
+        \item[If exists] \texttt{git pull}
+      \end{description}
+    \item Work
+      \begin{enumerate}
+        \item Edit files and build/test
+        \item Add changes to the next commit: \texttt{git add}
+        \item Save added changes in the history as \emph{commit}: \texttt{git commit}
+      \end{enumerate}
+    \item Download commits that happend in the meantime: \texttt{git pull}
+    \item Upload your own: \texttt{git push}
+    \item Go back to 1
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{\texttt{git init}, \texttt{git clone}}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    git init          & Creates a new git repo in the CWD \\
+    git clone <url>   & Clones (downloads) the repo from url \\
+    rm -rf .git       & Deletes all traces of git from the directory,\newline \faExclamationTriangle this is not recoverable locally
+  \end{tabu}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{git status}}
+  \begin{itemize}
+    \item Shows current branch and new, modified, added files
+    \item Make a habit of calling \mintinline{text}+git status+ often
+    \item Concise version with \mintinline{text}+git status -s+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c, fragile]{\texttt{git log}}
+  \begin{itemize}
+    \item Shows author information, date, hash, message
+    \item Supports commit ranges: \mintinline{text}+git log <a>..<b>+ \\
+      (All commits reachable from \texttt{<b>} but not from \texttt{<a>})
+    \item More concise log, helpful for use with \texttt{grep} \\
+      \mintinline{text}+git log --oneline+
+    \item Showing branches in \enquote{ASCII art}: \\
+      \mintinline{text}+git log --all --decorate --graph+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{\texttt{git add}, \texttt{git mv}, \texttt{git rm}, \texttt{git reset}}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    git add <file> … & Add files to the staging \\
+    git add -p …     & Powerfull tool to only add parts of a file \\
+    git mv           & like \texttt{mv}, stages automatically \\
+    git rm           & like \texttt{rm}, stages automatically \\
+    git reset <file> & Removes changes/files from the staging area
+  \end{tabu}
+\end{frame}
+
+\begin{frame}{\texttt{git commit}}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    git commit                       & Create a new commit from the changes in the staging area, opens editor for the commit message \\
+    git commit -m "\textit{message}" & Create a new commit, directly giving the message \\
+    git commit --amend               & Change the last commit (Adds staging to last commit, edit message)
+  \end{tabu}
+  \alert{\bfseries Never change commits that are already pushed to the main branch} 
+\end{frame}
+
+\begin{frame}[fragile]{What is a good commit?}
+  \begin{itemize}
+    \item Style guide for commit messages:
+      \begin{code}{text}
+        Subject line, short description, best < 60 characters
+
+        After one empty line, a detailed description of the commit.
+        Explain why the change was necessary and give details.
+        * Use bullet point lists for stuff
+        * Link releveant issues, #2
+
+        Give credit to other people when working together:
+        Co-authored-by: Thomas Vuillaume <thomas.vuillaume@lapp.in2p3.fr>
+      \end{code}
+    \item It is common to formulate the commit subject as imperative:\\
+      \begin{center}
+        \texttt{Change value of foo to 6}
+      \end{center}
+    \item Commits should be small, logical units
+    \item \enquote{Commit early, commit often}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{\texttt{git diff}}
+  Shows the difference between two versions.
+
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    git diff                     & Show diff between CWD and staging\\
+    git diff --staged            & Show diff between staging and last commit \\
+    git diff <commit1> <commit2> & Show diff between two commits / branches / tags
+  \end{tabu}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{git fetch, pull, push}}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    git fetch  & Downloads from remote \\
+    git pull   & Downloads from remote and merges remote branch into current branch\\
+    git push   & Uploads current branch to remote
+  \end{tabu}
+\end{frame}
+
+\begin{frame}{\texttt{git checkout}, \texttt{git restore}}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    git checkout <commit> & Load a certain commit from the history into the CWD (check with \texttt{git log}) \\
+    git restore [--source <source>]  <file>   & Restore \texttt{<file>} to the last commit, throwing any changes away
+  \end{tabu}
+\end{frame}
+
+\begin{frame}[c]{Working using multiple branches – GitHub Workflow}
+  There are multiple models of working together with git using branches
+
+  Simplest and most popular: \enquote{GitHub-Workflow}
+
+  \begin{itemize}
+    \item Nobody directly commits into the main branch
+    \item A new branch is created for each new feature / change / bug-fix
+    \item Branches should be rather short-lived
+    \item Merge into the main branch as soon as possible, then delete the feature branch
+    \item The main branch should always contain a working version
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Branches}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    git branch <name> & Create a new branch pointing to the current commit\\
+    git switch <name> & Switch to branch \texttt{<name>} \\
+    git switch -c <name> & Create a new branch and change to it \\
+    git merge <other> & Merge the changes of branch <other> into the current branch
+  \end{tabu}
+\end{frame}
+
+\begin{frame}[c, fragile]{Default branch name}
+
+  \begin{itemize}
+    \item Recently, a political correctness discussion happened around  master/slave terminology in tech
+    \item Many software projects have since replaced those terms
+    \item While not directly related to master/slave, git also enabled to change the name of the default branch
+    \item GitHub and GitLab now use \texttt{main} as default for new repositories
+  \end{itemize}
+
+  Locally:
+  \begin{code}{bash}
+  $ git config --global init.defaultBranch main
+  \end{code}
+\end{frame}
+
+\begin{frame}[fragile]{Beware: Merge conflicts}
+  Happens when git can't merge automatically, e.g. two people edited the same line.
+
+  \begin{enumerate}
+    \item Open the files with conflicts
+    \item Find the lines with conflicts and resolve by manually editing them
+      \begin{verbatim}
+        <<<<<<< HEAD
+        foo
+        ||||||| merged common ancestors
+        bar
+        =======
+        baz
+        >>>>>>> Commit-Message
+\end{verbatim}
+    \item Commit merged changes:
+      \begin{enumerate}
+        \item \texttt{git add …}
+        \item \texttt{git commit}
+      \end{enumerate}
+  \end{enumerate}
+  useful: \texttt{git config --global merge.conflictstyle diff3}
+\end{frame}
+
+\begin{frame}[t]{Relevant XKCD}%
+  \centering%
+  \includegraphics[height=0.95\textheight]{images/xkcd.png}%
+  \href{https://xkcd.com/1597}{R.~Munroe, xkcd.com/1597}%
+\end{frame}
+
+\begin{frame}{\texttt{git stash}}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    git stash     & Reset CWD to last commit but save the changes in the \enquote{stash} \\
+    git stash pop & Get the saved changes back
+  \end{tabu}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{.gitignore}}
+  \begin{itemize}
+    \item Many files or filetypes should not be put under version control
+      \begin{itemize}
+        \item Compilation results
+        \item Files reproducibly created by scripts
+        \item Config files containing credentials
+        \item ...
+      \end{itemize}
+    \item \texttt{.gitignore} in the base of a repository
+    \item One file or glob pattern per line for files that git should ignore
+  \end{itemize}
+  \begin{code}[title=Example \texttt{.gitignore}]{text}
+    build/
+    *.so
+    __pycache__/
+  \end{code}
+
+  Github provides a default \texttt{.gitignore} for most programming languages: \href{https://github.com/github/gitignore}{github.com/github/gitignore}
+\end{frame}
+
+\begin{frame}[fragile]{Global \texttt{.gitignore}}
+  \begin{itemize}
+    \item Some files should be ignored globally for all repositories of a user
+      \begin{itemize}
+        \item OS specific files
+        \item Editor / tool specific files
+        \item ...
+      \end{itemize}
+    \item \mintinline{bash}+git config --global core.excludesfile $HOME/.gitignore+
+  \end{itemize}
+
+  \begin{code}[title=\mintinline{text}+$HOME/.gitignore+]{text}
+    __MACOSX    # weird mac directory
+    .DS_STORE   # mac finder metadata file
+    *.swp       # vim backup files
+    *~          # nano / gedit / emacs backup files
+    desktop.ini # Windows explorer metadata file
+  \end{code}
+
+\end{frame}
+

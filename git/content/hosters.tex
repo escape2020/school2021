@@ -1,0 +1,115 @@
+\section{Git Hosting Providers}
+\headlineframe{Git Hosting Providers}
+
+\begin{frame}[c]{Git Hosting Providers}
+  \begin{itemize}
+    \item Several Providers and self-hosted server solutions are available
+    \item Usually provide much more than just hosting the repositories
+      \begin{itemize}
+        \item Issue tracking
+        \item Code review using pull requests
+        \item Wiki
+        \item Project Management, e.g. Canban boards
+        \item Continuous integration
+        \item Releases
+      \end{itemize}
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}[c]{Git Hosting Providers}
+  \small
+  \begin{tabu}{@{} X[,C] @{} X[,C] @{} X[,C] @{}}
+    \href{https://github.com}{\includegraphics[width=0.75\linewidth]{figures/github.png}} &
+    \href{https://gitlab.com}{\includegraphics[width=0.75\linewidth]{figures/gitlab.png}} &
+    \href{https://bitbucket.org}{\includegraphics[width=0.75\linewidth]{figures/bitbucket.png}} \\
+    \begin{itemize}
+      \item Largest Hoster
+      \item Many Open Source Projects, e.g. Python
+      \item Unlimited private repositories
+      \item Free CI service for public repositories
+      \item Github Pro free for students / teachers / researchers
+    \end{itemize}
+    &
+    \begin{itemize}
+      \item open-source community edition
+      \item paid enterprise edition with more features
+      \item unlimited private repositories
+      \item Self hosted or as service at \href{https://gitlab.com}{gitlab.com}
+    \end{itemize}
+    &
+    \begin{itemize}
+      \item Unlimited private repos with up to 5 contributors
+      \item Lacks far behind GitHub and GitLab
+    \end{itemize}
+  \end{tabu}
+\end{frame}
+
+\begin{frame}{SSH Keys}
+  Git can communicate using two ways with a remote:
+  \begin{description}
+    \item[HTTP] Works out of the box, requires entering credentials at every push/pull
+    \item[SSH] Using private/public keys, you only need to enter the key password once per session
+  \end{description}
+
+  SSH-Keys:
+  \begin{enumerate}
+    \item \texttt{ssh-keygen -t ed25519 -C "GitHub Key for <username> at <machine>" -f ~/.ssh/id\_rsa.github}
+    \item Choose a password
+    \item \texttt{cat \textasciitilde/.ssh/id\_rsa.github.pub}
+    \item Add key to profile
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[c]{Pull Requests}
+  
+\end{frame}
+
+
+\begin{frame}[c]{Forking}
+  \begin{itemize}
+    \item Using git and hosting providers, it's easy to contribute to projects you do not have write access to.
+
+    \item This is arguably the most important reason for git's success.
+
+    \item Forking means to create a copy of the main repository in your namespace, e.g. \url{http://github.com/matplotlib/matplotlib} to \texttt{http://github.com/maxnoe/matplotlib}
+
+    \item You can then make changes and create a pull request in the main repository!
+
+    \item To keep your fork up to date, you should add both your fork and the main repo as remotes.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Forks}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    git clone <your fork>  & Clone your fork \\
+    git add remote upstream <main repo>   & Add the main repo \\
+    git fetch upstream   & Download changes from the main repo \\
+    git reset --hard upstream/master & Reset the current branch to the master of the main repo to synchronize with the changes
+  \end{tabu}
+\end{frame}
+
+\begin{frame}[c]{Issue Tracking}
+\end{frame}
+
+\begin{frame}[c, fragile]{Commit Integration with Issue Tracking}
+  Start working on fixing a bug, that was documented in issue 42.
+
+  \begin{code}{text}
+  $ git checkout -b fix_42
+
+  ... do stuff to fix bug ...
+
+  $ git add src/foo.cxx
+  $ git commit -m "Fix segmentation fault when doing stuff, fixes #42" 
+  $ git push -u origin fix_42
+  \end{code}
+
+  If this commit get's merged into master, issue 42 will automatically be closed.
+\end{frame}
+
+\begin{frame}[c]{Code Review}
+\end{frame}
+
+\begin{frame}[c]{Continuous Integration}
+\end{frame}

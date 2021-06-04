@@ -26,6 +26,8 @@ luatex
 luatexbase
 minted
 ncctools
+pgf
+tabu
 tcolorbox
 tools
 unicode-math

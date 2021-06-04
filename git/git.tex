@@ -1,0 +1,34 @@
+\input{header_maxnoe.tex}
+
+\tikzset{
+  invisible/.style={opacity=0,text opacity=0},
+  visible on/.style={alt={#1{}{invisible}}},
+  alt/.code args={<#1>#2#3}{%
+    \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+  },
+}
+
+
+\author[M. Nöthe]{Maximilian Nöthe}
+\title[VC with Git]{Version Control using \texttt{git}}
+\date[2021-06-08]{%
+  \raisebox{-1.5cm}{\includegraphics[height=3cm]{../logo-Escape_cropped.png}}
+  \Large Summer School – 2021-06-08
+}
+\institute[TU Dortmund]{Astroparticle Physics, TU Dortmund}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}[c]{Overview}
+\tableofcontents
+\end{frame}
+
+\copywarning{}
+
+\input{content/vc.tex}
+\input{content/git.tex}
+\input{content/hosters.tex}
+
+\end{document}
