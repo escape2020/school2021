@@ -83,3 +83,10 @@ Some lectures will require the usage of [containers](https://www.docker.com/reso
 **Important** For Windows users, it is possible that you will need to enable the virtualization in your machine (it comes disabled by default by some vendors). However, this is **highly** vendor/hardware-dependent, making it impractical to list a series of instructions.
 
 For that reason, the best option is to Google ```enable virtualization in windows X``` where ```X``` is your Windows OS version. And/or search for ```enable virtualization in YZ``` where ```YZ``` is your machine brand/model.
+
+
+
+---
+
+| <img src="https://projectescape.eu/sites/default/files/logo-Escape_0.png" alt="escape-logo" width="200"/> | <img src="https://projectescape.eu/sites/all/themes/escape/images/eu-flag.png" alt="eu-flag" width="200"/> | _This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 824064 (ESCAPE, the European Science Cluster of Astronomy & Particle Physics ESFRI Research Infrastructures)._ |
+| --- | --- | --- |
