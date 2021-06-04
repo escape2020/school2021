@@ -1,10 +1,9 @@
-name: eschool2021_shep
+name: eschool2021_skhep
 channels:
   - default
   - conda-forge
 dependencies:
   - anaconda-client
-  - astropy=4.2
   - conda-build
   - cython
   - h5py
@@ -17,8 +16,6 @@ dependencies:
   - numpy
   - pandas
   - pip
-  - pyerfa=1.7.3
-  - pytables
   - pytest
   - pytest-cov
   - python=3.9

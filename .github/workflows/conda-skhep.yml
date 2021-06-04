@@ -1,4 +1,4 @@
-name: Build env scikit-hep
+name: Build env skhep
 
 on: [push, pull_request]
 
