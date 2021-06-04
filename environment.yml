@@ -1,10 +1,11 @@
 name: eschool2021
 channels:
-  - default
   - conda-forge
+  - default
 dependencies:
   - anaconda-client
   - astropy=4.2
+  - conda-forge::pyerfa=1.7.3
   - conda-build
   - cython
   - h5py
