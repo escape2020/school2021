@@ -1,4 +1,4 @@
-name: Tests
+name: Build env scikit-hep
 
 on: [push, pull_request]
 
@@ -33,3 +33,30 @@ jobs:
         mamba env create --file scikit-hep/environment.yml --name eschool2021_shep
         echo "conda activate eschool2021_shep" >> $HOME/.bash_profile
 
+
+  build-windows:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      max-parallel: 5
+      matrix:
+        os: ["windows-latest"]
+        python-version: ["3.9"]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          python-version: ${{ matrix.python-version }}
+      - name: Add conda to system path
+        run: |
+          # $CONDA is an environment variable pointing to the root of the miniconda directory
+          echo $CONDA/bin >> $GITHUB_PATH
+          echo "source $CONDA/etc/profile.d/conda.sh" >> $HOME/.bash_profile
+          conda info
+      - name: Install dependencies
+        shell: bash -leo pipefail {0}
+        run: |
+          conda env create --file environment.yml --name eschool2021
+          echo "conda activate eschool2021" >> $HOME/.bash_profile
