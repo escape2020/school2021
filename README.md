@@ -20,6 +20,10 @@ https://escape2020.github.io/school2021/
 
 [Go to anaconda](https://www.anaconda.com/products/individual) and follow install instructions for your OS.
 
+If you had already installed anaconda in the past, you might want to update it:
+```
+conda update -n base --all
+```
 
 ### clone the repository
 
@@ -40,6 +44,9 @@ git submodule update --init --recursive
 
 ### Setup the conda environment
 
+We recommend the use of [mamba](https://github.com/mamba-org/mamba) to solve environment dependencies.    
+However, you may use only conda (just replace `mamba` commands with `conda`).
+
 ```
 cd school2021
 conda install mamba -n base -c conda-forge
@@ -51,8 +58,10 @@ If you have already created the `eschool2021` env previously, you can update it 
 
 ```
 conda activate eschool2021
-conda env update -f environment.yml
+mamba env update -f environment.yml
 ```
+
+
 
 
 # binder
