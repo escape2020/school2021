@@ -10,7 +10,7 @@ jobs:
       max-parallel: 5
       matrix:
         os: ["ubuntu-latest", "macos-latest"]
-        python-version: ["3.9"]
+        python-version: ["3.8", "3.9"]
     steps:
     - uses: actions/checkout@v2
       with:
@@ -40,7 +40,7 @@ jobs:
       max-parallel: 5
       matrix:
         os: ["windows-latest"]
-        python-version: ["3.9"]
+        python-version: ["3.8", "3.9"]
     steps:
       - uses: actions/checkout@v2
         with:
