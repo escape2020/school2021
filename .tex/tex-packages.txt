@@ -15,6 +15,7 @@ fontspec
 framed
 fvextra
 graphics
+grfext
 infwarerr
 kvoptions
 l3packages
