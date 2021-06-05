@@ -1,0 +1,193 @@
+\section{Advanced Git}
+\headlineframe{Advanced Git}
+
+\begin{frame}[c, fragile]{Partial Adding}
+  \begin{itemize}
+    \item Commits should be small, logically contained units
+    \item Sometimes, we implement multiple things in one go 
+    \item Go through all changes interactively, select what we want to add with
+      \begin{code}{bash}
+        $ git add -p
+      \end{code}
+  \end{itemize}
+\end{frame}
+
+\headlineframe{%
+  Changing the git history\\
+  (aka the danger zone)
+}%
+
+\begin{frame}[c]{Disclaimers}
+  \begin{itemize}
+    \item The main/master branch's history should only be modified under severe circumstances\\
+      \begin{itemize}
+        \item Sensitive data in the history\footnote{Under most circumstances I wouldn't recomend to change the history. Change the passwords.}
+        \item Large files in the history that need to be removed
+      \end{itemize}
+    \item Not-yet-pushed commits can be freely modified
+    \item Feature branches can usually be modified
+    \item Most large projects will even ask you to cleanup the history of your Pull Request to have a \enquote{nice} history
+    \item Modifying already-pushed commits requires pushing with the \mintinline{bash}+--force+ option
+    \item The master/main branch should be protected against force pushes\\
+      (Github/Gitlab settings)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c, fragile]{Fixing the last commit}
+  \begin{itemize}
+    \item Just changing the last commit is one of the most common use cases
+      \begin{itemize}
+        \item Fix a typo in the commit message
+        \item Add a forgotten file
+        \item Remove an accidentally commit file
+      \end{itemize}
+    \item Make and add the changes you want to include / fix in the last commit
+    \item Execute
+      \begin{code}{bash}
+        $ git commit --amend
+      \end{code}
+      \begin{itemize}
+        \item Adds the current staging area to the last commit (optional)
+        \item Opens the editor for editing the commit message
+        \item Overwrites the last commit (will change the hash)
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Rebase - rewriting the git history}
+  Rebase is a very powerful tool to rewrite the git history.
+
+  It can
+  \begin{itemize}
+    \item Change commit order
+    \item Drop / edit single commits
+    \item Merge multiple commits into one
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[t, fragile]{Merge vs.\ Rebase}
+  \begin{itemize}
+    \item Default behaviour of \mintinline{bash}+git pull+ is equivalent to \mintinline{bash}+git fetch && git merge <remote>/<branch>+
+    \item This results in a non-linear history with many merge conflicts like \enquote{Merging remote tracking branch...}
+    \item \mintinline{bash}+git pull --rebase+ is equivalent to \mintinline{bash}+git fetch && git rebase <remote>/<branch>+
+    \item It makes the history equal to the remote history, and then tries to apply the local commits in order
+  \end{itemize}
+
+  Can be made the default with \mintinline{bash}+git config --global pull.rebase true+
+
+  Changes how conflicts are resolved: Instead of creating a single merge commit that 
+  contains the fixes to make the two parents compatible, each commit that is rebased is adapted
+  so the conflicts never existed.
+\end{frame}
+
+\begin{frame}[t, fragile]{\mintinline{bash}+git pull --rebase+ vs.\ \mintinline{bash}+git pull --merge+}
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.22\textwidth}
+      With merging
+
+      \begin{tikzpicture}
+        \graph [
+          layered layout,
+          nodes={
+            blue!70!black,
+            node font=\ttfamily,
+          },
+        ]{
+          a <- b <- c <- d <- e <- f;
+          b <- 1 <- 2 <- 3;
+          d <- 2;
+          3 <- f;
+          f <- master [vertexDarkRed];
+        };
+      \end{tikzpicture}
+    \end{column}
+    \hfill
+    \begin{column}{0.22\textwidth}
+      before rebase
+
+      \begin{tikzpicture}
+        \graph [
+          layered layout,
+          nodes={
+            blue!70!black,
+            node font=\ttfamily,
+          },
+        ]{
+          a <- b <- c <- d <- e <- f <- master [vertexDarkRed];
+          b <- 1 <- 2;
+        };
+      \end{tikzpicture}
+    \end{column}
+    \hfill
+    \begin{column}{0.22\textwidth}
+      After rebase
+
+      \begin{tikzpicture}
+        \graph [
+          layered layout,
+          nodes={
+            blue!70!black,
+            node font=\ttfamily,
+          },
+        ]{
+          a <- b <- c <- d <- e <-  master [vertexDarkRed];
+          e <- 1 <- 2;
+        };
+      \end{tikzpicture}
+    \end{column}
+    \hfill
+    \begin{column}{0.22\textwidth}
+      After merging the rebased branch
+
+      \begin{tikzpicture}
+        \graph [
+          layered layout,
+          nodes={
+            blue!70!black,
+            node font=\ttfamily,
+          },
+        ]{
+          c <- d <- e <- f <- master [vertexDarkRed];
+          e <- 1 <- 2;
+          2 <- f;
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}[c, fragile]{Interactive Rebase}
+  \begin{itemize}
+    \item Very powerful tool to change commits 
+    \item Joining / dropping / reordering / changing commits
+  \end{itemize}
+  \begin{code}{bash}
+    $ git rebase -i <target commit>
+  \end{code}
+\end{frame}
+
+\begin{frame}[c, fragile]{Submodules}
+  \begin{itemize}
+    \item Git discourages mono-repositories with many projects or
+      just adding other projects to a repository
+    \item Useful for 
+      \begin{itemize}
+        \item external source dependencies (e.\,g.\ Google Test for C++ projects)
+        \item meta-repositories joining multiple repositores at specific versions
+      \end{itemize}
+    \item Submodules add a reference to another repository at a certain commit:
+      \begin{code}{bash}
+        $ git submodule add <url> <path>
+      \end{code}
+    \item Cloning does not include submodules by default, needs
+      \begin{code}{bash}
+        $ git clone <url> --recursive
+      \end{code}
+    \item Update submodules (e.\,g.\ if changed on the remote)
+      \begin{code}{bash}
+        $ git submodule update --init --recursive
+      \end{code}
+  \end{itemize}
+\end{frame}

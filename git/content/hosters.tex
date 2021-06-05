@@ -45,24 +45,68 @@
   \end{tabu}
 \end{frame}
 
-\begin{frame}{SSH Keys}
+\begin{frame}[fragile]{SSH Keys}
   Git can communicate using two ways with a remote:
   \begin{description}
-    \item[HTTP] Works out of the box, requires entering credentials at every push/pull
-    \item[SSH] Using private/public keys, you only need to enter the key password once per session
+    \item[HTTPS] Works out of the box but requires entering credentials at every push/pull
+    \item[SSH] Using private/public keys. \\ Usually, you only need to decrypt a key once per session.
   \end{description}
 
-  SSH-Keys:
+  \begin{itemize}
+    \item To use ssh, you need to add at least one public key to your profile. 
+    \item It is considered best practice to use unique keys per machine and service
+  \end{itemize}
+  
   \begin{enumerate}
-    \item \texttt{ssh-keygen -t ed25519 -C "GitHub Key for <username> at <machine>" -f ~/.ssh/id\_rsa.github}
-    \item Choose a password
-    \item \texttt{cat \textasciitilde/.ssh/id\_rsa.github.pub}
-    \item Add key to profile
+    \item Create the key using: (choose a new password when asked)
+      \begin{code}{bash}
+        $ ssh-keygen -t ed25519 -C "GitHub Key for <username> at <machine>" -f ~/.ssh/id_rsa.github
+      \end{code}
+    \item Copy the output of: \mintinline{bash}+cat ~/.ssh/id_rsa.github.pub+
+    \item Add the public key to your profile 
   \end{enumerate}
 \end{frame}
 
-\begin{frame}[c]{Pull Requests}
-  
+\begin{frame}[c]{Pull / Merge Requests}
+  \begin{itemize}
+    \item Pull Requests (GitHub) / Merge Requests (GitLab) are a feature on top of git provided by several platforms
+    \item Used to propose changes by pushing a new branch and then requesting it to be merged into the main branch
+    \item Usually, projects using the GitHub Workflow only allow changes to the master branch via Pull Requests
+    \item Pull Requests are used for Code Review, project maintainers and co-developers can look at your code and
+      ask for changes
+    \item Usually, a Continous Integration (CI) system runs checks for the changes proposed in a Pull Request
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Code Reviews}
+  \begin{itemize}
+    \item Code reviews are among the most essential parts of software development
+    \item Similar to the peer-review process in science
+    \item Get feedback and advice for improvements
+    \item Prevent easy-to-find mistakes
+    \item Ensure quality, performance, documentation, clarity of the software
+    \item Developers can learn from each other immensely during code reviews
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{How should you review code?}
+  \begin{itemize}
+    \item Automatize as much as possible before the actual human review
+      \begin{itemize}
+        \item Static code checks
+        \item Unit tests / CI
+        \item Coverage
+        \item Code style checks
+      \end{itemize}
+    \item Focus on (in order):
+      \begin{itemize}
+        \item[\color{positive}\faCheckSquare] Are enough unit tests there?
+        \item[\color{positive}\faCheckSquare] Are code and tests clear / explained in comments / following best practices?
+        \item[\color{positive}\faCheckSquare] Any obvious performance improvements?\footnote{\enquote{Premature optimization is the root of all evil} –  Donald Knuth}
+        \item[\color{positive}\faCheckSquare] Is the code documented?
+      \end{itemize}
+    \item Stay friendly but be concise
+  \end{itemize}
 \end{frame}
 
 
@@ -80,16 +124,53 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Forks}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
-    git clone <your fork>  & Clone your fork \\
-    git add remote upstream <main repo>   & Add the main repo \\
-    git fetch upstream   & Download changes from the main repo \\
-    git reset --hard upstream/master & Reset the current branch to the master of the main repo to synchronize with the changes
-  \end{tabu}
+\begin{frame}[fragile]{Forks}
+  We'll use the school repository for this example
+
+  \begin{itemize}
+    \item Click the \enquote{Fork} button on GitHub
+    \item Clone your fork
+      \begin{code}{bash}
+        $ git clone git@github.com:maxnoe/school2021
+      \end{code}
+    \item Add the main repository as second remote. The name \enquote{upstream} is convention.
+      \begin{code}{bash}
+        $ git add remote upstream git@github.com:escape2020/school2021
+      \end{code}
+    \item Download content also from upstream
+      \begin{code}{bash}
+        $ git fetch upstream
+      \end{code}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c, fragile]{Making a Pull Request from a forked Repository}
+  \begin{itemize}
+    \item When starting the new branch, make sure to start from the up-to-date upstream main/master:
+      \begin{code}{bash}
+        $ git fetch upstream
+        $ git switch -c new_branch upstream/master
+      \end{code}
+    \item Make changes and commit
+    \item When pushing the branch, specify your fork (origin):
+      \begin{code}{bash}
+        $ git push -u origin new_branch
+      \end{code}
+    \item Go to GitHub or click on the link in the push message to open the Pull Request
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[c]{Issue Tracking}
+  \begin{itemize}
+    \item Issue Trackers are an important part of every software project
+      \begin{itemize}
+        \item Report bugs
+        \item Feature requests
+        \item Project planning
+        \item Ask for help
+      \end{itemize}
+    \item Issues can be linked to commits and pull requests
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[c, fragile]{Commit Integration with Issue Tracking}
@@ -106,9 +187,6 @@
   \end{code}
 
   If this commit get's merged into master, issue 42 will automatically be closed.
-\end{frame}
-
-\begin{frame}[c]{Code Review}
 \end{frame}
 
 \begin{frame}[c]{Continuous Integration}
