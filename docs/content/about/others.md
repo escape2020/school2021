@@ -12,7 +12,7 @@ lastmod: 2019-11-11T01:30:23+08:00
 
 **YouTube live**: https://www.youtube.com/channel/UC05braEQdP2rCSUamHm9I_Q/live
 
-**GatherTown**: By invitation only
+**GatherTown**: https://gather.town/app/Rww2ZWwsxiA2Usz3/ESCAPE%20school  (by invitation only)
 
 ---
 
