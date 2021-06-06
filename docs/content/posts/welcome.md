@@ -74,7 +74,7 @@ Questions will be selected by the chairman for the tutors, while others will be 
 
 **Slack**: https://escape-data-school.slack.com/ (by invitation only)
 
-**GatherTown**: By invitation only (see your email)
+**GatherTown**: https://gather.town/app/Rww2ZWwsxiA2Usz3/ESCAPE%20school (login using your registration email)
 
 ## Slides:
 
