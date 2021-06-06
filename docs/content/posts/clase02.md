@@ -36,7 +36,7 @@ follow the lectures of the summer school.
 
 ## Slides
 
-<object data="https://indico.in2p3.fr/event/20306/contributions/94709/attachments/64620/89712/20210607_eschool21_Environment_setup.pdf" type="application/pdf" width="100%" height="550px">
-    <embed src="https://indico.in2p3.fr/event/20306/contributions/94709/attachments/64620/89712/20210607_eschool21_Environment_setup.pdf">    
+<object data="https://indico.in2p3.fr/event/20306/contributions/94709/attachments/64620/89713/20210607_eschool21_Environment_setup.pdf" type="application/pdf" width="100%" height="550px">
+    <embed src="https://indico.in2p3.fr/event/20306/contributions/94709/attachments/64620/89713/20210607_eschool21_Environment_setup.pdf">    
     </embed>
 </object>
