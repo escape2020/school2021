@@ -22,6 +22,7 @@ dependencies:
   - pytest-cov
   - python=3.9
   - pyyaml
+  - rise
   - scikit-learn
   - scipy
   - tqdm
