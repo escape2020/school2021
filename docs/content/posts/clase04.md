@@ -1,5 +1,5 @@
 ---
-title: Git & CI - I
+title: Git & CI
 date: 2021-05-09T10:00:00
 lastmod: 2021-05-09T10:00:00
 author: Maximilian Nöthe
