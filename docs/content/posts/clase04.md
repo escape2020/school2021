@@ -4,28 +4,23 @@ date: 2021-05-09T10:00:00
 lastmod: 2021-05-09T10:00:00
 author: Maximilian Nöthe
 avatar: https://indico.in2p3.fr/event/20306/images/6618-max.jpg
-cover: /school2021/img/telescope.png
+cover: /school2021/img/git.png
 images:
-  - /school2021/img/telescope.png
+  - /school2021/img/git.png
 categories:
   - Coding environment, tools, good code practice for collaborative and continuous developments
 tags:
   - Day 2
 ---
 
-Git & CI I
+# Version Control using Git
 
-<!--more-->
-<!---->
 
-<!-- Dear instructor:
-* The dates at the top of this markdown (.md) document will help order the classes in the portal.
-Please, if you don't need to, do not change the one that is now.
-* Take into account that there is a feature in the dates: if you use a date in the future, the class will be not visible in the portal until the date you have assigned.
-* You can create dedicated folders if you need to.
-* But if you simply need to add some pictures, you can use the folder ../static/img/ mentioned at the top as /school2021/img/
--->
+Version Control is crucial for reproducible science and collaborative work
+on software.
 
-<!---->
+This lecture introduces you to the most widely used version control system,
+use by most software projects, especially by Free and Open Source Software projects.
 
-# Git & CI I
+
+* [Lecture Slides](https://indico.in2p3.fr/event/20306/contributions/94711/attachments/64650/89789/git.pdf)

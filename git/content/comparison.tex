@@ -1,0 +1,54 @@
+\section{git compared to other VCS}\label{sec:comparison}
+\headlineframe{Git compared to other VCS}
+
+
+\begin{frame}[c]{Git compared to other VCS}
+  \begin{itemize}
+    \item Only widely used alternative is \texttt{SVN}.
+    \item Outdated and not maintained anymore e.\,g. \texttt{CVS} (last release 13 years ago)
+    \item Mercurial (\texttt{hg}) rarely used alternative (\texttt{Python} just moved from \texttt{hg} to Git(Hub))
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Git vs. SVN}
+
+  \begin{columns}[t, onlytextwidth]
+    \setbeamercolor{itemize item}{fg=green!60!black}
+    \setbeamertemplate{itemize item}{\Large\bfseries +}
+    \begin{column}{0.475\textwidth}
+      \textbf{\Large Git}
+      \begin{itemize}
+        \item Faster
+        \item Full history available offline
+        \item Cheap branching
+        \item Much better tooling (GitHub/GitLab)
+        \item Branch/Fork → Pull Request Workflow (Outside Contribution, Code Review)
+      \end{itemize} 
+    \end{column}
+    \hfill
+    \begin{column}{0.475\textwidth}
+      \textbf{\Large SVN}
+      \begin{itemize}
+        \item Simpler
+      \end{itemize} 
+    \end{column}
+  \end{columns}
+
+  \begin{columns}[t, onlytextwidth]
+    \setbeamertemplate{itemize item}{\Large\bfseries -}
+    \begin{column}{0.475\textwidth}
+      \begin{itemize}
+        \item Harder to learn
+      \end{itemize} 
+    \end{column}
+    \hfill
+    \begin{column}{0.475\textwidth}
+      \begin{itemize}
+        \item Slower
+        \item Accessing the history needs server connections
+        \item Branching/Merging is expensive and not well supported
+      \end{itemize} 
+    \end{column}
+  \end{columns}
+\end{frame}
