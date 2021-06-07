@@ -1,5 +1,8 @@
+# hugo output directory
+docs/public
 wheelhouse
 fibonacci.c
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
