@@ -14,7 +14,6 @@
         \item Releases
       \end{itemize}
   \end{itemize}
-  
 \end{frame}
 
 \begin{frame}[c]{Git Hosting Providers}
@@ -56,14 +55,14 @@
     \item To use ssh, you need to add at least one public key to your profile. 
     \item It is considered best practice to use unique keys per machine and service
   \end{itemize}
-  
+
   \begin{enumerate}
     \item Create the key using: (choose a new password when asked)
       \begin{code}{bash}
         $ ssh-keygen -t ed25519 -C "GitHub Key for <username> at <machine>" -f ~/.ssh/id_rsa.github
       \end{code}
     \item Copy the output of: \mintinline{bash}+cat ~/.ssh/id_rsa.github.pub+
-    \item Add the public key to your profile 
+    \item Add the public key to your profile
   \end{enumerate}
 \end{frame}
 
@@ -74,7 +73,7 @@
     \item Usually, projects using the GitHub Workflow only allow changes to the master branch via Pull Requests
     \item Pull Requests are used for Code Review, project maintainers and co-developers can look at your code and
       ask for changes
-    \item Usually, a Continous Integration (CI) system runs checks for the changes proposed in a Pull Request
+    \item Usually, a Continuous Integration (CI) system runs checks for the changes proposed in a Pull Request
   \end{itemize}
 \end{frame}
 
@@ -86,6 +85,7 @@
     \item Prevent easy-to-find mistakes
     \item Ensure quality, performance, documentation, clarity of the software
     \item Developers can learn from each other immensely during code reviews
+    \item You should require code reviews for pull requests
   \end{itemize}
 \end{frame}
 
@@ -190,4 +190,30 @@
 \end{frame}
 
 \begin{frame}[c]{Continuous Integration}
+  \begin{itemize}
+    \item Strictly interpreted, continous integration means integrating current work
+      \enquote{often} into the main version
+    \item Usually, this means running automated builds and checks on a dedicated server
+    \item Ideally, these are run for each push event
+    \item For git projects, checks for pull requests should run on the merged result, not the branch itself
+    \item You should require passing CI system for Pull Requests
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Common Features of CI systems}
+  \begin{itemize}
+    \item Build your application / library
+    \item Run the test suite
+    \item Do that for multiple OSes and software / compiler versions
+    \item Build documentation and packages
+    \item Upload and publish results / build products
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c, fragile]{Example python workflow}
+  \begin{center}\large
+    \url{https://github.com/maxnoe/pyfibonacci/blob/main/.github/workflows/ci.yml}
+
+    More details during the testing lecture.
+  \end{center}
 \end{frame}
