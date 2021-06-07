@@ -25,6 +25,12 @@ If you had already installed anaconda in the past, you might want to update it:
 conda update -n base --all
 ```
 
+### Install Git
+
+In case you don't have Git installed (try to execute `git` in your terminal to
+check), [go to git-scm.com](http://www.git-scm.com/download) and follow the
+installation procedure.
+
 ### clone the repository
 
 Open a terminal and go to your working directory
