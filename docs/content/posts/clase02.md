@@ -41,3 +41,8 @@ follow the lectures of the summer school.
     <embed src="https://indico.in2p3.fr/event/20306/contributions/94709/attachments/64620/89713/20210607_eschool21_Environment_setup.pdf">    
     </embed>
 </object>
+
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e1dIWFBwD_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
