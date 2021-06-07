@@ -49,4 +49,3 @@ Also, some useful features of Jupyter Notebooks will be presented.
 
 The Jupyter Notebooks that will be shown in this lecture can be find in the 
 [env_setup/notebooks_lecture](/env_setup/notebooks_lecture) directory.
-
