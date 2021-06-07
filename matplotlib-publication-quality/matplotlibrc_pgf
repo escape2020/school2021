@@ -1,0 +1,13 @@
+backend:            pgf  # use system latex and the pgf graphics package
+figure.figsize:     5.781, 3.573  # size in inch
+
+text.usetex:        true
+pgf.rcfonts:        false  # set fonts in matplotlib_header.tex, not here
+pgf.texsystem:      lualatex # also supported: pdflatex, xelatex
+pgf.preamble:       \input{matplotlib_header.tex} # just input the actual header
+
+font.size:          11
+legend.fontsize:    11
+xtick.labelsize:    9
+ytick.labelsize:    9
+font.family:        serif
