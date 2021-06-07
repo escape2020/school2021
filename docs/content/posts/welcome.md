@@ -102,7 +102,7 @@ https://indico.in2p3.fr/event/20306/contributions/95829/
 ## Recorded lecture
 
 
-<iframe width="100%" height="500" src="https://youtu.be/TUrJ_IudVx8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/watch?v=TUrJ_IudVx8&ab_channel=ESCAPE_EU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ---
