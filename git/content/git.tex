@@ -501,7 +501,29 @@
     *~          # nano / gedit / emacs backup files
     desktop.ini # Windows explorer metadata file
   \end{code}
+\end{frame}
 
+
+\begin{frame}[c]{Some Limitations of git}
+  \begin{itemize}
+    \item Git is only designed to work well with text files
+    \item In general, git does not handle binary files well, this includes:
+      \begin{itemize}
+        \item Images
+        \item Document formats like odp, docx, pdf, ...
+        \item Binary data files
+      \end{itemize}
+    \item Git cannot efficiently store these files in the history
+    \item Repository size will grow quickly when often changing binary files
+    \item Although being text (JSON), jupyter notebooks are also hard to use well with git
+      \begin{itemize}
+        \item Graphics embedded into the notebook
+        \item Merge conflict resolution hard to get right
+        \item Diffs not really telling what changed
+        \item Tooling to improve this: nbdime, reviewnb
+        \item Recommendation: only commit notebooks after running \enquote{Clear all outputs}
+      \end{itemize}
+  \end{itemize}  
 \end{frame}
 
 \begin{frame}[fragile]{Most common commands}
