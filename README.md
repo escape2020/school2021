@@ -28,8 +28,25 @@ conda update -n base --all
 ### Install Git
 
 In case you don't have Git installed (try to execute `git` in your terminal to
-check), [go to git-scm.com](http://www.git-scm.com/download) and follow the
-installation procedure.
+check), you should install it first.
+
+#### Linux
+Use your distribution's package manager to install the `git` package. E.g. on Ubuntu:
+
+```
+$ sudo apt-get update
+$ sudo apt-get install git
+```
+
+#### macOS
+
+Install the XCode Command Line Tools to get git by running this command in a terminal:
+```
+$ xcode-select --install
+```
+
+#### Windows
+[go to git-scm.com](http://www.git-scm.com/download), download the windows installer and follow the installation procedure.
 
 ### clone the repository
 
