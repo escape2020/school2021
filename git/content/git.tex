@@ -1,4 +1,3 @@
-
 \section{Git}
 \headlineframe{
     \includegraphics[width=0.7\textwidth]{logos/git.pdf}
@@ -130,6 +129,18 @@
       \begin{itemize}
         \item For important revisions, e.g. release versions or version used for a certain paper
       \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Initial Setup}
+  \begin{itemize}
+    \item The first thing you should do after installing git is tell it who you are:
+      \begin{code}[title={\textcolor{negative!60!white}{\faExclamationTriangle} Fill your own information! \textcolor{negative!60!white}{\faExclamationTriangle}}]{bash}
+        $ git config --global user.name "Maximilian Nöthe"
+        $ git config --global user.email "maximilian.noethe@tu-dortmund.de"
+      \end{code}
+    \item This information is required as it will be added to each commit you make
+    \item Hosting providers map commits to users by the commit email
   \end{itemize}
 \end{frame}
 
@@ -274,6 +285,22 @@
   \end{tabu}
 \end{frame}
 
+\begin{frame}[c, fragile]{Note on older versions of git}
+  \begin{itemize}
+    \item In older versions of git, \mintinline{bash}+git checkout+ had many different tasks, which is confusing
+      \begin{itemize}
+        \item Loading commits into the working directory
+        \item Restoring files to another version
+        \item Switching branches
+      \end{itemize}
+    \item Recent versions of git added \mintinline{bash}+git restore+ for restoring files
+    \item Iff you have an old version of git and cannot upgrade easily, use
+      \begin{code}{bash}
+        $ git checkout <source> -- <file>
+      \end{code}
+  \end{itemize}
+\end{frame}
+
 \begin{frame}{Remotes}
   Remotes are central places, e.\,g.\ servers, where repositories can be saved and which can be used to synchronize between different clients.
   \begin{center}
@@ -302,7 +329,7 @@
       \end{itemize}
     \item Download changes from the default or a specific remote:
       \begin{code}{bash}
-        $ git fetch [remote] 
+        $ git fetch [remote]
       \end{code}
     \item Download changes from the default remote and merge them into your local branch
       \begin{code}{bash}
@@ -365,13 +392,29 @@
   GitLab or whatever other platform you are using.
 \end{frame}
 
-\begin{frame}{Branches}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
-    git branch <name> & Create a new branch pointing to the current commit\\
-    git switch <name> & Switch to branch \texttt{<name>} \\
-    git switch -c <name> & Create a new branch and change to it \\
-    git merge <other> & Merge the changes of branch <other> into the current branch
-  \end{tabu}
+\begin{frame}[fragile]{Branches}
+  \begin{itemize}
+    \item Create a new branch pointing to the current commit
+      \begin{code}{bash}
+        $ git branch <name>
+      \end{code}
+    \item Switch to branch \texttt{<name>}
+      \begin{code}{bash}
+        $ git switch <name>
+      \end{code}
+    \item Create a new branch and change to it
+      \begin{code}{bash}
+        $ git switch -c <name>
+      \end{code}
+    \item Merge the changes of branch \texttt{<other>} into the current branch
+      \begin{code}{bash}
+        $ git merge <other>
+      \end{code}
+  \end{itemize}
+
+  \smallskip
+  \small Note: As with \mintinline{bash}+git restore+, \mintinline{bash}+git switch+ is a relatively new addition to git. 
+  Use \mintinline{bash}+git checkout [-b] <branch>+ for older versions
 \end{frame}
 
 \begin{frame}[c, fragile]{Default branch name}
