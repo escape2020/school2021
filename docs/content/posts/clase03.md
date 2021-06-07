@@ -48,4 +48,9 @@ Also, some useful features of Jupyter Notebooks will be presented.
 ## Notebooks
 
 The Jupyter Notebooks that will be shown in this lecture can be find in the 
-[env_setup/notebooks_lecture](/env_setup/notebooks_lecture) directory.
+[env_setup/notebooks_lecture](https://github.com/escape2020/school2021/tree/main/env_setup/notebooks_lecture) directory.
+
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e1dIWFBwD_E?start=1998" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
