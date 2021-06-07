@@ -1,7 +1,7 @@
 ---
 title: Demo Class
-date: 2021-05-11
-lastmod: 2021-05-11
+date: 2021-04-11
+lastmod: 2021-04-11
 author: Jhon Doe
 cover: /school2021/img/ml.png
 images:
@@ -10,8 +10,6 @@ categories:
   - Other
 tags:
   - README
-  - Day 1
-weight: 1
 ---
 
 DEMO CLASS - TO BE REMOVED
