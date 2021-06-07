@@ -11,7 +11,7 @@ categories:
 tags:
   - README
   - Day 1
-weight: 1
+weight: 10
 ---
 
 DEMO CLASS - TO BE REMOVED
