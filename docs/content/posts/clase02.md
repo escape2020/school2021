@@ -3,6 +3,7 @@ title: Environment Setup
 date: 2021-05-10
 lastmod: 2021-05-10
 author: Enrique Garcia
+authorlink: https://github.com/garciagenrique
 avatar: https://indico.in2p3.fr/event/20306/images/6623-img251%20copy.jpeg
 cover: /school2021/img/cloud.png
 images:

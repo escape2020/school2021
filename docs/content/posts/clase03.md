@@ -3,7 +3,8 @@ title: Python and Notebooks
 date: 2021-05-10
 lastmod: 2021-05-10
 ##lastmod: 2021-04-03T21:41:50+08:00
-author: Enrique Garcia Garcia
+author: Enrique Garcia 
+authorlink: https://github.com/garciagenrique
 avatar: https://indico.in2p3.fr/event/20306/images/6623-img251%20copy.jpeg
 cover: /school2021/img/ml.png
 images:
@@ -32,3 +33,19 @@ Please, if you don't need to, do not change the one that is now.
 <!---->
 
 # Python and Notebooks
+
+In the last years, the evolution of the python editors has gone from a simple terminal to elaborated interactive environments. 
+In this lecture we will see the basic usage of these tools and a basic tutorial to get used to them. 
+Also, some useful features of Jupyter Notebooks will be presented.
+
+## Slides
+
+<object data="https://indico.in2p3.fr/event/20306/contributions/94710/attachments/64651/89793/20210607_eschool21_python_JupNotebooks.pdf" type="application/pdf" width="100%" height="550px">
+    <embed src="https://indico.in2p3.fr/event/20306/contributions/94710/attachments/64651/89793/20210607_eschool21_python_JupNotebooks.pdf">    
+    </embed>
+</object>
+
+## Notebooks
+
+The Jupyter Notebooks that will be shown in this lecture can be find in the 
+[env_setup/notebooks_lecture](/env_setup/notebooks_lecture) directory.
