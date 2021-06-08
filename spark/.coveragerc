@@ -1,0 +1,8 @@
+[run]
+branch = false
+parallel = true
+data_file = ${PWD}/.coverage
+omit=
+    $SPARK_HOME/*
+    notebooks/*
+    dist/*
