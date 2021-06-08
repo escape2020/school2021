@@ -30,18 +30,33 @@ As Spark needs a specific environment, the best way is to use Docker. We provide
 
 ```bash
 $ ./launch_notebooks.sh
-...
-Removing intermediate container e3782eaa192c
- ---> 367a84556afd
-Successfully built 367a84556afd
-Successfully tagged spark_stfc:latest
-[I 05:30:38.614 NotebookApp] Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
-[I 05:30:39.375 NotebookApp] JupyterLab extension loaded from /opt/conda/lib/python3.7/site-packages/jupyterlab
-[I 05:30:39.375 NotebookApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
-[I 05:30:39.381 NotebookApp] Serving notebooks from local directory: /home/jovyan/work
-[I 05:30:39.381 NotebookApp] The Jupyter Notebook is running at:
-[I 05:30:39.382 NotebookApp] http://(b14861473286 or 127.0.0.1):8888/?token=aba4b32c134e9fbca8ce99954c9ea2554dc68b7d9990a70c
-# --> Just follow the url generated using one of the two options.
+[+] Building 21.1s (12/12) FINISHED
+ => [internal] load build definition from Dockerfile                                                                         0.0s
+ => => transferring dockerfile: 37B                                                                                          0.0s
+ => [internal] load .dockerignore                                                                                            0.0s
+ => => transferring context: 2B                                                                                              0.0s
+ => [internal] load metadata for docker.io/jupyter/pyspark-notebook:spark-3.1.1                                              1.4s
+ => [auth] jupyter/pyspark-notebook:pull token for registry-1.docker.io                                                      0.0s
+ => [1/6] FROM docker.io/jupyter/pyspark-notebook:spark-3.1.1@sha256:0828ce07dc473da9825ea574df85261b1ed45f4f196e2392a2886c  0.0s
+ => [internal] load build context                                                                                            0.0s
+ => => transferring context: 9.66kB                                                                                          0.0s
+ => CACHED [2/6] WORKDIR /home/jovyan/work                                                                                   0.0s
+ => [3/6] ADD . .                                                                                                            0.0s
+ => [4/6] RUN apt-get update      && apt-get install -y vim                                                                  9.0s
+ => [5/6] RUN pip install -r requirements.txt                                                                                9.3s
+ => [6/6] WORKDIR /home/jovyan/work                                                                                          0.1s
+ => exporting to image                                                                                                       1.1s
+ => => exporting layers                                                                                                      1.0s
+ => => writing image sha256:3f3bed4dc293f98add6dda23d379930f5516860932f1753c5137c232851ee3e6                                 0.0s
+ => => naming to docker.io/library/spark_escape2021                                                                          0.0s
+
+[I 06:51:45.812 NotebookApp] Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
+[I 2021-06-08 06:51:48.014 LabApp] JupyterLab extension loaded from /opt/conda/lib/python3.9/site-packages/jupyterlab
+[I 2021-06-08 06:51:48.014 LabApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 06:51:48.032 NotebookApp] Serving notebooks from local directory: /home/jovyan/work
+[I 06:51:48.032 NotebookApp] Jupyter Notebook 6.4.0 is running at:
+[I 06:51:48.032 NotebookApp] http://68a9631126c6:8888/?token=c9d4b1cb3774293f9dc87d49f92ea0dfc785bdf924fe53eb
+[I 06:51:48.033 NotebookApp]  or http://127.0.0.1:8888/?token=c9d4b1cb3774293f9dc87d49f92ea0dfc785bdf924fe53eb
 ```
 
 Copy the generated URL in your browser tab, and walk to the notebook folder. Then open a notebook to play it. Note that you can either directly run the notebook as is, or play it as slides using the RISE button (use SPACE to move between slides):
