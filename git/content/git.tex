@@ -237,9 +237,19 @@
       \begin{code}{bash}
         $ git log --oneline
       \end{code}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c, fragile]{Accessing the log}
+  \begin{itemize}
     \item Showing branches in \enquote{ASCII art}: \\
       \begin{code}{bash}
         $ git log --all --decorate --graph
+      \end{code}
+
+    \item Show (number of) commits by author
+      \begin{code}{bash}
+        $ git shortlog [-sne]
       \end{code}
   \end{itemize}
 \end{frame}
