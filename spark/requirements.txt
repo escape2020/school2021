@@ -1,0 +1,8 @@
+astropy
+numpy
+scipy
+pandas
+photutils
+seaborn
+rise
+coverage>=4.2
