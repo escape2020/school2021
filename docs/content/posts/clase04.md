@@ -26,3 +26,14 @@ use by most software projects, especially by Free and Open Source Software proje
 
 
 * [Lecture Slides](https://indico.in2p3.fr/event/20306/contributions/94711/attachments/64650/89789/git.pdf)
+
+
+## Lectures
+
+### Part one
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/R2BCOtPwtXc?start=1009" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Part two
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZEcklfIp6Og" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
