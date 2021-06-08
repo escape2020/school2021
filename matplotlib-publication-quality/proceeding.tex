@@ -1,0 +1,47 @@
+\documentclass{scrartcl}
+
+\usepackage{fontspec}
+
+\usepackage[american]{babel}
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\usepackage[per-mode=fraction]{siunitx}
+
+\usepackage[
+  math-style=ISO,
+  bold-style=ISO,
+  nabla=upright,
+  partial=upright,
+]{unicode-math}
+
+\usepackage{blindtext}
+\usepackage{graphicx}
+
+\input{settings.tex}
+\recalctypearea % after changing the font, recalculate margin sizes
+
+
+\begin{document}
+  % get LaTeX to print the textwidth to use it as plot width
+  \section{Get the textwidth}
+  Textwidth: \the\textwidth \\
+  $\SI{1}{in} = \SI{72.27}{pt}$
+
+  \section{Awesome plot}
+
+  \blindtext
+
+  \begin{figure}[htbp]
+    \centering
+    % note we don't use any of width= or scale=, the plot as the correct size
+    \includegraphics{build/plot.pdf}
+    \caption{%
+      Plot with same font family and size as main document
+    }\label{fig:plot}
+  \end{figure}
+
+  \blindtext
+
+\end{document}
