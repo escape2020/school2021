@@ -23,7 +23,7 @@
 
 docker build -t "spark_escape2021" -f Dockerfile --build-arg PYSPARK_DRIVER_PYTHON=python .
 
-# Run jupyter through the Docker
+# Enter the container
 docker run -it --rm  \
     -v $PWD:/home/jovyan/work:rw -p 8888:8888 -p 400:4040 \
     spark_escape2021 bash \
