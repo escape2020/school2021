@@ -32,5 +32,12 @@ Please, if you don't need to, do not change the one that is now.
 
 # Pandas
 
+## Notebooks
+
+Find them in the pandas directory of the reposiotry
+
+https://github.com/escape2020/school2021/tree/main/pandas
+
+
 
 ---
