@@ -2,8 +2,8 @@
 title: Optimisation and parallelism in Python
 date: 2021-05-05
 lastmod: 2021-05-05
-author: TBD
-## avatar:
+author: Karl Kosack
+avatar: https://indico.in2p3.fr/event/20306/images/6672-me.png
 cover: /school2021/img/cloud.png
 images:
   - /school2021/img/cloud.png
