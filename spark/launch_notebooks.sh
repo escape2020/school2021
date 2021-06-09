@@ -20,14 +20,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-
-#docker build -t "spark_escape2021" -f Dockerfile .
-docker build -t "spark_escape2021" -f Dockerfile --build-arg PYSPARK_DRIVER_PYTHON=jupyter-notebook .
-
 SPARKFITS="com.github.astrolabsoftware:spark-fits_2.12:0.9.0"
 
-# Run jupyter through the Docker
+# Run jupyter through Docker
 docker run -it --rm  \
     -v $PWD:/home/jovyan/work:rw -p 8888:8888 -p 400:4040 \
-    spark_escape2021 /usr/local/spark/bin/pyspark --master local[*] \
-    --driver-memory 2g --executor-memory 2g --packages $SPARKFITS
+    spark_escape2021 /usr/local/spark/bin/pyspark \
+    --master local[*] --driver-memory 2g --executor-memory 2g \
+    --packages $SPARKFITS --conf "spark.pyspark.driver.python=jupyter-notebook"
