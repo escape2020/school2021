@@ -37,21 +37,23 @@ It refers to a series of principles, techniques, tools and practical considerati
 <hr>
 
 
-### as Google
+### Slides as Google
 <CENTER>
 
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRViM3dF4U5BDoe970B7DB0E2IQDOQSftVHdK9NFupaHoKocnxDv_o89arPzaKN-2XY4VtcPrPmAuEk/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="505" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 </CENTER>
 
-## Recorded Class
+## Recorded lecture
+(to come)
 
+<!--
 <CENTER>
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/ptbiB_0bUf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </CENTER>
-
+-->
 
 ---
 
