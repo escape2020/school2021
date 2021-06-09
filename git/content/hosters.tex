@@ -59,7 +59,7 @@
   \begin{enumerate}
     \item Create the key using: (choose a new password when asked)
       \begin{code}{bash}
-        $ ssh-keygen -t ed25519 -C "GitHub Key for <username> at <machine>" -f ~/.ssh/id_rsa.github
+        $ ssh-keygen -t ed25519 -C "GitHub Key for <username> at <machine>" -f ~/.ssh/id_ed25519.github
       \end{code}
     \item Copy the output of: \mintinline{bash}+cat ~/.ssh/id_rsa.github.pub+
     \item Add the public key to your profile
