@@ -3,6 +3,7 @@ title: Astropy
 date: 2021-05-06
 lastmod: 2021-05-06
 author: Axel Donath
+authorlink: https://github.com/adonath
 avatar: https://adonath.github.io/avatar/images/adonath_avatar.png
 cover: /school2021/img/ml.png
 images:
