@@ -7,7 +7,7 @@ authorlink: https://github.com/adonath
 avatar: https://adonath.github.io/avatar/images/adonath_avatar.png
 cover: /school2021/img/ml.png
 images:
-  - /school2021/img/telescope.png
+  - /school2021/img/astropy_logo_notext.png
 categories:
   - Community specific analysis
 tags:
