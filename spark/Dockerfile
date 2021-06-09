@@ -16,6 +16,7 @@ USER jovyan
 
 # Add dependencies
 RUN pip install -r requirements.txt
+RUN python config_rise.py
 
 # This ARG is passed during the build
 ARG PYSPARK_DRIVER_PYTHON
