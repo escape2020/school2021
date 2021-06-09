@@ -1,7 +1,7 @@
 ---
 title: Seminar - AI in Cosmological Experiments
-date: 2021-05-20
-lastmod: 2021-05-20
+date: 2021-05-06
+lastmod: 2021-05-06
 author: Prof. Ofer Lahav
 avatar: https://www.ucl.ac.uk/astrophysics/sites/astrophysics/files/styles/small_image/public/ofer_lahav_ucl_2014_0.jpg
 cover: /school2021/img/telescope.png
