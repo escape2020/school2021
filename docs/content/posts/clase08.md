@@ -14,6 +14,9 @@ tags:
   - Python
 ---
 
+Numpy
+
+
 # Numpy
 
 The content of this lecture is composed of notebooks that you may find in the repository:
