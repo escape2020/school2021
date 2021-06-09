@@ -4,7 +4,7 @@ date: 2021-05-08
 lastmod: 2021-05-08
 author: Tamas Gal
 avatar: https://indico.in2p3.fr/event/16864/images/3742-TG.jpg
-cover: /school2021/img/analysis.png
+cover: https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg
 images:
   - /school2021/img/analysis.png
 categories:
@@ -31,6 +31,13 @@ Please, if you don't need to, do not change the one that is now.
 <!---->
 
 # Pandas
+
+## Notebooks
+
+Find them in the pandas directory of the reposiotry
+
+https://github.com/escape2020/school2021/tree/main/pandas
+
 
 
 ---
