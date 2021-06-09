@@ -4,9 +4,9 @@ date: 2021-05-08
 lastmod: 2021-05-08
 author: Tamas Gal
 avatar: https://indico.in2p3.fr/event/16864/images/3742-TG.jpg
-cover: /school2021/img/cloud.png
+cover: https://matplotlib.org/stable/_images/sphx_glr_logos2_003.png
 images:
-  - /school2021/img/cloud.png
+  - https://matplotlib.org/stable/_images/sphx_glr_logos2_003.png
 categories:
   - Community specific analysis
 tags:
@@ -31,5 +31,8 @@ Please, if you don't need to, do not change the one that is now.
 
 # Matplotlib
 
+## Lecture
+
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/gfr2wzCOQYc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
