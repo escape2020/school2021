@@ -3,16 +3,17 @@ title: Scipy
 date: 2021-05-06
 lastmod: 2021-05-06
 author: Axel Donath
-avatar: https://indico.in2p3.fr/event/16864/images/3753-Donath_-_Copie.JPG
-cover: /school2021/img/ml.png
+authorlink: https://github.com/adonath
+avatar: https://adonath.github.io/avatar/images/adonath_avatar.png
+cover: /school2021/img/scipy_logo.png
 images:
-  - /school2021/img/ml.png
+  - /school2021/img/scipy_logo.png
 categories:
   - Community specific analysis
 tags:
   - Day 5
   - Python
----
+ --
 
 Scipy
 
@@ -30,6 +31,25 @@ Please, if you don't need to, do not change the one that is now.
 <!---->
 
 # Scipy
+Scipy is a community developed Python package for  numerical integration,
+interpolation, optimization, linear algebra and statistics.
+
+## Summary
+
+In this course we will learn the basic functionality of Scipy.
+
+## Recorded Class
+
+### as a YouTube video
+
+## References and external
+- https://scipy.org
+- https://docs.scipy.org/doc/
+- https://docs.scipy.org/doc/scipy/reference/tutorial/
+- https://scipy-lectures.org/
+
+## Other useful resources
+- https://jakevdp.github.io/PythonDataScienceHandbook/
 
 
 ---
