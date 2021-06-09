@@ -5,7 +5,7 @@ Welcome to the Apache Spark lecture! Please, read carefuly this page before star
 ### Goals of the lecture
 
 *  Learning the basics of cluster computing, and the big data challenges in modern science.
-- Learning how to integrate scientific tools into Apache Spark, and how to perform efficient analysis on large volumes of data.
+- Learning how to integrate scientific tools into [Apache Spark](https://spark.apache.org/), and how to perform efficient analysis on large volumes of data.
 
 ### Timetable
 
@@ -18,61 +18,76 @@ Welcome to the Apache Spark lecture! Please, read carefuly this page before star
 
 ### Pre-requisites:
 
-- Latest version of Docker installed. In case you do not have it, all the exercises will be also accessible from Google Colab - but you will need a Google account.
+- Latest version of [Docker](https://docs.docker.com/get-docker/) installed. In case you do not have it, all the exercises will be also accessible from Google Colab - but you will need a Google account.
 - A good knowledge in Python
 - Some general knowledge on parallel computing, and its challenges
 - Some knowledge in functional programming can help.
 
 
-### How to play the notebooks?
+### How to play the exercices?
 
-As Spark needs a specific environment, the best way is to use Docker. We provide a Dockerfile in the repo and a script to launch pyspark with jupyter:
+As Spark needs a specific environment, the best way is to use Docker. We provide a Dockerfile in the repo to build the image. From the `spark/` folder of the school repository, execute the build script:
 
 ```bash
-$ ./launch_notebooks.sh
-[+] Building 21.1s (12/12) FINISHED
- => [internal] load build definition from Dockerfile                                                                         0.0s
- => => transferring dockerfile: 37B                                                                                          0.0s
- => [internal] load .dockerignore                                                                                            0.0s
- => => transferring context: 2B                                                                                              0.0s
- => [internal] load metadata for docker.io/jupyter/pyspark-notebook:spark-3.1.1                                              1.4s
- => [auth] jupyter/pyspark-notebook:pull token for registry-1.docker.io                                                      0.0s
- => [1/6] FROM docker.io/jupyter/pyspark-notebook:spark-3.1.1@sha256:0828ce07dc473da9825ea574df85261b1ed45f4f196e2392a2886c  0.0s
- => [internal] load build context                                                                                            0.0s
- => => transferring context: 9.66kB                                                                                          0.0s
- => CACHED [2/6] WORKDIR /home/jovyan/work                                                                                   0.0s
- => [3/6] ADD . .                                                                                                            0.0s
- => [4/6] RUN apt-get update      && apt-get install -y vim                                                                  9.0s
- => [5/6] RUN pip install -r requirements.txt                                                                                9.3s
- => [6/6] WORKDIR /home/jovyan/work                                                                                          0.1s
- => exporting to image                                                                                                       1.1s
- => => exporting layers                                                                                                      1.0s
- => => writing image sha256:3f3bed4dc293f98add6dda23d379930f5516860932f1753c5137c232851ee3e6                                 0.0s
- => => naming to docker.io/library/spark_escape2021                                                                          0.0s
+./build_image.sh
+```
 
-[I 06:51:45.812 NotebookApp] Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
-[I 2021-06-08 06:51:48.014 LabApp] JupyterLab extension loaded from /opt/conda/lib/python3.9/site-packages/jupyterlab
-[I 2021-06-08 06:51:48.014 LabApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+The first time, it will download the `jupyter/pyspark-notebook:spark-3.1.1` image (~3.5GB), and install the necessary dependencies. It will also perform a test of the installation by printing some information at the end:
+
+```bash
+Spark configuration
+-------------------
+
+3.1.1
+[('spark.driver.extraJavaOptions', '-
+Dio.netty.tryReflectionSetAccessible=true'), ('spark.driver.port', '43877'), 
+('spark.rdd.compress', 'True'), ('spark.app.id', 'local-1623240222927'), 
+('spark.app.name', 'test_installation.py'), 
+('spark.serializer.objectStreamReset', '100'), ('spark.master', 'local[*]'), 
+('spark.submit.pyFiles', ''), ('spark.executor.id', 'driver'), 
+('spark.submit.deployMode', 'client'), ('spark.executor.extraJavaOptions', '-
+Dio.netty.tryReflectionSetAccessible=true'), ('spark.app.startTime', 
+'1623240220900'), ('spark.driver.host', '745599cb378c')]
+Reading some data...
+Configuration OK!
+
+
+Python configuration
+--------------------
+
+3.9.4 | packaged by conda-forge | (default, May 10 2021, 22:13:33)
+[GCC 9.3.0]
+
+
+Jupyter RISE add-ons
+--------------------
+
+{'scroll': 'true', 'enable_chalkboard': 'true'}
+```
+
+#### Launching notebooks
+
+Use the provided runner to launch notebooks from the inside of the container:
+
+```bash
+./launch_notebooks.sh
+...
 [I 06:51:48.032 NotebookApp] Serving notebooks from local directory: /home/jovyan/work
 [I 06:51:48.032 NotebookApp] Jupyter Notebook 6.4.0 is running at:
 [I 06:51:48.032 NotebookApp] http://68a9631126c6:8888/?token=c9d4b1cb3774293f9dc87d49f92ea0dfc785bdf924fe53eb
 [I 06:51:48.033 NotebookApp]  or http://127.0.0.1:8888/?token=c9d4b1cb3774293f9dc87d49f92ea0dfc785bdf924fe53eb
 ```
 
-Copy the generated URL in your browser tab, and walk to the notebook folder. Then open a notebook to play it. Note that you can either directly run the notebook as is, or play it as slides using the RISE button (use SPACE to move between slides):
+Copy the generated URL in your browser tab, and walk to the notebook folder. Then open a notebook to play it. Note that you can either directly run the notebook as is, or play it as slides using the [RISE](https://rise.readthedocs.io/en/stable/) button (use SPACE to move between slides):
 
 <img src="pictures/rise_button.png" alt="alt text"/>
 
-### How to enter the container?
+#### Entering the container
 
-To enter the container and fully enjoy all Spark features, you would just use the runner:
+To enter the container and fully enjoy all Spark features, you would just use the provided runner:
 
 ```bash
 ./launch_container.sh
-[+] Building 22.1s (12/12) FINISHED
- => [internal] load build definition from Dockerfile                                                                         0.0s
- => => transferring dockerfile: 37B
-...
 (base) jovyan@77081e01d859:~/work$
 
 ```
@@ -80,8 +95,7 @@ To enter the container and fully enjoy all Spark features, you would just use th
 From here, you can launch any regular Spark job. For example, try:
 
 ```bash
-cd src/
-spark-submit --master local[*] count_points.py
+spark-submit --master local[*] test_installation.py
 ```
 
 ### Alternative to Docker for notebooks: Google Colab
