@@ -58,10 +58,10 @@
 
   \begin{enumerate}
     \item Create the key using: (choose a new password when asked)
-      \begin{code}{bash}
-        $ ssh-keygen -t ed25519 -C "GitHub Key for <username> at <machine>" -f ~/.ssh/id_rsa.github
+      \begin{code}[title={Works in Powershell (Windows) and Unix Systems}]{bash}
+        $ ssh-keygen -t ed25519 -C "GitHub Key for <username> at <machine>" -f "$HOME/.ssh/id_ed25519.github"
       \end{code}
-    \item Copy the output of: \mintinline{bash}+cat ~/.ssh/id_rsa.github.pub+
+    \item Copy the content of the public key, on unix with \mintinline{bash}+cat ~/.ssh/id_rsa.github.pub+ or by using a text editor to open the file
     \item Add the public key to your profile
   \end{enumerate}
 \end{frame}
@@ -135,7 +135,7 @@
       \end{code}
     \item Add the main repository as second remote. The name \enquote{upstream} is convention.
       \begin{code}{bash}
-        $ git add remote upstream git@github.com:escape2020/school2021
+        $ git remote add upstream git@github.com:escape2020/school2021
       \end{code}
     \item Download content also from upstream
       \begin{code}{bash}
