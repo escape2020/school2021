@@ -30,5 +30,6 @@ dependencies:
   - wheel
   - pip:
     - build
+    - ctaplot
 
 
