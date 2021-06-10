@@ -23,5 +23,6 @@
 
 # Enter the container
 docker run -it --rm  \
-    -v $PWD:/home/jovyan/work:rw -p 8888:8888 -p 400:4040 \
+    -v $PWD:/home/jovyan/work:rw \
+    -p 8888:8888 -p 4040:4040 -p 18080:18080 \
     spark_escape2021 bash \
