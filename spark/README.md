@@ -32,7 +32,7 @@ As Spark needs a specific environment, the best way is to use Docker. We provide
 ./build_image.sh
 ```
 
-The first time, it will download the `jupyter/pyspark-notebook:spark-3.1.1` image (~3.5GB), and install the necessary dependencies. It will also perform a test of the installation by printing some information at the end:
+The first time, it will download the `jupyter/pyspark-notebook:spark-3.1.1` image (1.2GB compressed, ~3.5GB uncompressed on disk), and install the necessary dependencies. It will also perform a test of the installation by printing some information at the end:
 
 ```bash
 Spark configuration
