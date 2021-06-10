@@ -489,20 +489,42 @@
 \end{frame}
 
 \begin{frame}[c]{Providers}
-  \begin{description}[Github Actions\hspace{2em}]
-    \item[GitHub Actions]
+  \begin{description}[Github Actions]
+    \item[GitHub Actions] \url{https://docs.github.com/en/actions}
       \begin{itemize}
         \item Free for all public GitHub repositories
         \item Linux, Mac and Windows builds
         \item Support for custom runners that you can self-host
         \item Recommended for projects on GitHub
       \end{itemize}
-    \item[GitLab CI]
+    \item[GitLab CI] \url{https://docs.gitlab.com/ee/ci/}
       \begin{itemize}
         \item 400 minutes of build time per month with gitLab.com Free
-        \item Runners need to be setup for self-hosted GitLabs
+        \item Support for custom runners that you can self-host
+        \item Also available for self-hosted GitLabs (you have to setup at least one runner)
+      \end{itemize}
+    \item[Jenkins] \url{https://www.jenkins.io/}
+      \begin{itemize}
+        \item Open-Source CI platform you can self-host
       \end{itemize}
   \end{description}
+
+  Many more, including \href{https://travis-ci.com/}{Travis CI}, \href{https://www.appveyor.com/}{AppVeyor}, \href{https://circleci.com/}{circle\textbf{ci}}, \href{https://azure.microsoft.com/de-de/services/devops/pipelines/}{Azure Pipelines}
+\end{frame}
+
+\begin{frame}[c]{Defining a CI Workflow}
+  \begin{itemize}
+    \item All of these providers use different configuration files to specify a workload
+    \item Despite these differences, the idea is always the same
+      \begin{itemize}
+        \item Define environments, operating systems, software versions
+        \item Get the code
+        \item Install dependencies
+        \item Compile / build / install the software
+        \item Run the tests
+        \item Upload results
+      \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[c]{A minimal github actions example}
