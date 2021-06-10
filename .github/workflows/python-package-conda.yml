@@ -31,6 +31,7 @@ jobs:
         conda info
 
     - name: Install dependencies
+      if: steps.verify-changed-files.outputs.files_changed == 'true'
       shell: bash -leo pipefail {0}
       run: |
         conda install mamba -n base -c conda-forge
