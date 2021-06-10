@@ -29,8 +29,4 @@ RUN python config_rise.py \
 
 RUN . $SPARK_HOME/sbin/start-history-server.sh
 
-# This ARG is passed during the build
-ARG PYSPARK_DRIVER_PYTHON
-ENV PYSPARK_DRIVER_PYTHON=$PYSPARK_DRIVER_PYTHON
-
 WORKDIR /home/jovyan/work

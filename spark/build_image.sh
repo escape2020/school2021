@@ -20,12 +20,12 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-docker build -t "spark_escape2021" -f Dockerfile --build-arg PYSPARK_DRIVER_PYTHON=python .
+docker build -t "spark_escape2021" -f Dockerfile .
 
 SPARKFITS="com.github.astrolabsoftware:spark-fits_2.12:0.9.0"
 
 # Check all worked
 docker run -it --rm  \
-    -v $PWD:/home/jovyan/work:rw -p 8888:8888 -p 400:4040 \
+    -v $PWD:/home/jovyan/work:rw -p 8888:8888 -p 4040:4040 -p 18080:18080 \
     spark_escape2021 spark-submit --master local[*] \
      --driver-memory 2g --executor-memory 2g --packages $SPARKFITS test_installation.py \
