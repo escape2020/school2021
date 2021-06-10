@@ -6,14 +6,18 @@ on: [push, pull_request]
 jobs:
   test_env_change:
     runs-on: ubuntu-latest
-    uses: dorny/paths-filter@v2
-    id: file-changes
-    with:
-      filters: |
-        env:
-          - environment.yml
+    outputs:
+      env: ${{ steps.filter.outputs.env }}
+    steps:
+    - uses: dorny/paths-filter@v2
+      id: file-changes
+      with:
+        filters: |
+          env:
+            - environment.yml
   build:
-    if: steps.file-changes.outputs.env == 'true'
+    needs: test_env_changes
+    if: ${{ needs.test_env_changes.outputs.env == 'true' }}
     runs-on: ${{ matrix.os }}
     strategy:
       max-parallel: 5
