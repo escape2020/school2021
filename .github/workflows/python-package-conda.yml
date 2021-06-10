@@ -7,7 +7,7 @@ jobs:
   test_env_change:
     runs-on: ubuntu-latest
     outputs:
-      env: ${{ steps.filter.outputs.env }}
+      env: ${{ steps.file-changes.outputs.env }}
     steps:
     - uses: dorny/paths-filter@v2
       id: file-changes
