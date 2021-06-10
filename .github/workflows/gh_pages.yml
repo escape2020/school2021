@@ -6,7 +6,14 @@ on:
       - main  # Set a branch to deploy
 
 jobs:
+  test_pages_change:
+    runs-on: ubuntu-latest
+    uses: tj-actions/verify-changed-files@v6.2
+    with:
+      files: |
+        docs/*
   deploy:
+    if: steps.verify-changed-files.outputs.files_changed == 'true'
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -25,8 +32,6 @@ jobs:
           cd docs; hugo --minify -d ../public;
           echo "$PWD";
           ls;
-
-
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
