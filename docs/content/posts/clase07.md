@@ -1,5 +1,5 @@
 ---
-title: Library overview
+title: Python introduction, useful packages and libraries for data scientists
 date: 2021-05-08
 lastmod: 2021-05-08
 author: Tamas Gal
