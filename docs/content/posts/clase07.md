@@ -14,7 +14,7 @@ tags:
   - Coding
 ---
 
-Library overview
+Python introduction, useful packages and libraries for data scientists
 
 <!--more-->
 <!---->
@@ -29,7 +29,7 @@ Please, if you don't need to, do not change the one that is now.
 
 <!---->
 
-# Library overview
+# Python introduction, useful packages and libraries for data scientists
 
 <object data="https://indico.in2p3.fr/event/20306/contributions/94714/attachments/64721/89903/Python.pdf
 " type="application/pdf" width="100%" height="550px">
