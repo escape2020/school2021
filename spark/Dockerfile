@@ -14,7 +14,8 @@ ENV COVERAGE_PROCESS_START=/home/jovyan/work/.coveragerc
 
 USER root
 RUN apt-get update \
-  && apt-get install -y vim
+  && apt-get install -y vim \
+  && rm -rf /var/lib/apt/lists/*
 
 # Spark conf addition
 RUN echo "spark.eventLog.enabled true" >> $SPARK_HOME/conf/spark-defaults.conf \
