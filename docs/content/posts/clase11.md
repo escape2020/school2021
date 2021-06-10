@@ -45,7 +45,8 @@ It refers to a series of principles, techniques, tools and practical considerati
 </CENTER>
 
 ## Recorded lecture
-(to come)
+
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/i5b-2U7d9js" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <!--
 <CENTER>
