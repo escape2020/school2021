@@ -28,6 +28,4 @@ RUN pip install -r requirements.txt
 RUN python config_rise.py \
   && mkdir /tmp/spark-events
 
-RUN . $SPARK_HOME/sbin/start-history-server.sh
-
 WORKDIR /home/jovyan/work
