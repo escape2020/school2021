@@ -1,5 +1,5 @@
 ---
-title: Reproducible science in practice I
+title: Reproducible science in practice
 date: 2021-05-07T10:00:00
 lastmod: 2021-05-07T10:00:00
 author: ArturoS
@@ -15,7 +15,7 @@ tags:
   - Day 4
 ---
 
-Reproducible Science in practice #1
+Reproducible Science in practice
 
 <!--more-->
 <!---->
@@ -59,4 +59,11 @@ It refers to a series of principles, techniques, tools and practical considerati
 ---
 
 ***La science reproductible en pratique:***
-*Il fait référence à une série de principes, techniques, outils et considérations pratiques qui permettent la documentation, l'enregistrement et la préservation des pipelines d'analyse de données - améliorant les possibilités de collaborations transfrontalières et augmentant les probabilités de répliquer les résultats par d'autres (et par vous-même) à l'avenir. . La reproductibilité implique l'utilisation de protocoles standard et bien établis pour garantir que votre code survivra en dehors de votre ordinateur, au fil du temps et que d'autres pourront l'utiliser comme point de départ pour une nouvelle analyse. Nous explorerons plusieurs de ces outils: de l'utilisation du contrôle de version et des notebooks dans le cloud pour préparer et encapsuler les environnements logiciels (VM, conteneurs) et l'utilisation de bonnes pratiques concernant les licences, les citations et les DOI.*
+*Ceci fait référence à une série de principes, techniques, outils et considérations pratiques qui permettent la documentation, 
+l'enregistrement et la préservation des pipelines d'analyse de données - améliorant les possibilités de collaborations
+ transfrontalières et augmentant les probabilités de répliquer les résultats par d'autres (et par vous-même) à l'avenir.
+ La reproductibilité implique l'utilisation de protocoles standard et bien établis pour garantir que votre code survivra
+ en dehors de votre ordinateur, au fil du temps et que d'autres pourront l'utiliser comme point de départ pour une nouvelle analyse.
+ Nous explorerons plusieurs de ces outils: de l'utilisation du contrôle de version et des notebooks dans le cloud pour
+ préparer et encapsuler les environnements logiciels (VM, conteneurs) et l'utilisation de bonnes pratiques concernant
+ les licences, les citations et les DOI.*
