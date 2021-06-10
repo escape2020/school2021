@@ -5,9 +5,9 @@ lastmod: 2021-05-10
 author: Enrique Garcia
 authorlink: https://github.com/garciagenrique
 avatar: https://indico.in2p3.fr/event/20306/images/6623-img251%20copy.jpeg
-cover: /school2021/img/cloud.png
+cover: /school2021/img/env_python.png
 images:
-  - /school2021/img/cloud.png
+  - /school2021/img/env_python.png
 categories:
   - Coding environment, tools, good code practice for collaborative and continuous developments
 tags:
