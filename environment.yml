@@ -30,3 +30,6 @@ dependencies:
   - wheel
   - pip:
     - build
+    - pytest
+
+
