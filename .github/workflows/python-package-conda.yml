@@ -4,7 +4,14 @@ on: [push, pull_request]
 
 
 jobs:
+  test_env_change:
+    runs-on: ubuntu-latest
+    uses: tj-actions/verify-changed-files@v6.2
+    with:
+      files: |
+        environment.yml
   build:
+    if: steps.verify-changed-files.outputs.files_changed == 'true'
     runs-on: ${{ matrix.os }}
     strategy:
       max-parallel: 5
@@ -15,10 +22,6 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
-    - uses: tj-actions/verify-changed-files@v6.2
-      with:
-        files: |
-          environment.yml
     - uses: conda-incubator/setup-miniconda@v2
       with:
         auto-update-conda: true
@@ -31,7 +34,6 @@ jobs:
         conda info
 
     - name: Install dependencies
-      if: steps.verify-changed-files.outputs.files_changed == 'true'
       shell: bash -leo pipefail {0}
       run: |
         conda install mamba -n base -c conda-forge
