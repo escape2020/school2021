@@ -20,7 +20,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-SPARKFITS="com.github.astrolabsoftware:spark-fits_2.12:0.9.0"
+SPARKFITS="com.github.astrolabsoftware:spark-fits_2.12:0.8.4"
 
 # Run jupyter through Docker
 docker run -it --rm  \
