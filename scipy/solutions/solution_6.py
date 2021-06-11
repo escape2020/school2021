@@ -1,5 +1,5 @@
 # flake8: noqa
-date, temperature = np.loadtxt('./munich_temperatures_average.txt', unpack=True)
+date, temperature = np.loadtxt('./data/munich_temperatures_average.txt', unpack=True)
 plt.plot(date, temperature, '.')
 plt.ylim([-20, 30])
 
