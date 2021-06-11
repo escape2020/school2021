@@ -14,12 +14,13 @@ ENV COVERAGE_PROCESS_START=/home/jovyan/work/.coveragerc
 
 USER root
 RUN apt-get update \
-  && apt-get install -y vim \
+  && apt-get install -y vim curl \
   && rm -rf /var/lib/apt/lists/*
 
 # Spark conf addition
 RUN echo "spark.eventLog.enabled true" >> $SPARK_HOME/conf/spark-defaults.conf \
   && echo "spark.eventLog.dir file:///tmp/spark-events" >> $SPARK_HOME/conf/spark-defaults.conf \
+  && echo "spark.sql.shuffle.partitions 10" >> $SPARK_HOME/conf/spark-defaults.conf \
   && echo "SPARK_LOG_DIR=/tmp/spark-events" >> $SPARK_HOME/conf/spark-env.sh
 USER jovyan
 
