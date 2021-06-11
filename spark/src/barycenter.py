@@ -1,4 +1,3 @@
-#!/bin/bash
 # MIT License
 #
 # Copyright (c) 2021 ESCAPE
@@ -20,17 +19,50 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-docker build -t "spark_escape2021" -f Dockerfile .
+from pyspark.sql.functions import pandas_udf
+import pandas as pd
 
-SPARKFITS="com.github.astrolabsoftware:spark-fits_2.12:0.9.0"
+import os
 
-# Check installation worked
-docker run -it --rm  \
-  -v $PWD:/home/jovyan/work:rw -p 8888:8888 -p 4040:4040 -p 18080:18080 \
-  spark_escape2021 spark-submit --master local[*] \
-  --driver-memory 2g --executor-memory 2g --packages $SPARKFITS test_installation.py
+from tester import spark_unit_tests
 
-# Run unit tests
-docker run -it --rm  \
-  -v $PWD:/home/jovyan/work:rw -p 8888:8888 -p 4040:4040 -p 18080:18080 \
-  spark_escape2021 ./test.sh
+def compute_barycentre(pdf: pd.DataFrame) -> pd.DataFrame:
+    """ Compute the barycentre of a partition
+
+    Parameters
+    ----------
+    pdf : pandas DataFrame
+        pandas DataFrame containing partition data
+
+    Returns
+    ----------
+    Pandas DataFrame with barycentre coordinates.
+
+    Examples
+    ----------
+    >>> df = spark.read.format('parquet').load(datapath)
+
+    >>> df_grouped = df.groupBy("id")\
+        .applyInPandas(compute_barycentre, schema=df.schema)
+
+    # Check you have 3 clusters
+    >>> df_grouped.count()
+    3
+    """
+    mean = pdf.mean()
+
+    out = {colname: [value] for colname, value in zip(mean.keys(), mean.values)}
+
+    return pd.DataFrame(out)
+
+
+if __name__ == "__main__":
+    """ Execute the test suite """
+
+    globs = globals()
+    path = os.path.dirname(__file__)
+
+    globs["datapath"] = 'file://{}/../data/clusters.parquet'.format(path)
+
+    # Run the test suite
+    spark_unit_tests(globs)

@@ -6,3 +6,4 @@ omit=
     $SPARK_HOME/*
     notebooks/*
     dist/*
+    /opt/*
