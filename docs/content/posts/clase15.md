@@ -13,11 +13,12 @@ categories:
 tags:
   - Day 5
   - Python
- --
+---
 
 Scipy
 
 <!--more-->
+
 <!---->
 
 <!-- Dear instructor:
