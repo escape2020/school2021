@@ -5,7 +5,7 @@ lastmod: 2021-05-06
 author: Axel Donath
 authorlink: https://github.com/adonath
 avatar: https://adonath.github.io/avatar/images/adonath_avatar.png
-cover: /school2021/img/ml.png
+cover: /school2021/img/astropy_logo_notext.png
 images:
   - /school2021/img/astropy_logo_notext.png
 categories:
