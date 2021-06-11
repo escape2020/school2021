@@ -37,6 +37,10 @@ Astropy is a community developed Python package for astronomy.
 
 In this course we will learn the basic functionality of Astropy.
 
+## Material
+
+[astropy directory in the school repository](https://github.com/escape2020/school2021/tree/main/astropy)
+
 ## Recorded Class
 
 ### as a YouTube video
