@@ -19,12 +19,12 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-from pyspark.sql.functions import pandas_udf
 import pandas as pd
 
 import os
 
 from tester import spark_unit_tests
+
 
 def compute_barycentre(pdf: pd.DataFrame) -> pd.DataFrame:
     """ Compute the barycentre of a partition

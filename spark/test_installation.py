@@ -24,6 +24,7 @@ from pyspark.sql import SparkSession
 import sys
 import json
 
+
 def main():
     spark = SparkSession.Builder().getOrCreate()
 
@@ -39,7 +40,7 @@ def main():
 
     print('Reading some data...')
     df = spark.read.format('parquet').load('data/clusters.parquet')
-    npoints = df.count()
+    df.count()
     print('Configuration OK!')
 
     msg = """

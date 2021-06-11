@@ -5,6 +5,7 @@ import sys
 import doctest
 import numpy as np
 
+
 def spark_unit_tests(global_args: dict = None, verbose: bool = False):
     """ Base commands for the Spark unit test suite
 
