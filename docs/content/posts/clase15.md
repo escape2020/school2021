@@ -13,11 +13,12 @@ categories:
 tags:
   - Day 5
   - Python
- --
+---
 
 Scipy
 
 <!--more-->
+
 <!---->
 
 <!-- Dear instructor:
@@ -40,7 +41,7 @@ In this course we will learn the basic functionality of Scipy.
 
 ## Recorded Class
 
-### as a YouTube video
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/7A5rlbKHrtg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## References and external
 - https://scipy.org
