@@ -1,3 +1,4 @@
+# flake8: noqa
 from matplotlib.colors import LogNorm, PowerNorm
 rate, data = wavfile.read('synth_sound.wav')
 f, t, Sxx = signal.spectrogram(data, rate)

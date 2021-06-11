@@ -1,3 +1,4 @@
+# flake8: noqa
 from scipy import stats
 # 1
 t = np.linspace(-30, 30, 100)

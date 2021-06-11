@@ -1,3 +1,4 @@
+# flake8: noqa
 corr = signal.correlate(
     alien_signal,
     signal.boxcar(sample_length),

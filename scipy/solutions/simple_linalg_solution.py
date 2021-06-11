@@ -1,3 +1,4 @@
+# flake8: noqa
 # 1
 A = np.random.uniform(0, 1, size=(10, 10))
 

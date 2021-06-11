@@ -1,3 +1,4 @@
+# flake8: noqa
 a, b = .8, .4
 epsilon = np.sqrt(1 - b**2/a**2)
 

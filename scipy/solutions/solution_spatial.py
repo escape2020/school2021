@@ -1,3 +1,4 @@
+# flake8: noqa
 kdtree = spatial.cKDTree(points)
 
 target_point = [0.5, 0.5, 0.5]

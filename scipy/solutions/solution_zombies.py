@@ -1,3 +1,4 @@
+# flake8: noqa
 # fixed model parameters
 B = 0.1 # birth rate
 delta = 0.0001 # rate of natural casues of death
