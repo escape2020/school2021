@@ -7,3 +7,5 @@ omit=
     notebooks/*
     dist/*
     /opt/*
+    /etc/*
+    /home/jovyan/.jupyter/*
