@@ -43,7 +43,7 @@ In this course we will learn the basic functionality of Astropy.
 
 ## Recorded Class
 
-### as a YouTube video
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/uzhQ6RIGHQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## References and external
 - https://www.astropy.org
