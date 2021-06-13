@@ -3,7 +3,7 @@ title: Gammapy
 date: 2021-05-05
 lastmod: 2021-05-05
 author: Axel Donath
-avatar: https://indico.in2p3.fr/event/16864/images/3753-Donath_-_Copie.JPG
+avatar: https://adonath.github.io/avatar/images/adonath_avatar.png
 cover: /school2021/img/ml.png
 images:
   - /school2021/img/ml.png
@@ -30,6 +30,22 @@ Please, if you don't need to, do not change the one that is now.
 <!---->
 
 # Gammapy
+
+Gammapy is a community developed Python package for gamma-ray astronomy.
+
+## Summary
+
+In this course we will learn the basic functionality and API of Gammapy.
+
+
+## Recorded Class
+
+### as a YouTube video
+
+## References and external
+- https://www.gammapy.org
+- https://docs.gammapy.org/en/stable/
+- https://docs.gammapy.org/0.18.2/tutorials/index.html
 
 
 ---
