@@ -3,10 +3,11 @@ title: Gammapy
 date: 2021-05-05
 lastmod: 2021-05-05
 author: Axel Donath
+authorlink: https://github.com/adonath
 avatar: https://adonath.github.io/avatar/images/adonath_avatar.png
-cover: /school2021/img/ml.png
+cover: /school2021/img/gammapy_logo_square.png
 images:
-  - /school2021/img/ml.png
+  - /school2021/img/gammapy_logo_square.png
 categories:
   - Community specific analysis
 tags:
