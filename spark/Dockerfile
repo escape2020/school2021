@@ -14,7 +14,7 @@ ENV COVERAGE_PROCESS_START=/home/jovyan/work/.coveragerc
 
 USER root
 RUN apt-get update \
-  && apt-get install -y vim curl \
+  && apt-get install -y vim curl unzip \
   && rm -rf /var/lib/apt/lists/*
 
 # Spark conf addition
