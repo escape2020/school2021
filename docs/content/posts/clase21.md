@@ -3,10 +3,11 @@ title: Spark I
 date: 2021-05-04T09:00:00
 lastmod: 2021-05-04T09:00:00
 author: Julien Peloton
+authorlink: https://github.com/JulienPeloton
 avatar: https://indico.in2p3.fr/event/20306/images/6622-peloton_light.jpg
-cover: /school2021/img/analysis.png
+cover: /school2021/img/spark_logo.png
 images:
-  - /school2021/img/analysis.png
+  - /school2021/img/spark_logo.png
 categories:
   - Big data for big science
 tags:

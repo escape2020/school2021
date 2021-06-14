@@ -121,7 +121,7 @@ The last session will show case real-life analysis using Apache Spark. The datas
 
 ## Note for Windows users
 
-The bash scripts are mostly here to ease the ... by abstracting a number of commands. However, you can open each script, and just copy/paste the command in your Windows shell. It should work (almost) as-is. If you encounter trouble, just open a ticket in the [bug tracker](https://github.com/escape2020/school2021/issues).
+The bash scripts are mostly here to simplify your life by abstracting a number of commands. However, you can open each script, and just copy/paste the commands in your Windows shell. It should work (almost) as-is. If you encounter trouble, just open a ticket in the [bug tracker](https://github.com/escape2020/school2021/issues).
 
 ## Alternative to Docker for notebooks: Google Colab
 
