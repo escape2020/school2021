@@ -36,6 +36,8 @@ Please, if you don't need to, do not change the one that is now.
 
 https://github.com/escape2020/school2021/tree/main/optimization-parallelization
 
+<iframe frameborder="0" height="400" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/optimization-parallelization/multiprocessing.ipynb"></iframe>
+
 
 ## Slides
 
