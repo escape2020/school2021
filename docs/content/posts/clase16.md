@@ -41,6 +41,9 @@ In this course we will learn the basic functionality of Astropy.
 
 [astropy directory in the school repository](https://github.com/escape2020/school2021/tree/main/astropy)
 
+<iframe frameborder="0" height="400" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/astropy/astropy_hands_on.ipynb"></iframe>
+
+
 ## Recorded Class
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/uzhQ6RIGHQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

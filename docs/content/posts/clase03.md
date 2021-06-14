@@ -47,8 +47,16 @@ Also, some useful features of Jupyter Notebooks will be presented.
 
 ## Notebooks
 
-The Jupyter Notebooks that will be shown in this lecture can be find in the 
+The Jupyter Notebooks that will be shown in this lecture can be found in the 
 [env_setup/notebooks_lecture](https://github.com/escape2020/school2021/tree/main/env_setup/notebooks_lecture) directory.
+
+
+<iframe frameborder="0" height="400" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/env_setup/notebooks_lecture/Notebook-tutorial_basics.ipynb"></iframe>
+
+<iframe frameborder="0" height="400" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/env_setup/notebooks_lecture/Notebook-tutorial_advanced-features.ipynb"></iframe>
+
+<iframe frameborder="0" height="400" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/env_setup/notebooks_lecture/Lorenz_attractor_example.ipynb"></iframe>
+
 
 
 ## Lecture

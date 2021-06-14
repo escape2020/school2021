@@ -32,4 +32,26 @@ Please, if you don't need to, do not change the one that is now.
 # Optimisation and parallelism in Python
 
 
+## Lecture material
+
+https://github.com/escape2020/school2021/tree/main/optimization-parallelization
+
+<iframe frameborder="0" height="400" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/optimization-parallelization/multiprocessing.ipynb"></iframe>
+
+
+## Slides
+
+### as PDF
+<CENTER>
+
+<object data="https://indico.in2p3.fr/event/20306/contributions/96906/attachments/64858/90125/Optimization%20Parallelization.pdf" type="application/pdf" width="100%" height="550px">
+    <embed src="https://indico.in2p3.fr/event/20306/contributions/96906/attachments/64858/90125/Optimization%20Parallelization.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://indico.in2p3.fr/event/20306/contributions/96906/attachments/64858/90125/Optimization%20Parallelization.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
+</CENTER>
+
+[Downaload them](https://indico.in2p3.fr/event/20306/contributions/96906/attachments/64858/90125/Optimization%20Parallelization.pdf)
+
 ---
