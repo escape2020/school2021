@@ -38,6 +38,14 @@ Gammapy is a community developed Python package for gamma-ray astronomy.
 
 In this course we will learn the basic functionality and API of Gammapy.
 
+## Code
+
+The code is available in the repository:
+https://github.com/escape2020/school2021/tree/main/gammapy
+
+
+<iframe frameborder="0" height="400" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/tree/main/gammapy/"></iframe>
+
 
 ## Recorded Class
 
