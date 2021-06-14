@@ -51,6 +51,9 @@ https://github.com/escape2020/school2021/tree/main/gammapy
 
 ### as a YouTube video
 
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/gsAI0TDV5B0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ## References and external
 - https://www.gammapy.org
 - https://docs.gammapy.org/en/stable/

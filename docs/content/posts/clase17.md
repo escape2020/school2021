@@ -62,6 +62,10 @@ https://github.com/escape2020/school2021/tree/main/debugging-profiling
 [Download them](https://indico.in2p3.fr/event/20306/contributions/96905/attachments/64857/90126/Debugging%20Profiling.pdf)
 
 
+## Video
+
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/gDUx_B3BeoQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ---
 This lecture can be continued with the [optimisation one](clase18).
 
