@@ -15,7 +15,7 @@ tags:
   - Spark
 ---
 
-Spark II
+Apache Spark: scientific use-cases
 
 <!--more-->
 <!---->
@@ -30,7 +30,18 @@ Please, if you don't need to, do not change the one that is now.
 
 <!---->
 
-# Spark #2
+# ESCAPE data science summer school 2021: Apache Spark
+
+Welcome to the Apache Spark lecture! Please, read carefuly the instruction at this [page](https://github.com/escape2020/school2021/tree/main/spark) before starting the lecture as it contains materials and important information to set it up. 
+
+### Session 2
+
+In this session, we will use the Apache Spark Python API (PySpark) and learn on concrete examples how to interface and play with popular scientific libraries (Numpy, Pandas, ...). We will also see how to test and debug a code written with Spark, and integrate it in a Continuous Integration pipeline.
+
+### Session 3
+
+For the last session, we will finish with concrete applications in the domain of astronomy: catalog & image manipulation, machine learning and streaming data (if time permits).
+
 
 
 ---

@@ -15,7 +15,7 @@ tags:
   - Spark
 ---
 
-Spark I
+Apache Spark: first steps
 
 <!--more-->
 <!---->
@@ -30,7 +30,12 @@ Please, if you don't need to, do not change the one that is now.
 
 <!---->
 
-# Spark #1
+# ESCAPE data science summer school 2021: Apache Spark
 
+Welcome to the Apache Spark lecture! Please, read carefuly the instruction at this [page](https://github.com/escape2020/school2021/tree/main/spark) before starting the lecture as it contains materials and important information to set it up. 
+
+### Session 1
+
+I will review the landscape of cluster computing by addressing some of the most pressing questions today: what is cluster computing? What does it mean working in a distributed environment? What are the data and computing challenges that the scientific community is facing nowadays, and how can we tackle those? Some useful concepts like functional programming and implicit parallelisation will be discussed. I will also introduce Apache Spark, a cluster computing framework for analysing large datasets that proved successful in the industry. I will specifically focus on the Apache Spark SQL module and DataFrames API, and we will start practicing through a series of simple exercises.
 
 ---
