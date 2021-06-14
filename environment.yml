@@ -7,7 +7,9 @@ dependencies:
   - astropy=4.2
   - conda-build
   - cython
+  - gammapy
   - h5py
+  - iminuit<2.0
   - ipython
   - jupyter
   - jupyterlab
