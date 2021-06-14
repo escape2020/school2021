@@ -28,5 +28,8 @@ dependencies:
   - tqdm
   - twine
   - wheel
+  - line_profiler
+  - memory_profiler
+  - snakeviz
   - pip:
     - build
