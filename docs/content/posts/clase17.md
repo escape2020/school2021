@@ -30,5 +30,9 @@ Please, if you don't need to, do not change the one that is now.
 
 # Debugging and profiling
 
+Lecture material:
+
+https://github.com/escape2020/school2021/tree/main/debugging-profiling
+
 
 ---
