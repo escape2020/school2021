@@ -4,7 +4,7 @@ Welcome to the Apache Spark lecture! Please, read carefuly this page before star
 
 1. [Goals of the lecture](#goals-of-the-lecture)
 2. [Timetable](#timetable)
-3. [Pre-requisites](#prerequisite)
+3. [Pre-requisites](#prerequisites)
 4. [How to play the exercices?](#how-to-play-the-exercices)
 5. [Note for Windows users](#note-for-windows-users)
 6. [Alternative to Docker for notebooks: Google Colab](#alternative-to-docker-for-notebooks-google-colab)
