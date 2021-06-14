@@ -31,6 +31,13 @@ Please, if you don't need to, do not change the one that is now.
 
 # Matplotlib
 
+## Notebook
+
+You may clone it from here:
+https://github.com/escape2020/school2021/blob/main/matplotlib
+
+<iframe frameborder="0" height="400" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/matplotlib/Matplotlib%20Introduction.ipynb"></iframe>
+
 ## Lecture
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/gfr2wzCOQYc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
