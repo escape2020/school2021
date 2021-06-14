@@ -63,3 +63,6 @@ https://github.com/escape2020/school2021/tree/main/debugging-profiling
 
 
 ---
+This lecture can be continued with the [optimisation one](clase18).
+
+---
