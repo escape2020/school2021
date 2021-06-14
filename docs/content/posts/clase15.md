@@ -39,6 +39,10 @@ interpolation, optimization, linear algebra and statistics.
 
 In this course we will learn the basic functionality of Scipy.
 
+## Code
+
+<iframe frameborder="0" height="400" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/scipy/scipy_hands_on.ipynb"></iframe>
+
 ## Recorded Class
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/7A5rlbKHrtg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

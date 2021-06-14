@@ -30,9 +30,21 @@ Please, if you don't need to, do not change the one that is now.
 
 # Debugging and profiling
 
-## Lecture material:
+## Lecture material
+
+In the repository:
 
 https://github.com/escape2020/school2021/tree/main/debugging-profiling
+
+
+### Debugging
+
+<iframe frameborder="0" height="400" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/debugging-profiling/debugging.ipynb"></iframe>
+
+### Profiling
+
+<iframe frameborder="0" height="400" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/debugging-profiling/profiling.ipynb"></iframe>
+
 
 ## Slides
 
@@ -49,5 +61,8 @@ https://github.com/escape2020/school2021/tree/main/debugging-profiling
 
 [Download them](https://indico.in2p3.fr/event/20306/contributions/96905/attachments/64857/90126/Debugging%20Profiling.pdf)
 
+
+---
+This lecture can be continued with the [optimisation one](clase18).
 
 ---
