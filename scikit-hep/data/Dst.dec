@@ -1,0 +1,30 @@
+# Example decay chain for testing purposes
+# Considered by itself, this file in in fact incomplete,
+# as there are no instructions on how to decay the anti-D0 and the D-!
+
+Decay D*+
+0.6770    D0  pi+                    VSS;
+0.3070    D+  pi0                    VSS;
+0.0160    D+  gamma                  VSP_PWAVE;
+Enddecay
+
+Decay D*-
+0.6770    anti-D0  pi-                VSS;
+0.3070    D-       pi0                VSS;
+0.0160    D-       gamma              VSP_PWAVE;
+Enddecay
+
+Decay D0
+1.0   K-      pi+                  PHSP;
+Enddecay
+
+Decay D+
+1.0   K-   pi+   pi+   pi0    PHSP;
+Enddecay
+
+Decay pi0
+0.988228297   gamma   gamma                   PHSP;
+0.011738247   e+      e-      gamma           PI0_DALITZ;
+0.000033392   e+      e+      e-      e-      PHSP;
+0.000000065   e+      e-                      PHSP;
+Enddecay
