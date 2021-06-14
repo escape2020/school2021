@@ -1,43 +1,33 @@
 name: eschool2021_skhep
 channels:
-  - default
+  - default 
   - conda-forge
 dependencies:
-  - anaconda-client
+  - python>=3.7, <3.10
+  - anaconda-cl
   - conda-build
-  - cython
-  - h5py
   - ipython
   - jupyter
   - jupyterlab
-  - matplotlib
   - seaborn
-  - numba
-  - numpy
-  - pandas
-  - pip
-  - pytest
-  - pytest-cov
-  - python=3.9
-  - pyyaml
-  - scikit-hep>3.1,<3.3
-  - scikit-learn
   - scipy
   - tqdm
   - twine
   - wheel
-  # for zfit
-  - iminuit
-  - nlopt
-  - numdifftools
-  - tensorflow
-  - tensorflow-probability
-  - texttable
-  - ordered-set
+  # Setting recent versions to make the conda solve faster
+  - numpy>=1.16
+  - pandas>=0.24
+  - attrs>=19.0
+  - six>=1.11
+  - pip>19.0
+  - jupyterlab>=0.35
+  - RISE
+  - plumbum>=1.6.6
   - tabulate
-  - uproot
-  - dotmap
+  - pydot>=1.3.0
+  - scikit-hep>3.1,<3.3
   - pip:
-    - zfit>0.6,<0.8
-    - phasespace>1.0,<1.4
     - build
+    - graphviz
+    - zfit>0.6,<0.8
+    - phasespace>1.0,<1.5
