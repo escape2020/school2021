@@ -30,9 +30,19 @@ Please, if you don't need to, do not change the one that is now.
 
 # Numpy
 
+
+## Code
+ 
 The content of this lecture is composed of notebooks that you may find in the repository:
 
 https://github.com/escape2020/school2021/tree/main/numpy
+
+
+<iframe frameborder="0" height="400" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/numpy/1.%20NumPy%20Warming%20Up.ipynb"></iframe>
+
+<iframe frameborder="0" height="400" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/numpy/3.%20Nearest%20Points.ipynb"></iframe>
+
+<iframe frameborder="0" height="400" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/numpy/4.%20Binary%20Data.ipynb"></iframe>
 
 
 ## Lecture
