@@ -44,6 +44,9 @@ The content of this lecture is composed of notebooks that you may find in the re
 
 https://github.com/escape2020/school2021/tree/main/scikit-hep.
 
+<iframe frameborder="0" height="400" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/tree/main/scikit-hep/"></iframe>
+
+
 ## References and external
 
 - https://scikit-hep.org/
