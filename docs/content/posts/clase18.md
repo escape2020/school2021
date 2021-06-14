@@ -32,4 +32,8 @@ Please, if you don't need to, do not change the one that is now.
 # Optimisation and parallelism in Python
 
 
+## Lecture material
+
+https://github.com/escape2020/school2021/tree/main/optimization-parallelization
+
 ---
