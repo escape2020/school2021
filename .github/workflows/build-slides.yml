@@ -27,3 +27,4 @@ jobs:
         export PATH="$HOME/texlive/2021/bin/x86_64-linux:$PATH"
         make -C packaging/slides
         make -C testing/slides
+        make -C git
