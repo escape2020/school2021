@@ -5,7 +5,7 @@ lastmod: 2021-05-06
 author: Axel Donath
 authorlink: https://github.com/adonath
 avatar: https://adonath.github.io/avatar/images/adonath_avatar.png
-cover: /school2021/img/ml.png
+cover: /school2021/img/astropy_logo_notext.png
 images:
   - /school2021/img/astropy_logo_notext.png
 categories:
@@ -37,9 +37,13 @@ Astropy is a community developed Python package for astronomy.
 
 In this course we will learn the basic functionality of Astropy.
 
+## Material
+
+[astropy directory in the school repository](https://github.com/escape2020/school2021/tree/main/astropy)
+
 ## Recorded Class
 
-### as a YouTube video
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/uzhQ6RIGHQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## References and external
 - https://www.astropy.org

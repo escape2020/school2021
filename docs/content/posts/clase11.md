@@ -1,11 +1,11 @@
 ---
-title: Reproducible science in practice I
+title: Reproducible science in practice
 date: 2021-05-07T10:00:00
 lastmod: 2021-05-07T10:00:00
 author: ArturoS
 authorlink: https://github.com/artfisica
 avatar: https://indico.in2p3.fr/event/20306/images/6620-yo.jpg
-cover: /school2021/img/ml.png
+cover: /school2021/img/reproducible-sciences-classes.png
 images:
   - /school2021/img/ml.png
 categories:
@@ -15,7 +15,7 @@ tags:
   - Day 4
 ---
 
-Reproducible Science in practice #1
+Reproducible Science in Practice
 
 <!--more-->
 <!---->
@@ -36,25 +36,71 @@ It refers to a series of principles, techniques, tools and practical considerati
 
 <hr>
 
+## **Session #1**
 
-### Slides as Google
+Please, take into account that many links are inserted in the images. Follow those to get/download/explore the mentioned resources:
+
+### Google Slides
 <CENTER>
 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRViM3dF4U5BDoe970B7DB0E2IQDOQSftVHdK9NFupaHoKocnxDv_o89arPzaKN-2XY4VtcPrPmAuEk/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="505" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQy1lo8qrWG4CyRKKpva_HRU1REvsnQ6KRk5AV9-BvnxYfmOeYCRio0b-mIV9z42UxWFr-WA7cqnngu/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="505" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 </CENTER>
 
-## Recorded lecture
+### Recorded lecture
 
-<iframe width="100%" height="400" src="https://www.youtube.com/embed/i5b-2U7d9js" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<!--
 <CENTER>
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/ptbiB_0bUf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/i5b-2U7d9js" title="Reproducible Science in practice" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </CENTER>
--->
+
+
+### PDF Slides
+<CENTER>
+
+<object data="https://indico.in2p3.fr/event/20306/contributions/95830/attachments/64244/90062/reproducible-science-in-practice-01.pdf" type="application/pdf" width="100%" height="550px">
+    <embed src="https://indico.in2p3.fr/event/20306/contributions/95830/attachments/64244/90062/reproducible-science-in-practice-01.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://indico.in2p3.fr/event/20306/contributions/95830/attachments/64244/90062/reproducible-science-in-practice-01.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
+</CENTER>
+
+---
+
+## **Session #2**
+
+Please, take into account that many links are inserted in the images. Follow those to get/download/explore the mentioned resources:
+
+### Google Slides
+
+<CENTER>
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRKT0Le_PqShaYsx9TX_bCRABS5o3z5glLJnqnyr_gYR7T0ZflyzRd7AxHj8kST8LeqCrF2jMhbEjvw/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="505" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+</CENTER>
+
+### Recorded lecture
+
+<CENTER>
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/8Si021BOTUI" title="Reproducible Science in practice" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</CENTER>
+
+
+### PDF Slides
+<CENTER>
+
+<object data="https://indico.in2p3.fr/event/20306/contributions/95831/attachments/64579/90061/reproducible-science-in-practice-02.pdf" type="application/pdf" width="100%" height="525px">
+    <embed src="https://indico.in2p3.fr/event/20306/contributions/95831/attachments/64579/90061/reproducible-science-in-practice-02.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://indico.in2p3.fr/event/20306/contributions/95831/attachments/64579/90061/reproducible-science-in-practice-02.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
+</CENTER>
+
 
 ---
 
