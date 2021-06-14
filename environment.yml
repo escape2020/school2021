@@ -4,7 +4,6 @@ channels:
   - conda-forge
 dependencies:
   - anaconda-client
-  - aplpy
   - astroml
   - astropy=4.2
   - conda-build
@@ -27,7 +26,6 @@ dependencies:
   - rise
   - scikit-learn
   - scipy
-  - specviz
   - tensorly
   - tqdm
   - twine
