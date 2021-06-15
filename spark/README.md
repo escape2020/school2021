@@ -26,7 +26,7 @@ In this session, we will use the Apache Spark Python API (PySpark) and learn on 
 
 ### Session 3
 
-For the last session, we will finish with concrete applications in the domain of astronomy: catalog & image manipulation, machine learning and streaming data (if time permits).
+For the last session, we will finish with concrete applications in the domain of astronomy: catalog & image manipulation and machine learning (if time permits).
 
 ## Pre-requisites
 
@@ -125,6 +125,6 @@ The bash scripts are mostly here to simplify your life by abstracting a number o
 
 ## Alternative to Docker for notebooks: Google Colab
 
-If you do not have Docker, or you do not want to use it, you can also play the notebooks directly in Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]()
+If you do not have Docker, or you do not want to use it, you can also play the notebooks directly in Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/escape2020/school2021/blob/main)
 
 Note you will need a Google account.
