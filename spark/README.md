@@ -40,8 +40,13 @@ For the last session, we will finish with concrete applications in the domain of
 
 As Spark needs a specific environment, the best way is to use Docker. We provide a Dockerfile in the repo to build the image. From the `spark/` folder of the school repository, execute the build script:
 
+* Linux/MacOS
 ```bash
 ./build_image.sh
+```
+* Windows
+```bat
+./build_image.bat
 ```
 
 The first time, it will download the `jupyter/pyspark-notebook:spark-3.1.1` image (1.2GB compressed, ~3.5GB uncompressed on disk), and install the necessary dependencies. It will also perform a test of the installation by printing some information at the end:
@@ -81,8 +86,16 @@ Jupyter RISE add-ons
 
 Use the provided runner to launch notebooks from the inside of the container:
 
+* Linux/MacOS
 ```bash
 ./launch_notebooks.sh
+```
+* Windows
+```bat
+./launch_notebooks.bat
+```
+
+```bash
 ...
 [I 06:51:48.032 NotebookApp] Serving notebooks from local directory: /home/jovyan/work
 [I 06:51:48.032 NotebookApp] Jupyter Notebook 6.4.0 is running at:
@@ -98,8 +111,15 @@ Copy the generated URL in your browser tab, and walk to the notebook folder. The
 
 To enter the container and fully enjoy all Spark features, you would just use the provided runner:
 
+* Linux/MacOS
 ```bash
 ./launch_container.sh
+(base) jovyan@77081e01d859:~/work$
+
+```
+* Windows
+```bat
+./launch_container.bat
 (base) jovyan@77081e01d859:~/work$
 
 ```
