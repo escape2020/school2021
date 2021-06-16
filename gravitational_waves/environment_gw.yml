@@ -1,0 +1,37 @@
+name: eschool2021
+channels:
+  - default
+  - conda-forge
+dependencies:
+  - anaconda-client
+  - astropy=4.2
+  - conda-build
+  - cython
+  - gammapy
+  - h5py
+  - iminuit<2.0
+  - ipython
+  - jupyter
+  - jupyterlab
+  - matplotlib
+  - seaborn
+  - numba
+  - numpy
+  - pandas
+  - pip
+  - pytables
+  - pytest
+  - pytest-cov
+  - python=3.9
+  - pyyaml
+  - rise
+  - scikit-learn
+  - scipy
+  - tqdm
+  - twine
+  - wheel
+  - line_profiler
+  - memory_profiler
+  - snakeviz
+  - pip:
+    - build
