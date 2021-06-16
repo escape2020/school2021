@@ -31,4 +31,14 @@ Please, if you don't need to, do not change the one that is now.
 # An introduction to gravitational wave data analysis
 
 
+## Code 
+
+Material in the repository:
+https://github.com/escape2020/school2021/
+
+
+<iframe frameborder="0" height="700" width="100%" scrolling="yes" src="https://github.com/escape2020/school2021/blob/main/gravitational_waves/hands_on_gw.ipynb"></iframe>
+
+## Video
+
 ---
