@@ -37,7 +37,7 @@ Material in the repository:
 https://github.com/escape2020/school2021/
 
 
-<iframe frameborder="0" height="700" width="100%" scrolling="yes" src="https://github.com/escape2020/school2021/blob/main/gravitational_waves/hands_on_gw.ipynb"></iframe>
+<iframe frameborder="0" height="700" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/gravitational_waves/hands_on_gw.ipynb"></iframe>
 
 ## Video
 
