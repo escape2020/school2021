@@ -33,6 +33,6 @@ Please, if you don't need to, do not change the one that is now.
 
 ## Code
 
-<iframe frameborder="0" height="700" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/machine-learning-2/"></iframe>
+<iframe frameborder="0" height="700" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/tree/main/machine-learning-2/"></iframe>
 
 ---
