@@ -2,8 +2,8 @@
 title: Machine Learning III
 date: 2021-05-03T08:00:00
 lastmod: 2021-05-03T08:00:00
-author: Martino Sorbaro
-avatar: https://indico.in2p3.fr/event/20306/images/6641-martino_ini.jpeg
+author: Claudia Beleites
+avatar: https://indico.in2p3.fr/event/20306/images/6678-cbeleites.jpg
 cover: /school2021/img/telescope.png
 images:
   - /school2021/img/telescope.png
@@ -31,5 +31,8 @@ Please, if you don't need to, do not change the one that is now.
 
 # Machine Learning #3
 
+## Code
+
+<iframe frameborder="0" height="700" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/machine-learning-2/"></iframe>
 
 ---
