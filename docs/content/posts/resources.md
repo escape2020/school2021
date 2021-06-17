@@ -2,7 +2,7 @@
 title: Demo Class
 date: 2021-04-11
 lastmod: 2021-04-11
-author: Thomas Vuillaume et al
+author: Thomas Vuillaume, Maximilian Nöthe, Benson Muite
 cover: /school2021/img/analysis.png
 images:
   - /school2021/img/analysis.png
