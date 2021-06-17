@@ -14,6 +14,18 @@ tags:
 
 Additionnal resources
 
+<!--more-->
+
+<!---->
+
+<!-- Dear instructor:
+* The dates at the top of this markdown (.md) document will help order the classes in the portal.
+Please, if you don't need to, do not change the one that is now.
+* Take into account that there is a feature in the dates: if you use a date in the future, the class will be not visible in the portal until the date you have assigned.
+* You can create dedicated folders if you need to.
+* But if you simply need to add some pictures, you can use the folder ../static/img/ mentioned at the top as /school2021/img/
+-->
+
 <!---->
 
 # Additionnal resources
@@ -46,7 +58,7 @@ Nano is a very simple terminal based editor that is easy to use, shows it's help
 The other large, very extensible terminal text editor. Some people joke it has so many features that it is its own operating system, only lacking a good text editor.
 
 #### Graphical Text Editors
-There are lots, but currently I would just recommend you try out Microsoft's Visual Studio Code (https://code.visualstudio.com/), or the open source builds of it without telemetry called VS Codium (https://code.visualstudio.com/)
+There are lots, but currently I would just recommend you try out Microsoft's Visual Studio Code (https://code.visualstudio.com/), or the open source builds of it without telemetry called VS Codium (https://vscodium.com/)
 Choosing a good text editor and learning how to efficiently work with it will dramatically ease your development.
 Several notebooks with analysis examples and an interface to launch the framework mentioned above, are available using executable platforms.
 
