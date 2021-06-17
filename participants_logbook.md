@@ -14,4 +14,3 @@ You may contribute your message through a pull request (see the git lecture if n
 
 * Giovanni Cozzolongo: thank you for this cool Summer School!
 
-*Gabriel Finneran Was here, this was an amazing school and I'm really happy I attended. The tutors were all fantastic, with a great mix of material. Best of luck to everyone with our research!
