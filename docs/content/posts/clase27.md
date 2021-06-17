@@ -31,7 +31,7 @@ Please, if you don't need to, do not change the one that is now.
 
 # Machine Learning #2
 
-Material for this session has been merged in [Machine Learning #1](clase26)
+Material for this session has been merged in [Machine Learning #1](../clase26)
 
 
 ---
