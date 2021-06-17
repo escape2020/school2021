@@ -7,3 +7,4 @@ You may contribute your message through a pull request (see the git lecture if n
 
 * Thomas Vuillaume was here.
 * This was a very helpful and informative school, thank you so much! - Ronan Laker
+* ESCAPE 2021: Very informative and fruitful. Glad to be part of it. Thank you very much! - Manish Bhurtel
