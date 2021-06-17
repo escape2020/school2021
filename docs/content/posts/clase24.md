@@ -30,5 +30,30 @@ Please, if you don't need to, do not change the one that is now.
 
 # Analysis Workflow from the KM3NeT Open Data Center
 
+## Summary
+
+In this course, a short overview is given on how to use neutrino data from the KM3NeT experiment. As work  is in progress, you will also learn about the considerations leading to expanding an open science programm within a large collaboration.
+
+## Example notebooks
+
+Several notebooks with analysis examples and an interface to launch the framework mentioned above, are available using executable platforms.
+
+<CENTER>
+
+| <h2><b>Visualisation</b></h2> | <h2><b>Code and Run</b></h2> |
+| :---:        |          :---: |
+| [![nbviewer](/school2021/img/Jupyter-logo.jpg)](https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/neutrinos/) | [![GitHub](/school2021/img/GitHub-logo.png)](https://github.com/escape2020/school2021/blob/main/neutrinos/) |
+| Take a look at the notebooks in NBviewer | Check, clone and run the code from GitHub |
+
+</CENTER>
+
+<hr>
+
+### Presentation slides
+<CENTER>
+  
+ <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRUAf1e9MGhK2hc2SoyjI9iw60_N49iZ-U2w93_n7KTzZTvJveQSnWq7qUuLxDZMg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+</CENTER>
 
 ---

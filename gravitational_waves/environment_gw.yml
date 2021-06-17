@@ -1,0 +1,28 @@
+name: eschool2021_gw
+channels:
+  - default
+  - conda-forge
+dependencies:
+  - anaconda-client
+  - astropy=4.2
+  - conda-build
+  - gwosc
+  - gwpy
+  - ipython
+  - jupyter
+  - jupyterlab
+  - matplotlib
+  - numpy
+  - pandas
+  - pip
+  - pycbc
+  - pytables
+  - pytest
+  - pytest-cov
+  - python=3.9
+  - pyyaml
+  - scikit-learn
+  - scipy
+  - tqdm
+  - pip:
+    - build
