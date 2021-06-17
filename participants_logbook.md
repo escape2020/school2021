@@ -14,3 +14,4 @@ You may contribute your message through a pull request (see the git lecture if n
 
 * Giovanni Cozzolongo: thank you for this cool Summer School!
 
+*  Nouhaila Innan: Thank you all for this wonderful and amazingly interesting Summer School. Thank you so much for the sessions, really helped a lot, my concepts have been strengthened and knowledge has been expanded to whole new realm.
