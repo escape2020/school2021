@@ -6,4 +6,4 @@ You may contribute your message through a pull request (see the git lecture if n
 
 
 * Thomas Vuillaume was here.
-
+* This was a very helpful and informative school, thank you so much! - Ronan Laker
