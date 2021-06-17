@@ -1,5 +1,5 @@
 ---
-title: Demo Class
+title: Additionnal resources
 date: 2021-04-11
 lastmod: 2021-04-11
 author: Thomas Vuillaume, Maximilian Nöthe, Benson Muite
@@ -14,6 +14,7 @@ tags:
 
 Additionnal resources
 
+<!---->
 
 # Additionnal resources
 
