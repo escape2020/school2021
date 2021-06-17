@@ -6,4 +6,4 @@ You may contribute your message through a pull request (see the git lecture if n
 
 
 * Thomas Vuillaume was here.
-
+* Guillaume Huet : :clap: Thanks a lot to all the tutors, this was a great school! :clap: Good luck for the PRs merge conflicts resolving :grin:
