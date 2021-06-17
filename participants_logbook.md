@@ -12,3 +12,5 @@ You may contribute your message through a pull request (see the git lecture if n
 
 * Fantastic Summer School! Thank you for putting in so much effort, for having the best tutors/lecturers around, and for making it freely availlable to us all! 10^6 thanks! Pascal U. Förster
 
+* Giovanni Cozzolongo: thank you for this cool Summer School!
+
