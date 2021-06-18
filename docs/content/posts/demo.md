@@ -1,7 +1,7 @@
 ---
 title: Demo Class
-date: 2021-04-11
-lastmod: 2021-04-11
+date: 2040-01-01
+lastmod: 2040-01-01
 author: Jhon Doe
 cover: /school2021/img/ml.png
 images:
