@@ -31,3 +31,13 @@ I never felt lost. It was a great learning experience. Thanks for introducing me
 * Great summer school and very well organized! I have learned a lot! Thank you all, Ana Karla Diaz Rodriguez
 
 * What a great school! Well organised, helpful tutors and friendly environment. I learned so much, and will keep using the skills gained here for a long time. Thanks everyone! Michael Sarkis 
+
+* I am approaching the end of the first year of my PhD in astrophysics. I only started to teach 
+  my self python in order to carry out astrophysical research. However, after this school, I feel 
+  an obsession growing for coding itself. I look forward to being able to contribute to great 
+  projects. Im also keen to start writing elegant scripts in Julia with the advantages of 
+  subscripting, using sybomls etc... Thank you to everyone who delivered this school! 
+  - Zachary Jennings. 
+
+
+
