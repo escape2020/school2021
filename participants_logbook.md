@@ -17,6 +17,6 @@ Thank you so much for the sessions, really helped a lot, my concepts have been s
 
 * Thank you for this amazing experience in this (my first) summer school! A lot of shared tools and knowledge, I really enjoyed it. Juan Macharé 🇪🇨 
 
-
-
 * It was one of the best schools I have attended. Thank you very much for making coding and related resources and tasks a little more accessible and a little less scary for a self taugh novice! Also, thank you for making the lectures and materials open for everyone. Thank you, thank you, thank you...Stay safe and take care. :) Aishrila Mazumder
+
+* Thank you for organizing such a well-planned school. The sessions had a nice flow of ideas and were super fun; I never felt lost. It was a great learning experience. Thanks for introducing me to some witchcraft:upside_down_face:! - Devansh Shukla
