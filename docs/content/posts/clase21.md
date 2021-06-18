@@ -1,5 +1,5 @@
 ---
-title: Spark I
+title: Spark I and II
 date: 2021-05-04T09:00:00
 lastmod: 2021-05-04T09:00:00
 author: Julien Peloton
@@ -38,8 +38,27 @@ Welcome to the Apache Spark lecture! Please, read carefuly the instruction at th
 
 I will review the landscape of cluster computing by addressing some of the most pressing questions today: what is cluster computing? What does it mean working in a distributed environment? What are the data and computing challenges that the scientific community is facing nowadays, and how can we tackle those? Some useful concepts like functional programming and implicit parallelisation will be discussed. I will also introduce Apache Spark, a cluster computing framework for analysing large datasets that proved successful in the industry. I will specifically focus on the Apache Spark SQL module and DataFrames API, and we will start practicing through a series of simple exercises.
 
-## Video
+
+### Session 2
+
+In this session, we will use the Apache Spark Python API (PySpark) and learn on concrete examples how to interface and play with popular scientific libraries (Numpy, Pandas, ...). We will also see how to test and debug a code written with Spark, and integrate it in a Continuous Integration pipeline.
+
+### Session 3
+
+For the last session, we will finish with concrete applications in the domain of astronomy: catalog & image manipulation, machine learning and streaming data (if time permits).
+
+
+## Videos
+
+### Part 1
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/mdp2fM2YFCU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### Part 2
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/DrEH5-0FSig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 
 ---
