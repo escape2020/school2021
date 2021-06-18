@@ -24,4 +24,4 @@ Thank you, thank you, thank you...Stay safe and take care. :) Aishrila Mazumder
 * Thank you for organizing such a well-planned school. The sessions had a nice flow of ideas and were super fun;
 I never felt lost. It was a great learning experience. Thanks for introducing me to some witchcraft:upside_down_face:! - Devansh Shukla
 * It is really awesome that you made this lot of material accessible to us, together with the experience of so many great tutors.Thank you so much, see you soon!
-
+* Thank you for your amazing lectures and feedbacks and thank you for being so supportive! Greetings from Argentina! 🇦🇷
