@@ -49,11 +49,16 @@ Several notebooks with analysis examples and an interface to launch the framewor
 
 <hr>
 
-### Presentation slides
+## Presentation slides
 <CENTER>
   
  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRUAf1e9MGhK2hc2SoyjI9iw60_N49iZ-U2w93_n7KTzZTvJveQSnWq7qUuLxDZMg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 </CENTER>
+
+## Video
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/nvtRZspzXjk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ---
