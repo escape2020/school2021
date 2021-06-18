@@ -40,5 +40,15 @@ https://github.com/escape2020/school2021/tree/main/machine-learning-1
 <iframe frameborder="0" height="700" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/blob/main/machine-learning-1/"></iframe>
 
 
+## Video
+
+### Part 1
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/AR432YFJb04" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Part 2
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/7CLJ3mQSAz8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ---

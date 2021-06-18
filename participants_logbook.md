@@ -7,6 +7,8 @@ You may contribute your message through a pull request (see the git lecture if n
 
 * Thomas Vuillaume was here.
 * This was a very helpful and informative school, thank you so much! - Ronan Laker
+
+* ESCAPE 2021: Very informative and fruitful. Glad to be part of it. Thank you very much! - Manish Bhurtel
 * Thank you so much to all the tutors for fantastic lectures and for being so responsive and helpful on Slack - Karen Meyer
 * Guillaume Huet : :clap: Thanks a lot to all the tutors, this was a great school! :clap: Good luck for the PRs merge conflicts resolving :grin:
 * Fantastic Summer School! Thank you for putting in so much effort, for having the best tutors/lecturers around, and for making it freely availlable to us all!
@@ -27,3 +29,4 @@ I never felt lost. It was a great learning experience. Thanks for introducing me
 * Thank you for your amazing lectures and feedbacks and thank you for being so supportive! Greetings from Argentina! 🇦🇷
 
 * Great summer school and very well organized! I have learned a lot! Thank you all, Ana Karla Diaz Rodriguez
+
