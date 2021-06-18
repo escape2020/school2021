@@ -43,5 +43,15 @@ In this session, we will use the Apache Spark Python API (PySpark) and learn on 
 For the last session, we will finish with concrete applications in the domain of astronomy: catalog & image manipulation, machine learning and streaming data (if time permits).
 
 
+## Videos
+
+### Part 1
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/mdp2fM2YFCU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### Part 2
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/DrEH5-0FSig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
