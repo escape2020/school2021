@@ -96,12 +96,12 @@ Several notebooks with analysis examples and an interface to launch the framewor
 
 ## Libraries
 
-Suggested by @kabartay in [issue #72](https://github.com/escape2020/school2021/issues/72)
-
-- [AstroML](http://www.astroml.org/) - a [module](https://pypi.org/project/astroML/) for machine learning and data mining. It contains a growing library of statistical and machine learning routines for analyzing astronomical data in Python, loaders for several open astronomical datasets, and a large suite of examples of analyzing and visualizing astronomical datasets.
-- [3ML](https://threeml.readthedocs.io/en/stable/) - a multi-mission maximum likelihood [framework](https://pypi.org/project/threeML/) that provides a common high-level interface and model definition, which allows for an easy, coherent and intuitive modeling of sources using all the available data, no matter their origin.
-- [SunPy](https://sunpy.org/) - a [package](https://pypi.org/project/sunpy/) for solar physics.
-- [APLpy](https://aplpy.github.io/) - a [module](https://pypi.org/project/APLpy/) aimed at producing publication-quality plots of astronomical imaging data in FITS format.
-- [SpecViz](https://specviz.readthedocs.io/en/stable/) - a [tool](https://pypi.org/project/specviz/) for visualization and quick-look analysis of 1D astronomical spectra.
-
+- [3ML](https://threeml.readthedocs.io/en/stable/) - a multi-mission maximum likelihood [framework](https://pypi.org/project/threeML/) that provides a common high-level interface and model definition, which allows for an easy, coherent and intuitive modeling of sources using all the available data, no matter their origin. shared by @kabartay [issue #72](https://github.com/escape2020/school2021/issues/72)
+- [APLpy](https://aplpy.github.io/) - a [module](https://pypi.org/project/APLpy/) aimed at producing publication-quality plots of astronomical imaging data in FITS format. shared by @kabartay [issue #72](https://github.com/escape2020/school2021/issues/72)
+- [AstroML](http://www.astroml.org/) - a [module](https://pypi.org/project/astroML/) for machine learning and data mining. It contains a growing library of statistical and machine learning routines for analyzing astronomical data in Python, loaders for several open astronomical datasets, and a large suite of examples of analyzing and visualizing astronomical datasets. shared by @kabartay [issue #72](https://github.com/escape2020/school2021/issues/72)
+- [AstroNN](https://astronn.readthedocs.io/en/latest/) - a library built on top of [Tensorflow](https://www.tensorflow.org/) for machine learning in astronomy. shared by @bkmgit
+- [PySINDY](https://pysindy.readthedocs.io/en/latest/) - a library to do regression fitting of differential equation parameters from data. shared by @bkmgit
+- [SunPy](https://sunpy.org/) - a [package](https://pypi.org/project/sunpy/) for solar physics. shared by @kabartay [issue #72](https://github.com/escape2020/school2021/issues/72)
+- [SpecViz](https://specviz.readthedocs.io/en/stable/) - a [tool](https://pypi.org/project/specviz/) for visualization and quick-look analysis of 1D astronomical spectra. shared by @kabartay [issue #72](https://github.com/escape2020/school2021/issues/72)
+- [Tensorly](http://tensorly.org/stable/index.html) - a library to make Tensor operations for data science and machine learning easier to do. shared by @bkmgit
 ---
