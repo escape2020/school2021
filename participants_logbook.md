@@ -20,3 +20,5 @@ Thank you so much for the sessions, really helped a lot, my concepts have been s
 
 
 * It was one of the best schools I have attended. Thank you very much for making coding and related resources and tasks a little more accessible and a little less scary for a self taugh novice! Also, thank you for making the lectures and materials open for everyone. Thank you, thank you, thank you...Stay safe and take care. :) Aishrila Mazumder
+
+* It is really awesome that you made this lot of material accessible to us, together with the experience of so many great tutors. Thank you so much, see you soon!
