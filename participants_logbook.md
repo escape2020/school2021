@@ -25,3 +25,5 @@ Thank you, thank you, thank you...Stay safe and take care. :) Aishrila Mazumder
 I never felt lost. It was a great learning experience. Thanks for introducing me to some witchcraft:upside_down_face:! - Devansh Shukla
 * It is really awesome that you made this lot of material accessible to us, together with the experience of so many great tutors.Thank you so much, see you soon!
 * Thank you for your amazing lectures and feedbacks and thank you for being so supportive! Greetings from Argentina! 🇦🇷
+
+* Great summer school and very well organized! I have learned a lot! Thank you all, Ana Karla Diaz Rodriguez
