@@ -35,4 +35,23 @@ Please, if you don't need to, do not change the one that is now.
 
 <iframe frameborder="0" height="700" width="100%" scrolling="yes" src="https://nbviewer.jupyter.org/github/escape2020/school2021/tree/main/machine-learning-2/"></iframe>
 
+## Slides
+
+[Download them](https://github.com/escape2020/school2021/blob/main/machine-learning-2/20210617-ESCAPE-Validation.pdf)
+
+<CENTER>
+
+<object data="https://github.com/escape2020/school2021/blob/main/machine-learning-2/20210617-ESCAPE-Validation.pdf" type="application/pdf" width="100%" height="525px">
+    <embed src="https://github.com/escape2020/school2021/blob/main/machine-learning-2/20210617-ESCAPE-Validation.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/escape2020/school2021/blob/main/machine-learning-2/20210617-ESCAPE-Validation.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
+</CENTER>
+
+
+## Video
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/guEK9GdFZBk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ---

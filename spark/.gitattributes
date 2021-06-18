@@ -1,0 +1,2 @@
+# Make bash scripts run fine, even on containers launched from Windows
+*.sh  text eol=lf
