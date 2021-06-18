@@ -57,6 +57,6 @@ https://github.com/escape2020/school2021/tree/main/optimization-parallelization
 
 ## Video
 
-<iframe width="100%" height="400" src="https://www.youtube.com/embed/eNpX3sROC3I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/eNpX3sROC3I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---

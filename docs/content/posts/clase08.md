@@ -32,7 +32,7 @@ Please, if you don't need to, do not change the one that is now.
 
 
 ## Code
- 
+
 The content of this lecture is composed of notebooks that you may find in the repository:
 
 https://github.com/escape2020/school2021/tree/main/numpy
@@ -47,7 +47,7 @@ https://github.com/escape2020/school2021/tree/main/numpy
 
 ## Lecture
 
-<iframe width="100%" height="400" src="https://www.youtube.com/embed/3Zx5zIR9Hyw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/3Zx5zIR9Hyw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ---
