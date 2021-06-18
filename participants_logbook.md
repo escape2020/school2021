@@ -29,5 +29,5 @@ I never felt lost. It was a great learning experience. Thanks for introducing me
 * Thank you for your amazing lectures and feedbacks and thank you for being so supportive! Greetings from Argentina! 🇦🇷
 
 * Great summer school and very well organized! I have learned a lot! Thank you all, Ana Karla Diaz Rodriguez
-* I assumed that only regular education would result in a significant shift in knowledge. But here I am, after this summer school, become smitten with data science. Thank you to all of the tutors and the organizers! 🙏🏾 Feven Markos Hunde
+* I assumed that only regular education would result in a significant shift in knowledge. But here I am, after this summer school, become smitten with data science. Thank you to all of the tutors and the organizers! Feven Markos Hunde
 
