@@ -14,3 +14,5 @@ You may contribute your message through a pull request (see the git lecture if n
 
 * Giovanni Cozzolongo: thank you for this cool Summer School!
 
+* Thank you for this amazing experience in this (my first) summer school! A lot of shared tools and knowledge, I really enjoyed it. Juan Macharé 🇪🇨 
+
