@@ -14,3 +14,6 @@ You may contribute your message through a pull request (see the git lecture if n
 
 * Giovanni Cozzolongo: thank you for this cool Summer School!
 
+
+
+* It was one of the best schools I have attended. Thank you very much for making coding and related resources and tasks a little more accessible and a little less scary for a self taugh novice! Also, thank you for making the lectures and materials open for everyone. Thank you, thank you, thank you...Stay safe and take care. :) Aishrila Mazumder
