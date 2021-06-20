@@ -30,3 +30,5 @@ I never felt lost. It was a great learning experience. Thanks for introducing me
 
 * Great summer school and very well organized! I have learned a lot! Thank you all, Ana Karla Diaz Rodriguez
 
+* What a great school! Well organised, helpful tutors and friendly environment. I learned so much, and will keep using the skills gained here for a long time. Thanks everyone! Michael Sarkis 
+* i learned soo much, and i made some new friends tooo thank you so much . khadija ech-challaouy 
