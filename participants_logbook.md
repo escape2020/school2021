@@ -39,5 +39,5 @@ I never felt lost. It was a great learning experience. Thanks for introducing me
   subscripting, using sybomls etc... Thank you to everyone who delivered this school! 
   - Zachary Jennings. 
 
-
+* i learned soo much, and i made some new friends tooo thank you so much . khadija ech-challaouy 
 
