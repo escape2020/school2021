@@ -42,3 +42,5 @@ I never felt lost. It was a great learning experience. Thanks for introducing me
 
 * i learned soo much, and i made some new friends tooo thank you so much . khadija ech-challaouy 
 
+* *A great summer school I was pleased to participate in. Very complete in topics covered and essential to gain skills that in high demand today. Accessibility of the school lectures and materials after the school is over makes it even better. Thanks a lot to outstanding lecturers and organizers for their great efforts and well organization.* - Mukharbek Organokov
+
