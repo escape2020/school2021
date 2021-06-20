@@ -1,7 +1,7 @@
 ---
 title: Machine Learning I & II
-date: 2021-05-03T07:00:00
-lastmod: 2021-05-03T07:00:00
+date: 2021-05-03T09:00:00
+lastmod: 2021-05-03T09:00:00
 author: Martino Sorbaro
 avatar: https://indico.in2p3.fr/event/20306/images/6641-martino_ini.jpeg
 cover: /school2021/img/cloud.png
@@ -14,7 +14,7 @@ tags:
   - Day 8
 ---
 
-Machine Learning #1
+Machine Learning #1 & #2
 
 <!--more-->
 <!---->
@@ -29,7 +29,7 @@ Please, if you don't need to, do not change the one that is now.
 
 <!---->
 
-# Machine Learning #1
+# Machine Learning #1 & #2
 
 ## Code
 
