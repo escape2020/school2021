@@ -1,3 +1,4 @@
+.DS_Store
 # hugo output directory
 docs/public
 wheelhouse
