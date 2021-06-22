@@ -48,3 +48,5 @@ I never felt lost. It was a great learning experience. Thanks for introducing me
 
 * This was my first summer school and I am very grateful that I attended it. The organisation was great, all the tutors very friendly and always willing to help and the materials provided extremely helpful. 
   The contents tought provide a very mighty tool and I will try to integrate it to my workflow. Many thanks! Robert Kamlah
+
+* This was my first experience with a school in data science and it was a wonderful one. I learnt a lot and the organization was great. Thank you all for that effort and everything you taught us. Greetings from Peru. Jaime Hoefken
