@@ -48,3 +48,5 @@ I never felt lost. It was a great learning experience. Thanks for introducing me
 
 * This was my first summer school and I am very grateful that I attended it. The organisation was great, all the tutors very friendly and always willing to help and the materials provided extremely helpful. 
   The contents tought provide a very mighty tool and I will try to integrate it to my workflow. Many thanks! Robert Kamlah
+
+* This summer school was a new experience for me, but definitely a welcome one. The contents will be very helpful for my master's thesis and I'm sure that I will revisit some of the lectures sooner or later. I hope I can participate in similar events in person soon. Thank you all very much! Martin Schneider 
