@@ -48,3 +48,5 @@ I never felt lost. It was a great learning experience. Thanks for introducing me
 
 * This was my first summer school and I am very grateful that I attended it. The organisation was great, all the tutors very friendly and always willing to help and the materials provided extremely helpful. 
   The contents tought provide a very mighty tool and I will try to integrate it to my workflow. Many thanks! Robert Kamlah
+  
+* Thank you for organizing this summer school. I learned a lot and I look forward to meet and code with our colleagues soon. Thank you for making Astronomy and Data Science more accessible. :telescope: :computer: All the best! :muscle: - Julie Ann Delda
