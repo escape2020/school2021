@@ -54,3 +54,5 @@ I really felt immersed and involved with the subjects thanks to all the resource
 * This was my first experience with a school in data science and it was a wonderful one. I learnt a lot and the organization was great. Thank you all for that effort and everything you taught us. Greetings from Peru. Jaime Hoefken
 * Thank you for organizing this summer school. I learned a lot and I look forward to meet and code with our colleagues soon. Thank you for making Astronomy and Data Science more accessible. :telescope: :computer: All the best! :muscle: - Julie Ann Delda
 
+* I had a great time and I really learned a lot in those ten days. Thanks to all the wonderful instructors for this wonderful oppurtunity!! - Ashwin V George
+
