@@ -51,8 +51,15 @@ I really felt immersed and involved with the subjects thanks to all the resource
 * This was my first summer school and I am very grateful that I attended it. The organisation was great, all the tutors very friendly and always willing to help and the materials provided extremely helpful. 
   The contents tought provide a very mighty tool and I will try to integrate it to my workflow. Many thanks! Robert Kamlah
 
+* This was the best online school that I have attended, with excellent feedbacks and very well organized. Mainly I found examples beneficial. I am so excited and satisfied with the things I learned. And the most important thing is that it was Free! Thanks a lot.
+Nooshineh Fallah Zabihi
+
 * This was my first experience with a school in data science and it was a wonderful one. I learnt a lot and the organization was great. Thank you all for that effort and everything you taught us. Greetings from Peru. Jaime Hoefken
 * Thank you for organizing this summer school. I learned a lot and I look forward to meet and code with our colleagues soon. Thank you for making Astronomy and Data Science more accessible. :telescope: :computer: All the best! :muscle: - Julie Ann Delda
 
+* I had a great time and I really learned a lot in those ten days. Thanks to all the wonderful instructors for this wonderful oppurtunity!! - Ashwin V George
+
+* Thanks for organizing this summer school and providing us all this content. I will share this repository with my friends, the material here is really helpful, I will surely consult it again in the future - María Ramos.
+
 * This summer school was a new experience for me, but definitely a welcome one. The contents will be very helpful for my master's thesis and I'm sure that I will revisit some of the lectures sooner or later. 
-* I hope I can participate in similar events in person soon. Thank you all very much! Martin Schneider 
+  I hope I can participate in similar events in person soon. Thank you all very much! Martin Schneider 
