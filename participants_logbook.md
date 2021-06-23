@@ -59,3 +59,4 @@ Nooshineh Fallah Zabihi
 
 * I had a great time and I really learned a lot in those ten days. Thanks to all the wonderful instructors for this wonderful oppurtunity!! - Ashwin V George
 
+* Thanks for organizing this summer school and providing us all this content. I will share this repository with my friends, the material here is really helpful, I will surely consult it again in the future - María Ramos.
