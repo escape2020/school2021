@@ -60,3 +60,6 @@ Nooshineh Fallah Zabihi
 * I had a great time and I really learned a lot in those ten days. Thanks to all the wonderful instructors for this wonderful oppurtunity!! - Ashwin V George
 
 * Thanks for organizing this summer school and providing us all this content. I will share this repository with my friends, the material here is really helpful, I will surely consult it again in the future - María Ramos.
+
+* This summer school was a new experience for me, but definitely a welcome one. The contents will be very helpful for my master's thesis and I'm sure that I will revisit some of the lectures sooner or later. 
+  I hope I can participate in similar events in person soon. Thank you all very much! Martin Schneider 
