@@ -42,10 +42,20 @@ I never felt lost. It was a great learning experience. Thanks for introducing me
 
 * i learned soo much, and i made some new friends tooo thank you so much . khadija ech-challaouy 
 
-* *A great summer school I was pleased to participate in. Very complete in topics covered and essential to gain skills that in high demand today. Accessibility of the school lectures and materials after the school is over makes it even better. Thanks a lot to outstanding lecturers and organizers for their great efforts and well organization.* - Mukharbek Organokov
+* *A great summer school I was pleased to participate in. Very complete in topics covered and essential to gain skills that in high demand today. Accessibility of the school lectures and materials after the school is over makes it even better.
+Thanks a lot to outstanding lecturers and organizers for their great efforts and well organization.* - Mukharbek Organokov
 
-* This was my first experience in a summer school, and it was incredible! I'll definitely be using all the skills I learned here. Kudos to the organization team and all the tutors, I really felt immersed and involved with the subjects thanks to all the resources at our disposal. Keep up the incredible work! - Gabe Schneider
+* This was my first experience in a summer school, and it was incredible! I'll definitely be using all the skills I learned here. Kudos to the organization team and all the tutors,
+I really felt immersed and involved with the subjects thanks to all the resources at our disposal. Keep up the incredible work! - Gabe Schneider
 
 * This was my first summer school and I am very grateful that I attended it. The organisation was great, all the tutors very friendly and always willing to help and the materials provided extremely helpful. 
   The contents tought provide a very mighty tool and I will try to integrate it to my workflow. Many thanks! Robert Kamlah
-* This was the best online school that I have attended, with excellent feedbacks and very well organized. Mainly I found examples beneficial. I am so excited and satisfied with the things I learned. And the most important thing is that it was Free! Thanks a lot. Nooshineh Fallah Zabihi
+
+* This was the best online school that I have attended, with excellent feedbacks and very well organized. Mainly I found examples beneficial. I am so excited and satisfied with the things I learned. And the most important thing is that it was Free! Thanks a lot.
+Nooshineh Fallah Zabihi
+
+* This was my first experience with a school in data science and it was a wonderful one. I learnt a lot and the organization was great. Thank you all for that effort and everything you taught us. Greetings from Peru. Jaime Hoefken
+* Thank you for organizing this summer school. I learned a lot and I look forward to meet and code with our colleagues soon. Thank you for making Astronomy and Data Science more accessible. :telescope: :computer: All the best! :muscle: - Julie Ann Delda
+
+* I had a great time and I really learned a lot in those ten days. Thanks to all the wonderful instructors for this wonderful oppurtunity!! - Ashwin V George
+
