@@ -5,6 +5,7 @@ This is a collaborative logbook of messages left by participants to the ESCAPE D
 You may contribute your message through a pull request (see the git lecture if needed!) - or click on the edit button using the GitHub interface.
 
 
+* It was the best thing I attended this summer. I learned a lot of new things here and wanted to thank all the teachers. Dev Malik (Remember the name). 
 * Thomas Vuillaume was here.
 * This was a very helpful and informative school, thank you so much! - Ronan Laker
 
