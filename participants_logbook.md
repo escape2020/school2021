@@ -63,3 +63,5 @@ Nooshineh Fallah Zabihi
 
 * This summer school was a new experience for me, but definitely a welcome one. The contents will be very helpful for my master's thesis and I'm sure that I will revisit some of the lectures sooner or later. 
   I hope I can participate in similar events in person soon. Thank you all very much! Martin Schneider 
+  
+ * Fantastic summer school, thanks and all the best! - Kong You Liow
