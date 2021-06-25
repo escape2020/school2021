@@ -1,5 +1,5 @@
 ---
-title: Introduction to Deep Learning I
+title: Introduction to Deep Learning
 date: 2021-05-02T09:00:00
 lastmod: 2021-05-02T09:00:00
 author: Mikaël Jacquemont
@@ -14,7 +14,7 @@ tags:
   - ML
 ---
 
-Introduction to Deep Learning #1
+Introduction to Deep Learning
 
 <!--more-->
 <!---->
@@ -30,6 +30,13 @@ Please, if you don't need to, do not change the one that is now.
 <!---->
 
 # Introduction to Deep Learning #1
+
+
+---
+
+<!---->
+
+# Introduction to Deep Learning #2
 
 
 ---

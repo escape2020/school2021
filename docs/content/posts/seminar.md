@@ -36,13 +36,13 @@ Please, if you don't need to, do not change the one that is now.
 
 
 Detailed observations of the present contents of the Universe are consistent with the Lambda + Cold Dark Matter model, subject to some ‘tensions'.
-To probe these components further the Dark Energy Survey and larger galaxy surveys require new statistical approaches. 
+To probe these components further the Dark Energy Survey and larger galaxy surveys require new statistical approaches.
 In particular the role of Artificial Intelligence, or preferably Augmented Intelligence, is crucial for analysing forthcoming surveys (e.g. Rubin-LSST and Euclid) of billions of galaxies.
 This also requires new ways to train the next generation of scientists for the challenges ahead.
 
 
 Prof. Ofer Lahav  is Perren Chair of Astronomy in the Astrophysics Group atUniversity College London (UCL) and Vice-Dean (International) of the UCL Faculty of Mathematical and Physical Sciences (MAPS).
-He is also Co-Director of the STFC-funded Centre for Doctoral Training in Data Intensive Science at UCL. 
+He is also Co-Director of the STFC-funded Centre for Doctoral Training in Data Intensive Science at UCL.
 Ofer's research area is Observational Cosmology, in particular probing Dark Matter and Dark Energy.
 His work involves Machine Learning for Big Data.
 https://www.ucl.ac.uk/astrophysics/professor-ofer-lahav
@@ -55,7 +55,7 @@ https://indico.in2p3.fr/event/20306/contributions/96462/attachments/64795/90019/
 
 ## Video
 
-<iframe width="100%" height="400" src="https://www.youtube.com/embed/QvmPhVWgKqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/QvmPhVWgKqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ---
