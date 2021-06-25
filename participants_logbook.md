@@ -62,7 +62,10 @@ Nooshineh Fallah Zabihi
 
 * Thanks for organizing this summer school and providing us all this content. I will share this repository with my friends, the material here is really helpful, I will surely consult it again in the future - María Ramos.
 
+* It is really awesome that you made this lot of material accessible to us, together with the experience of so many great tutors. Thank you so much, see you soon! Alessandro Bianchetti
+
 * This summer school was a new experience for me, but definitely a welcome one. The contents will be very helpful for my master's thesis and I'm sure that I will revisit some of the lectures sooner or later. 
   I hope I can participate in similar events in person soon. Thank you all very much! Martin Schneider 
   
  * Fantastic summer school, thanks and all the best! - Kong You Liow
+
