@@ -69,3 +69,6 @@ Nooshineh Fallah Zabihi
   
  * Fantastic summer school, thanks and all the best! - Kong You Liow
 
+* One of the best Summer School Projects available worldwide. I had a lot of fun conversing with the tutors. The *gather town* was a really exciting experience. (*Ali Abolhassanzadeh Mahani*)
+
+
