@@ -71,4 +71,5 @@ Nooshineh Fallah Zabihi
 
 * One of the best Summer School Projects available worldwide. I had a lot of fun conversing with the tutors. The *gather town* was a really exciting experience. (*Ali Abolhassanzadeh Mahani*)
 
+* I just wanted to reach out and say a big thank you (Tutors, Organizers) for your lectures and a well organised summer school. All quizzes were helpful in digging further the lectures. I found all sessions very fascinating and insightful, extremely beneficial and enlightening. I feel that I am in a far better position to tackle my PhD after listenig to what you had to teach us! - Jean Damascene Mbarubucyeye 
 
