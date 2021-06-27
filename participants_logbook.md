@@ -69,3 +69,4 @@ Nooshineh Fallah Zabihi
   
  * Fantastic summer school, thanks and all the best! - Kong You Liow
 
+* I just wanted to reach out and say a big thank you (Tutors, Organizers) for your lectures and a well-organized summer school. I found all sessions very fascinating and insightful, extremely beneficial, and enlightening. I feel that I am in a far better position to tackle my Ph.D. after listening to what you had to teach us! - Jean Damascene Mbarubucyeye
