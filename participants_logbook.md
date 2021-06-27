@@ -68,4 +68,4 @@ Nooshineh Fallah Zabihi
   I hope I can participate in similar events in person soon. Thank you all very much! Martin Schneider 
   
  * Fantastic summer school, thanks and all the best! - Kong You Liow
-
+* I just wanted to reach out and say a big thank you (Tutors, Organizers) for your lectures and a well organised summer school. All quizzes were helpful in digging further the lectures. I found all sessions very fascinating and insightful, extremely beneficial and enlightening. I feel that I am in a far better position to tackle my PhD after listenig to what you had to teach us! - Jean Damascene Mbarubucyeye 
