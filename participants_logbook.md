@@ -73,3 +73,4 @@ Nooshineh Fallah Zabihi
 
 * I just wanted to reach out and say a big thank you (Tutors, Organizers) for your lectures and a well organised summer school. All quizzes were helpful in digging further the lectures. I found all sessions very fascinating and insightful, extremely beneficial and enlightening. I feel that I am in a far better position to tackle my PhD after listenig to what you had to teach us! - Jean Damascene Mbarubucyeye 
 
+* Pandemics foster some good things as remote summer schools!. This event helped me to reconcile studies with work and taught me that what matters is a good organisation. Please continue with a hybrid system in future! (*Juanlu*)
