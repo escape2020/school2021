@@ -41,17 +41,8 @@ https://github.com/escape2020/school2021/tree/main/machine-learning-1
 
 
 ## Slides
-Slides from this lecture can be found [there](https://github.com/escape2020/school2021/blob/main/machine-learning-1/Intro_ML_slides.pdf)
+Slides from this lecture can be found there: [https://github.com/escape2020/school2021/blob/main/machine-learning-1/Intro_ML_slides.pdf](https://github.com/escape2020/school2021/blob/main/machine-learning-1/Intro_ML_slides.pdf)
 
-<CENTER>
-
-<object data="https://github.com/escape2020/school2021/raw/main/machine-learning-1/Intro_ML_slides.pdf" type="application/pdf" width="100%" height="650px">
-    <embed src="https://github.com/escape2020/school2021/raw/main/machine-learning-1/Intro_ML_slides.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/escape2020/school2021/raw/main/machine-learning-1/Intro_ML_slides.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
-
-</CENTER>
 
 ## Video
 
