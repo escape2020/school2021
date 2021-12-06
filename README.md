@@ -1,5 +1,8 @@
 # ESCAPE data science summer school 2021
 
+[![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/escape2020/school2021/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/escape2020/school2021)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5093909.svg)](https://doi.org/10.5281/zenodo.5093909)
+
 All information on the school may be found on the main page:     
 https://indico.in2p3.fr/event/20306/
 
@@ -85,8 +88,6 @@ mamba env update -f environment.yml
 ```
 
 
-
-
 # binder
 
 You may run the content of this repository on [mybinder service](https://mybinder.readthedocs.io/en/latest/).
@@ -106,6 +107,12 @@ Some lectures will require the usage of [containers](https://www.docker.com/reso
 **Important** For Windows users, it is possible that you will need to enable the virtualization in your machine (it comes disabled by default by some vendors). However, this is **highly** vendor/hardware-dependent, making it impractical to list a series of instructions.
 
 For that reason, the best option is to Google ```enable virtualization in windows X``` where ```X``` is your Windows OS version. And/or search for ```enable virtualization in YZ``` where ```YZ``` is your machine brand/model.
+
+---
+
+# Cite as
+
+Thomas Vuillaume, Maximilian Nöthe, Julien Peloton, Axel Donath, Arturo Sanchez Pineda, Eduardo Rodrigues, Enrique Garcia, Karl Kosack, Tamas Gal, Benson Muite, Alberto Iess, Martino Sorbaro, Claudia Beleites, Jutta Schnabel, & Rachael Ainsworth. (2021, July 12). ESCAPE Data Science Summer School 2021. Zenodo. https://doi.org/10.5281/zenodo.5093909
 
 
 
