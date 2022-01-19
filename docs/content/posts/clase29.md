@@ -31,12 +31,25 @@ Please, if you don't need to, do not change the one that is now.
 
 # Introduction to Deep Learning #1
 
+Unfortunately there is no registered version of this lecture.
 
----
+However, you may its content, including exercices, in the repository:
+https://github.com/escape2020/school2021/tree/main/deep-learning
 
-<!---->
 
-# Introduction to Deep Learning #2
+## Slides
+
+[Download them](https://github.com/escape2020/school2021/blob/main/deep-learning/Intro_to_DL_ESCAPE_school21.pdf)
+
+<CENTER>
+
+<object data="https://github.com/escape2020/school2021/blob/main/deep-learning/Intro_to_DL_ESCAPE_school21.pdf" type="application/pdf" width="100%" height="525px">
+    <embed src="https://github.com/escape2020/school2021/blob/main/deep-learning/Intro_to_DL_ESCAPE_school21.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/escape2020/school2021/blob/main/deep-learning/Intro_to_DL_ESCAPE_school21.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
+</CENTER>
 
 
 ---
